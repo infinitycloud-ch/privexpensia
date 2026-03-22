@@ -1,0 +1,352 @@
+{
+  "version": 1,
+  "identifier": "com.moulinsart.privexpensia.storekit",
+  "appName": "PrivExpensIA",
+  "localizations": {
+    "fr": {
+      "title": "PrivExpensIA",
+      "description": "Gestionnaire d'expenses privé et sécurisé"
+    },
+    "en": {
+      "title": "PrivExpensIA",
+      "description": "Private and secure expense manager"
+    },
+    "de": {
+      "title": "PrivExpensIA",
+      "description": "Privater und sicherer Ausgaben-Manager"
+    },
+    "ja": {
+      "title": "PrivExpensIA",
+      "description": "プライベートで安全な支出管理"
+    }
+  },
+  "subscriptionGroups": [
+    {
+      "id": "pro_subscription_group",
+      "localizations": {
+        "fr": {
+          "displayName": "Abonnement Pro",
+          "description": "Accès complet aux fonctionnalités premium"
+        },
+        "en": {
+          "displayName": "Pro Subscription",
+          "description": "Complete access to premium features"
+        },
+        "de": {
+          "displayName": "Pro-Abonnement",
+          "description": "Vollzugang zu Premium-Funktionen"
+        },
+        "ja": {
+          "displayName": "Proサブスクリプション",
+          "description": "プレミアム機能への完全アクセス"
+        }
+      },
+      "subscriptions": [
+        {
+          "id": "com.moulinsart.privexpensia.pro.monthly",
+          "type": "RecurringSubscription",
+          "familyShareable": false,
+          "subscriptionPeriod": "P1M",
+          "recurringBillingPeriod": "P1M",
+          "localizations": {
+            "fr": {
+              "displayName": "Pro Mensuel",
+              "description": "Accès illimité aux fonctionnalités premium pour 1 mois"
+            },
+            "en": {
+              "displayName": "Pro Monthly",
+              "description": "Unlimited access to premium features for 1 month"
+            },
+            "de": {
+              "displayName": "Pro Monatlich",
+              "description": "Unbegrenzter Zugang zu Premium-Funktionen für 1 Monat"
+            },
+            "ja": {
+              "displayName": "Pro月額",
+              "description": "1ヶ月間プレミアム機能への無制限アクセス"
+            }
+          },
+          "pricing": [
+            {
+              "currencyCode": "EUR",
+              "price": 9.99,
+              "paymentMode": "PayAsYouGo"
+            },
+            {
+              "currencyCode": "CHF",
+              "price": 10.90,
+              "paymentMode": "PayAsYouGo"
+            },
+            {
+              "currencyCode": "USD",
+              "price": 10.99,
+              "paymentMode": "PayAsYouGo"
+            },
+            {
+              "currencyCode": "JPY",
+              "price": 1600,
+              "paymentMode": "PayAsYouGo"
+            }
+          ],
+          "introductoryOffer": {
+            "paymentMode": "FreeTrial",
+            "subscriptionPeriod": "P1W",
+            "numberOfPeriods": 1
+          }
+        },
+        {
+          "id": "com.moulinsart.privexpensia.pro.yearly",
+          "type": "RecurringSubscription",
+          "familyShareable": false,
+          "subscriptionPeriod": "P1Y",
+          "recurringBillingPeriod": "P1Y",
+          "localizations": {
+            "fr": {
+              "displayName": "Pro Annuel",
+              "description": "Accès illimité aux fonctionnalités premium pour 1 an (2 mois gratuits)"
+            },
+            "en": {
+              "displayName": "Pro Yearly",
+              "description": "Unlimited access to premium features for 1 year (2 months free)"
+            },
+            "de": {
+              "displayName": "Pro Jährlich",
+              "description": "Unbegrenzter Zugang zu Premium-Funktionen für 1 Jahr (2 Monate gratis)"
+            },
+            "ja": {
+              "displayName": "Pro年額",
+              "description": "1年間プレミアム機能への無制限アクセス（2ヶ月無料）"
+            }
+          },
+          "pricing": [
+            {
+              "currencyCode": "EUR",
+              "price": 99.99,
+              "paymentMode": "PayAsYouGo"
+            },
+            {
+              "currencyCode": "CHF",
+              "price": 109.90,
+              "paymentMode": "PayAsYouGo"
+            },
+            {
+              "currencyCode": "USD",
+              "price": 109.99,
+              "paymentMode": "PayAsYouGo"
+            },
+            {
+              "currencyCode": "JPY",
+              "price": 16000,
+              "paymentMode": "PayAsYouGo"
+            }
+          ],
+          "introductoryOffer": {
+            "paymentMode": "FreeTrial",
+            "subscriptionPeriod": "P2W",
+            "numberOfPeriods": 1
+          }
+        }
+      ]
+    }
+  ],
+  "nonConsumables": [
+    {
+      "id": "com.moulinsart.privexpensia.business.tier",
+      "type": "NonConsumable",
+      "familyShareable": false,
+      "localizations": {
+        "fr": {
+          "displayName": "Tier Business",
+          "description": "Fonctionnalités avancées pour professionnels (prix personnalisé)"
+        },
+        "en": {
+          "displayName": "Business Tier",
+          "description": "Advanced features for professionals (custom pricing)"
+        },
+        "de": {
+          "displayName": "Business-Stufe",
+          "description": "Erweiterte Funktionen für Profis (individuelle Preise)"
+        },
+        "ja": {
+          "displayName": "ビジネスティア",
+          "description": "プロフェッショナル向け高度機能（カスタム価格）"
+        }
+      },
+      "pricing": [
+        {
+          "currencyCode": "EUR",
+          "price": 299.99,
+          "paymentMode": "PayAsYouGo"
+        },
+        {
+          "currencyCode": "CHF",
+          "price": 329.90,
+          "paymentMode": "PayAsYouGo"
+        },
+        {
+          "currencyCode": "USD",
+          "price": 329.99,
+          "paymentMode": "PayAsYouGo"
+        },
+        {
+          "currencyCode": "JPY",
+          "price": 48000,
+          "paymentMode": "PayAsYouGo"
+        }
+      ]
+    }
+  ],
+  "featureTiers": {
+    "free": {
+      "id": "free_tier",
+      "localizations": {
+        "fr": {
+          "displayName": "Gratuit",
+          "description": "Fonctionnalités de base"
+        },
+        "en": {
+          "displayName": "Free",
+          "description": "Basic features"
+        },
+        "de": {
+          "displayName": "Kostenlos",
+          "description": "Grundfunktionen"
+        },
+        "ja": {
+          "displayName": "無料",
+          "description": "基本機能"
+        }
+      },
+      "features": {
+        "maxTransactions": 50,
+        "maxCategories": 10,
+        "maxAccounts": 2,
+        "exportFormats": ["csv"],
+        "cloudSync": false,
+        "advancedReports": false,
+        "budgetTracking": false,
+        "multiCurrency": false,
+        "dataEncryption": "basic",
+        "customerSupport": "community"
+      },
+      "limitations": {
+        "fr": [
+          "Maximum 50 transactions par mois",
+          "10 catégories personnalisées maximum",
+          "2 comptes maximum",
+          "Export CSV uniquement",
+          "Pas de synchronisation cloud",
+          "Rapports de base uniquement"
+        ],
+        "en": [
+          "Maximum 50 transactions per month",
+          "Maximum 10 custom categories",
+          "Maximum 2 accounts",
+          "CSV export only",
+          "No cloud synchronization",
+          "Basic reports only"
+        ],
+        "de": [
+          "Maximal 50 Transaktionen pro Monat",
+          "Maximal 10 benutzerdefinierte Kategorien",
+          "Maximal 2 Konten",
+          "Nur CSV-Export",
+          "Keine Cloud-Synchronisation",
+          "Nur grundlegende Berichte"
+        ],
+        "ja": [
+          "月最大50取引",
+          "カスタムカテゴリ最大10個",
+          "最大2アカウント",
+          "CSV出力のみ",
+          "クラウド同期なし",
+          "基本レポートのみ"
+        ]
+      }
+    },
+    "pro": {
+      "id": "pro_tier",
+      "localizations": {
+        "fr": {
+          "displayName": "Pro",
+          "description": "Toutes les fonctionnalités premium"
+        },
+        "en": {
+          "displayName": "Pro",
+          "description": "All premium features"
+        },
+        "de": {
+          "displayName": "Pro",
+          "description": "Alle Premium-Funktionen"
+        },
+        "ja": {
+          "displayName": "Pro",
+          "description": "全プレミアム機能"
+        }
+      },
+      "features": {
+        "maxTransactions": "unlimited",
+        "maxCategories": "unlimited",
+        "maxAccounts": "unlimited",
+        "exportFormats": ["csv", "pdf", "xlsx", "qif"],
+        "cloudSync": true,
+        "advancedReports": true,
+        "budgetTracking": true,
+        "multiCurrency": true,
+        "dataEncryption": "advanced",
+        "customerSupport": "priority",
+        "receiptScanning": true,
+        "automaticCategorization": true,
+        "recurringTransactions": true,
+        "customReports": true
+      }
+    },
+    "business": {
+      "id": "business_tier",
+      "localizations": {
+        "fr": {
+          "displayName": "Business",
+          "description": "Fonctionnalités professionnelles avancées"
+        },
+        "en": {
+          "displayName": "Business",
+          "description": "Advanced professional features"
+        },
+        "de": {
+          "displayName": "Business",
+          "description": "Erweiterte professionelle Funktionen"
+        },
+        "ja": {
+          "displayName": "ビジネス",
+          "description": "高度なプロ機能"
+        }
+      },
+      "features": {
+        "maxTransactions": "unlimited",
+        "maxCategories": "unlimited",
+        "maxAccounts": "unlimited",
+        "exportFormats": ["csv", "pdf", "xlsx", "qif", "xml"],
+        "cloudSync": true,
+        "advancedReports": true,
+        "budgetTracking": true,
+        "multiCurrency": true,
+        "dataEncryption": "enterprise",
+        "customerSupport": "dedicated",
+        "receiptScanning": true,
+        "automaticCategorization": true,
+        "recurringTransactions": true,
+        "customReports": true,
+        "apiAccess": true,
+        "auditTrail": true,
+        "teamCollaboration": true,
+        "customIntegrations": true
+      }
+    }
+  },
+  "settings": {
+    "askToBuyEnabled": true,
+    "failTransactionsEnabled": false,
+    "locale": "fr_FR",
+    "storefront": "FRA"
+  }
+}

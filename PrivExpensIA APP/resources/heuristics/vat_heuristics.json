@@ -1,0 +1,282 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "description": "VAT/Tax detection and calculation heuristics by country",
+  
+  "countries": {
+    "CH": {
+      "name": "Switzerland",
+      "tax_names": ["MwSt", "MWST", "TVA", "IVA"],
+      "rates": {
+        "standard": 8.1,
+        "reduced": 2.5,
+        "accommodation": 3.7
+      },
+      "detection_patterns": [
+        "MwSt\\.?\\s*(\\d+[.,]\\d+)\\s*%",
+        "TVA\\s*(\\d+[.,]\\d+)\\s*%",
+        "IVA\\s*(\\d+[.,]\\d+)\\s*%",
+        "inkl\\.?\\s*MwSt",
+        "incl\\.?\\s*TVA"
+      ],
+      "rate_detection_rules": [
+        {
+          "rate": 2.5,
+          "keywords": ["Lebensmittel", "Alimentari", "Food", "Nourriture", "Getränke"],
+          "categories": ["food", "grocery"]
+        },
+        {
+          "rate": 3.7,
+          "keywords": ["Übernachtung", "Hotel", "Unterkunft", "Logement"],
+          "categories": ["hotel", "accommodation"]
+        },
+        {
+          "rate": 8.1,
+          "keywords": ["Restaurant", "Service", "Transport"],
+          "categories": ["restaurant", "transport", "other"]
+        }
+      ],
+      "calculation": {
+        "rounding": 0.05,
+        "inclusive_default": true
+      }
+    },
+    
+    "DE": {
+      "name": "Germany",
+      "tax_names": ["MwSt", "Mehrwertsteuer", "USt", "Umsatzsteuer"],
+      "rates": {
+        "standard": 19,
+        "reduced": 7
+      },
+      "detection_patterns": [
+        "MwSt\\.?\\s*(\\d+)\\s*%",
+        "USt\\.?\\s*(\\d+)\\s*%",
+        "Mehrwertsteuer\\s*(\\d+)\\s*%",
+        "A\\s*=\\s*19\\s*%",
+        "B\\s*=\\s*7\\s*%"
+      ],
+      "rate_detection_rules": [
+        {
+          "rate": 7,
+          "keywords": ["Lebensmittel", "Bücher", "Zeitungen", "ÖPNV", "Hotel", "Taxi"],
+          "categories": ["food", "books", "public_transport", "hotel", "taxi"]
+        },
+        {
+          "rate": 19,
+          "keywords": ["Restaurant", "Elektronik", "Kleidung", "Benzin"],
+          "categories": ["restaurant", "electronics", "clothing", "gas"]
+        }
+      ],
+      "special_cases": {
+        "takeaway": {
+          "rate": 7,
+          "keywords": ["zum Mitnehmen", "Take-away", "to go"]
+        },
+        "eat_in": {
+          "rate": 19,
+          "keywords": ["vor Ort", "Hier essen", "eat in"]
+        }
+      }
+    },
+    
+    "FR": {
+      "name": "France",
+      "tax_names": ["TVA", "Taxe"],
+      "rates": {
+        "standard": 20,
+        "intermediate": 10,
+        "reduced": 5.5,
+        "super_reduced": 2.1
+      },
+      "detection_patterns": [
+        "TVA\\s*(\\d+[.,]\\d+)\\s*%",
+        "Taxe\\s*(\\d+[.,]\\d+)\\s*%",
+        "HT\\s*([0-9]+[.,]\\d{2})",
+        "TTC\\s*([0-9]+[.,]\\d{2})"
+      ],
+      "rate_detection_rules": [
+        {
+          "rate": 2.1,
+          "keywords": ["Médicament", "Journal", "Presse"],
+          "categories": ["medicine", "newspaper"]
+        },
+        {
+          "rate": 5.5,
+          "keywords": ["Alimentaire", "Livre", "Énergie"],
+          "categories": ["food", "books", "energy"]
+        },
+        {
+          "rate": 10,
+          "keywords": ["Restaurant", "Transport", "Hôtel", "Spectacle"],
+          "categories": ["restaurant", "transport", "hotel", "entertainment"]
+        },
+        {
+          "rate": 20,
+          "keywords": ["Service", "Produit", "Carburant"],
+          "categories": ["service", "product", "gas"]
+        }
+      ]
+    },
+    
+    "JP": {
+      "name": "Japan",
+      "tax_names": ["消費税", "税", "Tax"],
+      "rates": {
+        "standard": 10,
+        "reduced": 8
+      },
+      "detection_patterns": [
+        "消費税\\s*(\\d+)\\s*%",
+        "税\\s*(\\d+)\\s*%",
+        "内税",
+        "外税",
+        "\\(税込\\)",
+        "\\(税抜\\)"
+      ],
+      "rate_detection_rules": [
+        {
+          "rate": 8,
+          "keywords": ["食品", "飲料", "テイクアウト", "持ち帰り"],
+          "categories": ["food", "beverage", "takeaway"]
+        },
+        {
+          "rate": 10,
+          "keywords": ["イートイン", "店内", "サービス", "交通"],
+          "categories": ["eat_in", "service", "transport"]
+        }
+      ],
+      "special_notation": {
+        "inclusive": ["税込", "内税"],
+        "exclusive": ["税抜", "外税"]
+      }
+    },
+    
+    "US": {
+      "name": "United States",
+      "tax_names": ["Sales Tax", "Tax", "State Tax", "Local Tax"],
+      "rates": {
+        "varies_by_state": true,
+        "range": {
+          "min": 0,
+          "max": 13.5
+        }
+      },
+      "state_rates": {
+        "CA": {"state": 7.25, "avg_local": 1.43},
+        "NY": {"state": 4, "avg_local": 4.52},
+        "TX": {"state": 6.25, "avg_local": 1.95},
+        "FL": {"state": 6, "avg_local": 1.05},
+        "WA": {"state": 6.5, "avg_local": 2.79},
+        "OR": {"state": 0, "avg_local": 0},
+        "MT": {"state": 0, "avg_local": 0},
+        "NH": {"state": 0, "avg_local": 0},
+        "DE": {"state": 0, "avg_local": 0}
+      },
+      "detection_patterns": [
+        "Sales\\s+Tax\\s*([0-9]+[.,]\\d+)\\s*%?",
+        "Tax\\s*([0-9]+[.,]\\d+)\\s*%?",
+        "State\\s+Tax\\s*([0-9]+[.,]\\d+)",
+        "Local\\s+Tax\\s*([0-9]+[.,]\\d+)"
+      ],
+      "exemptions": {
+        "common": ["Groceries", "Prescription drugs"],
+        "state_specific": {
+          "PA": ["Clothing"],
+          "NJ": ["Clothing under $110"],
+          "NY": ["Clothing under $110"]
+        }
+      }
+    },
+    
+    "GB": {
+      "name": "United Kingdom",
+      "tax_names": ["VAT", "Value Added Tax"],
+      "rates": {
+        "standard": 20,
+        "reduced": 5,
+        "zero": 0
+      },
+      "detection_patterns": [
+        "VAT\\s*@?\\s*(\\d+)\\s*%",
+        "VAT\\s*([0-9]+[.,]\\d{2})",
+        "Includes\\s+VAT",
+        "Plus\\s+VAT"
+      ],
+      "rate_detection_rules": [
+        {
+          "rate": 0,
+          "keywords": ["Food", "Children's clothing", "Books"],
+          "categories": ["food", "children_clothing", "books"]
+        },
+        {
+          "rate": 5,
+          "keywords": ["Energy", "Children's car seat"],
+          "categories": ["energy", "safety"]
+        },
+        {
+          "rate": 20,
+          "keywords": ["Restaurant", "Hotel", "Service"],
+          "categories": ["restaurant", "hotel", "service"]
+        }
+      ]
+    }
+  },
+  
+  "global_patterns": {
+    "inclusive_indicators": [
+      "incl", "inkl", "including", "inc", "TTC", "税込", "IVA inclusa"
+    ],
+    "exclusive_indicators": [
+      "excl", "exkl", "excluding", "exc", "HT", "税抜", "IVA esclusa", "plus"
+    ],
+    "tax_line_indicators": [
+      "tax:", "vat:", "tva:", "mwst:", "iva:", "消費税:", "sales tax:"
+    ]
+  },
+  
+  "calculation_methods": {
+    "from_inclusive": {
+      "formula": "tax_amount = total - (total / (1 + tax_rate/100))",
+      "precision": 2
+    },
+    "from_exclusive": {
+      "formula": "tax_amount = subtotal * (tax_rate/100)",
+      "precision": 2
+    },
+    "validation": {
+      "tolerance": 0.02,
+      "rounding_check": true
+    }
+  },
+  
+  "confidence_scoring": {
+    "factors": [
+      {
+        "name": "rate_match",
+        "weight": 0.3,
+        "description": "Tax rate matches country standards"
+      },
+      {
+        "name": "keyword_match",
+        "weight": 0.2,
+        "description": "Tax keywords found"
+      },
+      {
+        "name": "calculation_valid",
+        "weight": 0.3,
+        "description": "Tax calculation validates"
+      },
+      {
+        "name": "format_match",
+        "weight": 0.2,
+        "description": "Format matches country patterns"
+      }
+    ],
+    "thresholds": {
+      "high": 0.8,
+      "medium": 0.6,
+      "low": 0.4
+    }
+  }
+}

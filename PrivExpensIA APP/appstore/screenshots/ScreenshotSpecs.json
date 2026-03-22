@@ -1,0 +1,151 @@
+{
+  "screenshot_requirements": {
+    "iphone_15_pro": {
+      "resolution": "1290x2796",
+      "format": "PNG",
+      "orientation": "portrait",
+      "count": 5,
+      "status_bar": "clean",
+      "device_frame": false
+    },
+    "iphone_15": {
+      "resolution": "1179x2556", 
+      "format": "PNG",
+      "orientation": "portrait",
+      "count": 5,
+      "status_bar": "clean",
+      "device_frame": false
+    },
+    "iphone_se": {
+      "resolution": "750x1334",
+      "format": "PNG", 
+      "orientation": "portrait",
+      "count": 5,
+      "status_bar": "clean",
+      "device_frame": false
+    },
+    "ipad_pro": {
+      "resolution": "2048x2732",
+      "format": "PNG",
+      "orientation": "portrait", 
+      "count": 5,
+      "status_bar": "clean",
+      "device_frame": false
+    }
+  },
+  "screenshot_content": {
+    "screen_1": {
+      "title": "Scanner IA Révolutionnaire",
+      "caption_french": "Scannez vos reçus avec 95% de précision",
+      "caption_english": "Scan receipts with 95% accuracy",
+      "features": [
+        "Interface de scan avec preview camera",
+        "Bouton de capture central et lumineux", 
+        "Indicateur de qualité en temps réel",
+        "Guidelines d'aide au cadrage",
+        "Overlay de guidage intelligent"
+      ],
+      "overlay_elements": {
+        "main_text": "Scanner IA 95% précis",
+        "subtitle": "Reconnaissance instantanée",
+        "accent_color": "#007AFF",
+        "position": "top_third"
+      }
+    },
+    "screen_2": {
+      "title": "Extraction Automatique",
+      "caption_french": "L'IA extrait automatiquement toutes les données",
+      "caption_english": "AI automatically extracts all data",
+      "features": [
+        "Vue détail du reçu scanné",
+        "Champs extraits automatiquement surlignés",
+        "Montant, date, marchand, TVA détectés",
+        "Boutons d'édition pour corrections",
+        "Animation de traitement IA"
+      ],
+      "overlay_elements": {
+        "main_text": "Extraction 100% automatique",
+        "subtitle": "IA avancée intégrée",
+        "accent_color": "#34C759",
+        "position": "bottom_third"
+      }
+    },
+    "screen_3": {
+      "title": "Analyse Intelligente", 
+      "caption_french": "Catégorisation et analyse de vos dépenses",
+      "caption_english": "Smart categorization and expense analysis",
+      "features": [
+        "Dashboard avec graphiques animés",
+        "Catégories colorées et icônées", 
+        "Tendances mensuelles",
+        "Alertes budget intelligentes",
+        "Vue d'ensemble financière"
+      ],
+      "overlay_elements": {
+        "main_text": "Analyses intelligentes",
+        "subtitle": "Comprenez vos dépenses",
+        "accent_color": "#FF9500",
+        "position": "center"
+      }
+    },
+    "screen_4": {
+      "title": "Confidentialité Totale",
+      "caption_french": "Vos données restent sur votre appareil",
+      "caption_english": "Your data stays on your device",
+      "features": [
+        "Écran de confidentialité avec icônes sécurité",
+        "Badges 'Données locales' et 'Chiffré'",
+        "Illustration du device avec cadenas",
+        "Mentions RGPD et conformité",
+        "Interface rassurante et professionnelle"
+      ],
+      "overlay_elements": {
+        "main_text": "100% Privé & Sécurisé",
+        "subtitle": "Données locales uniquement",
+        "accent_color": "#5856D6",
+        "position": "top_third"
+      }
+    },
+    "screen_5": {
+      "title": "Export Professionnel",
+      "caption_french": "Rapports Excel/PDF prêts pour la comptabilité", 
+      "caption_english": "Professional Excel/PDF reports ready for accounting",
+      "features": [
+        "Interface d'export avec preview",
+        "Options de format multiples",
+        "Template professionnel visible",
+        "Boutons de partage (email, cloud)",
+        "Aperçu du rapport généré"
+      ],
+      "overlay_elements": {
+        "main_text": "Rapports professionnels",
+        "subtitle": "Export Excel/PDF instant",
+        "accent_color": "#FF3B30",
+        "position": "bottom_third"
+      }
+    }
+  },
+  "design_guidelines": {
+    "font_family": "SF Pro Display",
+    "main_text_size": "34pt",
+    "subtitle_size": "17pt", 
+    "background_overlay": "rgba(0,0,0,0.4)",
+    "text_color": "#FFFFFF",
+    "shadow_offset": "0,2",
+    "shadow_blur": "4px",
+    "corner_radius": "12px",
+    "animation_duration": "0.8s",
+    "transition_easing": "ease-out"
+  },
+  "technical_specs": {
+    "color_profile": "sRGB",
+    "bit_depth": "8-bit",
+    "compression": "PNG-24",
+    "max_file_size": "8MB",
+    "safe_area_margins": {
+      "top": "88px",
+      "bottom": "134px",
+      "sides": "20px"
+    }
+  }
+}

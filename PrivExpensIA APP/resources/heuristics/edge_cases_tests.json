@@ -1,0 +1,296 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "description": "Edge cases and test scenarios for receipt extraction heuristics",
+  
+  "edge_cases": {
+    "receipt_quality": {
+      "faded_text": {
+        "description": "Receipt with faded or partially visible text",
+        "handling": "Apply OCR enhancement filters, increase contrast",
+        "fallback": "Request manual input for critical fields",
+        "test_cases": ["faded_thermal_receipt.jpg", "old_receipt.jpg"]
+      },
+      "crumpled_paper": {
+        "description": "Wrinkled or folded receipt",
+        "handling": "Apply perspective correction and smoothing",
+        "fallback": "Multiple scan attempts with different angles",
+        "test_cases": ["crumpled_receipt.jpg", "folded_receipt.jpg"]
+      },
+      "partial_receipt": {
+        "description": "Receipt with torn or missing sections",
+        "handling": "Extract available data, flag incomplete fields",
+        "fallback": "Estimate missing values based on items",
+        "test_cases": ["torn_bottom.jpg", "missing_header.jpg"]
+      }
+    },
+    
+    "multilingual_receipts": {
+      "mixed_languages": {
+        "description": "Receipt with multiple languages",
+        "example": "Swiss receipt with German/French/Italian",
+        "handling": "Detect primary language, maintain multilingual keywords",
+        "test_cases": ["swiss_multilingual.jpg", "belgium_dual.jpg"]
+      },
+      "non_latin_scripts": {
+        "description": "Receipts in Arabic, Chinese, Japanese, etc.",
+        "handling": "Script detection, appropriate OCR engine selection",
+        "test_cases": ["japanese_receipt.jpg", "arabic_receipt.jpg", "chinese_receipt.jpg"]
+      },
+      "transliteration": {
+        "description": "Roman script version of non-Latin text",
+        "example": "Romaji in Japanese receipts",
+        "handling": "Dual extraction paths for original and transliterated",
+        "test_cases": ["romaji_receipt.jpg", "pinyin_receipt.jpg"]
+      }
+    },
+    
+    "format_variations": {
+      "handwritten_additions": {
+        "description": "Printed receipt with handwritten notes",
+        "example": "Tip added by hand, manual corrections",
+        "handling": "Separate OCR passes for printed and handwritten",
+        "confidence": "Lower confidence for handwritten portions",
+        "test_cases": ["receipt_with_tip.jpg", "manual_corrections.jpg"]
+      },
+      "email_receipts": {
+        "description": "Digital receipts in email format",
+        "handling": "HTML/PDF parsing instead of OCR",
+        "extraction": "Different field locations and formatting",
+        "test_cases": ["amazon_email.html", "uber_receipt.pdf"]
+      },
+      "thermal_paper": {
+        "description": "Special handling for thermal printer receipts",
+        "issues": "Low contrast, fading over time",
+        "handling": "Preprocessing for thermal paper characteristics",
+        "test_cases": ["pos_thermal.jpg", "faded_thermal.jpg"]
+      }
+    },
+    
+    "currency_edge_cases": {
+      "multiple_currencies": {
+        "description": "Receipt showing multiple currency amounts",
+        "example": "Airport duty-free with EUR/USD/Local",
+        "handling": "Extract all currencies, identify primary",
+        "test_cases": ["duty_free_multi.jpg", "forex_receipt.jpg"]
+      },
+      "crypto_payments": {
+        "description": "Receipts with cryptocurrency payments",
+        "example": "BTC/ETH payment with fiat equivalent",
+        "handling": "Extract both crypto and fiat amounts",
+        "test_cases": ["bitcoin_payment.jpg", "crypto_receipt.jpg"]
+      },
+      "no_currency_symbol": {
+        "description": "Amount without currency indicator",
+        "handling": "Infer from merchant location or country",
+        "test_cases": ["no_currency.jpg", "ambiguous_amount.jpg"]
+      }
+    },
+    
+    "tax_complications": {
+      "multiple_tax_rates": {
+        "description": "Different tax rates on same receipt",
+        "example": "German receipt with 7% and 19% items",
+        "handling": "Extract and calculate each tax category",
+        "test_cases": ["multi_vat_de.jpg", "mixed_tax_rates.jpg"]
+      },
+      "tax_exemptions": {
+        "description": "Tax-free or exempt items",
+        "example": "US groceries, medical items",
+        "handling": "Identify exempt items, adjust calculations",
+        "test_cases": ["tax_exempt.jpg", "mixed_taxable.jpg"]
+      },
+      "inclusive_exclusive_mix": {
+        "description": "Some prices include tax, others don't",
+        "handling": "Detect indicators for each line item",
+        "test_cases": ["mixed_tax_inclusion.jpg"]
+      },
+      "tax_on_tax": {
+        "description": "Compound taxes (e.g., Quebec)",
+        "handling": "Layer tax calculations appropriately",
+        "test_cases": ["quebec_receipt.jpg", "compound_tax.jpg"]
+      }
+    },
+    
+    "date_time_issues": {
+      "ambiguous_dates": {
+        "description": "01/02/2025 - Jan 2 or Feb 1?",
+        "handling": "Use merchant location to determine format",
+        "fallback": "Prompt user if ambiguous",
+        "test_cases": ["ambiguous_date.jpg"]
+      },
+      "multiple_dates": {
+        "description": "Transaction, printing, processing dates",
+        "handling": "Identify and extract primary transaction date",
+        "test_cases": ["multi_date_receipt.jpg"]
+      },
+      "timezone_issues": {
+        "description": "Receipt from different timezone",
+        "handling": "Store original time and timezone if available",
+        "test_cases": ["timezone_receipt.jpg"]
+      },
+      "relative_dates": {
+        "description": "Today, Yesterday, etc.",
+        "handling": "Convert based on scan date",
+        "test_cases": ["relative_date.jpg"]
+      }
+    },
+    
+    "merchant_challenges": {
+      "generic_names": {
+        "description": "Store #1234, Location 5678",
+        "handling": "Extract additional context (address, phone)",
+        "test_cases": ["generic_store.jpg"]
+      },
+      "franchises": {
+        "description": "McDonald's operated by XYZ Corp",
+        "handling": "Identify brand name vs operator",
+        "test_cases": ["franchise_receipt.jpg"]
+      },
+      "mall_receipts": {
+        "description": "Food court, shopping center receipts",
+        "handling": "Extract specific vendor within location",
+        "test_cases": ["food_court.jpg", "mall_vendor.jpg"]
+      }
+    },
+    
+    "amount_anomalies": {
+      "negative_amounts": {
+        "description": "Refunds, discounts, returns",
+        "handling": "Preserve sign, flag as return/refund",
+        "test_cases": ["refund_receipt.jpg", "return_receipt.jpg"]
+      },
+      "zero_amounts": {
+        "description": "Complimentary items, free samples",
+        "handling": "Extract but flag as zero-value",
+        "test_cases": ["comp_receipt.jpg", "free_item.jpg"]
+      },
+      "calculation_errors": {
+        "description": "Receipt totals don't add up",
+        "handling": "Flag discrepancy, extract raw values",
+        "test_cases": ["calc_error.jpg", "rounding_issue.jpg"]
+      }
+    },
+    
+    "special_receipt_types": {
+      "split_bills": {
+        "description": "Partial payment of larger bill",
+        "handling": "Extract split information if available",
+        "test_cases": ["split_bill.jpg", "shared_meal.jpg"]
+      },
+      "deposits": {
+        "description": "Refundable deposits (bottles, rental)",
+        "handling": "Flag as deposit, track separately",
+        "test_cases": ["bottle_deposit.jpg", "rental_deposit.jpg"]
+      },
+      "prepayments": {
+        "description": "Advance payments, reservations",
+        "handling": "Flag as prepayment, link to future service",
+        "test_cases": ["hotel_prepay.jpg", "reservation.jpg"]
+      },
+      "tips_service": {
+        "description": "Added tips or service charges",
+        "handling": "Separate extraction, include in total",
+        "test_cases": ["restaurant_tip.jpg", "service_charge.jpg"]
+      }
+    }
+  },
+  
+  "test_scenarios": {
+    "basic_validation": [
+      {
+        "test": "total_calculation",
+        "description": "Verify subtotal + tax = total",
+        "tolerance": 0.02,
+        "expected_pass_rate": 0.95
+      },
+      {
+        "test": "date_validity",
+        "description": "Date not in future, within reasonable range",
+        "expected_pass_rate": 0.99
+      },
+      {
+        "test": "currency_detection",
+        "description": "Currency symbol or code identified",
+        "expected_pass_rate": 0.90
+      }
+    ],
+    
+    "extraction_accuracy": [
+      {
+        "test": "merchant_extraction",
+        "min_accuracy": 0.85,
+        "method": "fuzzy_match"
+      },
+      {
+        "test": "amount_extraction",
+        "min_accuracy": 0.95,
+        "method": "exact_match"
+      },
+      {
+        "test": "date_extraction",
+        "min_accuracy": 0.90,
+        "method": "format_validation"
+      }
+    ],
+    
+    "categorization_tests": [
+      {
+        "test": "known_merchant",
+        "description": "Category assignment for known merchants",
+        "expected_accuracy": 0.95
+      },
+      {
+        "test": "keyword_based",
+        "description": "Category from receipt keywords",
+        "expected_accuracy": 0.80
+      },
+      {
+        "test": "fallback_category",
+        "description": "Unknown receipts -> 'other'",
+        "expected_accuracy": 1.00
+      }
+    ],
+    
+    "performance_benchmarks": {
+      "ocr_speed": {
+        "target": "< 2 seconds",
+        "max": "5 seconds"
+      },
+      "extraction_speed": {
+        "target": "< 500ms",
+        "max": "1 second"
+      },
+      "categorization_speed": {
+        "target": "< 100ms",
+        "max": "250ms"
+      }
+    }
+  },
+  
+  "validation_rules": {
+    "required_fields": ["amount", "date", "merchant_or_category"],
+    "optional_fields": ["tax", "receipt_number", "items", "payment_method"],
+    "confidence_thresholds": {
+      "auto_accept": 0.90,
+      "review_required": 0.70,
+      "manual_entry": 0.50
+    }
+  },
+  
+  "error_handling": {
+    "ocr_failure": {
+      "action": "retry_with_preprocessing",
+      "max_retries": 3,
+      "fallback": "manual_entry"
+    },
+    "extraction_failure": {
+      "action": "apply_fallback_patterns",
+      "fallback": "partial_extraction"
+    },
+    "validation_failure": {
+      "action": "flag_for_review",
+      "user_prompt": true
+    }
+  }
+}

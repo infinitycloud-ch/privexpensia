@@ -1,0 +1,2798 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-09-12",
+  "description": "Comprehensive test dataset with 100 realistic receipt test cases across 5 countries",
+  
+  "metadata": {
+    "total_test_cases": 100,
+    "countries": ["CH", "DE", "FR", "JP", "US"],
+    "test_cases_per_country": 20,
+    "merchant_types": [
+      "restaurants", "transport", "hotels", "shopping", "gas_stations", 
+      "supermarkets", "cafes", "electronics", "pharmacies", "clothing"
+    ],
+    "edge_cases_included": [
+      "faded_text", "multiple_currencies", "split_bills", "handwritten_additions",
+      "crumpled_receipts", "mixed_languages", "calculation_errors", "refunds"
+    ]
+  },
+
+  "test_cases": {
+    "CH": [
+      {
+        "receipt_id": "CH_001",
+        "country": "CH",
+        "merchant_name": "Restaurant Bahnhof",
+        "date": "15.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Zürcher Geschnetzeltes", "price": 28.50},
+          {"description": "Rösti", "price": 8.50},
+          {"description": "Mineralwasser 50cl", "price": 4.20},
+          {"description": "Espresso", "price": 3.80}
+        ],
+        "subtotal": 41.85,
+        "tax_rate": 8.1,
+        "tax_amount": 3.15,
+        "total": 45.00,
+        "currency": "CHF",
+        "category": "restaurant",
+        "special_conditions": ["standard_quality"],
+        "expected_extraction": {
+          "merchant": "Restaurant Bahnhof",
+          "date": "2025-03-15",
+          "total": 45.00,
+          "tax": 3.15,
+          "category": "restaurant",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "CH_002",
+        "country": "CH",
+        "merchant_name": "Migros Zürich HB",
+        "date": "22/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Bio Milch 1L", "price": 1.85},
+          {"description": "Brot Vollkorn", "price": 2.95},
+          {"description": "Äpfel Gala 1kg", "price": 3.20},
+          {"description": "Yogurt Nature", "price": 1.40}
+        ],
+        "subtotal": 8.95,
+        "tax_rate": 2.5,
+        "tax_amount": 0.22,
+        "total": 9.17,
+        "currency": "CHF",
+        "category": "grocery",
+        "special_conditions": ["faded_text"],
+        "expected_extraction": {
+          "merchant": "Migros",
+          "date": "2025-02-22",
+          "total": 9.17,
+          "tax": 0.22,
+          "category": "grocery",
+          "confidence": 0.85
+        }
+      },
+      {
+        "receipt_id": "CH_003",
+        "country": "CH",
+        "merchant_name": "Hotel Bellevue Palace",
+        "date": "08.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Übernachtung Einzelzimmer", "price": 280.00},
+          {"description": "Frühstück Continental", "price": 35.00},
+          {"description": "Minibar", "price": 15.50}
+        ],
+        "subtotal": 318.32,
+        "tax_rate": 3.7,
+        "tax_amount": 11.78,
+        "total": 330.50,
+        "currency": "CHF",
+        "category": "hotel",
+        "special_conditions": ["standard_quality"],
+        "expected_extraction": {
+          "merchant": "Hotel Bellevue Palace",
+          "date": "2025-01-08",
+          "total": 330.50,
+          "tax": 11.78,
+          "category": "hotel",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "CH_004",
+        "country": "CH",
+        "merchant_name": "SBB CFF FFS",
+        "date": "12.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Zürich HB - Bern", "price": 47.00},
+          {"description": "Reservation 2. Klasse", "price": 5.00}
+        ],
+        "subtotal": 48.15,
+        "tax_rate": 8.1,
+        "tax_amount": 3.85,
+        "total": 52.00,
+        "currency": "CHF",
+        "category": "transport",
+        "special_conditions": ["mobile_ticket"],
+        "expected_extraction": {
+          "merchant": "SBB",
+          "date": "2025-03-12",
+          "total": 52.00,
+          "tax": 3.85,
+          "category": "transport",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "CH_005",
+        "country": "CH",
+        "merchant_name": "Shell Station Bern",
+        "date": "19.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Benzin 95 (42.5L)", "price": 61.88},
+          {"description": "Red Bull", "price": 2.90},
+          {"description": "Sandwich", "price": 5.50}
+        ],
+        "subtotal": 64.79,
+        "tax_rate": 8.1,
+        "tax_amount": 5.24,
+        "total": 70.28,
+        "currency": "CHF",
+        "category": "gas",
+        "special_conditions": ["crumpled"],
+        "expected_extraction": {
+          "merchant": "Shell",
+          "date": "2025-02-19",
+          "total": 70.28,
+          "tax": 5.24,
+          "category": "gas",
+          "confidence": 0.88
+        }
+      },
+      {
+        "receipt_id": "CH_006",
+        "country": "CH",
+        "merchant_name": "Café Central Basel",
+        "date": "25.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Cappuccino", "price": 4.50},
+          {"description": "Croissant", "price": 3.20},
+          {"description": "Trinkgeld", "price": 2.00}
+        ],
+        "subtotal": 7.05,
+        "tax_rate": 8.1,
+        "tax_amount": 0.57,
+        "total": 9.70,
+        "currency": "CHF",
+        "category": "restaurant",
+        "special_conditions": ["handwritten_tip"],
+        "expected_extraction": {
+          "merchant": "Café Central",
+          "date": "2025-01-25",
+          "total": 9.70,
+          "tax": 0.57,
+          "category": "restaurant",
+          "confidence": 0.85
+        }
+      },
+      {
+        "receipt_id": "CH_007",
+        "country": "CH",
+        "merchant_name": "Manor Genève",
+        "date": "03.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Hemd Business", "price": 89.00},
+          {"description": "Krawatte Seide", "price": 45.00},
+          {"description": "Rabatt -10%", "price": -13.40}
+        ],
+        "subtotal": 112.07,
+        "tax_rate": 8.1,
+        "tax_amount": 9.08,
+        "total": 120.60,
+        "currency": "CHF",
+        "category": "clothing",
+        "special_conditions": ["discount_applied"],
+        "expected_extraction": {
+          "merchant": "Manor",
+          "date": "2025-03-03",
+          "total": 120.60,
+          "tax": 9.08,
+          "category": "clothing",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "CH_008",
+        "country": "CH",
+        "merchant_name": "Pharmacie Principale Lausanne",
+        "date": "17.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Aspirin Complex", "price": 12.90},
+          {"description": "Vitamins D3", "price": 18.50},
+          {"description": "Pflaster", "price": 4.20}
+        ],
+        "subtotal": 32.85,
+        "tax_rate": 2.5,
+        "tax_amount": 0.82,
+        "total": 35.60,
+        "currency": "CHF",
+        "category": "pharmacy",
+        "special_conditions": ["standard_quality"],
+        "expected_extraction": {
+          "merchant": "Pharmacie Principale",
+          "date": "2025-02-17",
+          "total": 35.60,
+          "tax": 0.82,
+          "category": "pharmacy",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "CH_009",
+        "country": "CH",
+        "merchant_name": "Digitec Galaxus AG",
+        "date": "11.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "iPhone 15 Pro 256GB", "price": 1199.00},
+          {"description": "Hülle MagSafe", "price": 49.00},
+          {"description": "Versand Express", "price": 9.90}
+        ],
+        "subtotal": 1163.79,
+        "tax_rate": 8.1,
+        "tax_amount": 94.21,
+        "total": 1257.90,
+        "currency": "CHF",
+        "category": "electronics",
+        "special_conditions": ["online_order"],
+        "expected_extraction": {
+          "merchant": "Digitec Galaxus",
+          "date": "2025-01-11",
+          "total": 1257.90,
+          "tax": 94.21,
+          "category": "electronics",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "CH_010",
+        "country": "CH",
+        "merchant_name": "Taxi Zürich 247",
+        "date": "28.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Fahrt Flughafen-City", "price": 65.00},
+          {"description": "Wartezeit", "price": 8.00},
+          {"description": "Trinkgeld", "price": 7.00}
+        ],
+        "subtotal": 74.07,
+        "tax_rate": 8.1,
+        "tax_amount": 5.99,
+        "total": 80.00,
+        "currency": "CHF",
+        "category": "transport",
+        "special_conditions": ["handwritten_tip"],
+        "expected_extraction": {
+          "merchant": "Taxi Zürich",
+          "date": "2025-02-28",
+          "total": 80.00,
+          "tax": 5.99,
+          "category": "transport",
+          "confidence": 0.87
+        }
+      },
+      {
+        "receipt_id": "CH_011",
+        "country": "CH",
+        "merchant_name": "Coop Restaurant Bern",
+        "date": "14.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Salat misto / Salade mixte", "price": 12.90},
+          {"description": "Acqua minerale / Mineralwasser", "price": 3.50},
+          {"description": "Gelato / Glace", "price": 4.20}
+        ],
+        "subtotal": 19.13,
+        "tax_rate": 8.1,
+        "tax_amount": 1.55,
+        "total": 20.60,
+        "currency": "CHF",
+        "category": "restaurant",
+        "special_conditions": ["multilingual_receipt"],
+        "expected_extraction": {
+          "merchant": "Coop Restaurant",
+          "date": "2025-03-14",
+          "total": 20.60,
+          "tax": 1.55,
+          "category": "restaurant",
+          "confidence": 0.88
+        }
+      },
+      {
+        "receipt_id": "CH_012",
+        "country": "CH",
+        "merchant_name": "Denner Satelit",
+        "date": "09.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Wein Merlot Tessin", "price": 8.95},
+          {"description": "Chips Paprika", "price": 2.45},
+          {"description": "Schokolade Lindt", "price": 3.60}
+        ],
+        "subtotal": 13.89,
+        "tax_rate": 8.1,
+        "tax_amount": 1.12,
+        "total": 15.00,
+        "currency": "CHF",
+        "category": "grocery",
+        "special_conditions": ["thermal_paper_faded"],
+        "expected_extraction": {
+          "merchant": "Denner",
+          "date": "2025-02-09",
+          "total": 15.00,
+          "tax": 1.12,
+          "category": "grocery",
+          "confidence": 0.82
+        }
+      },
+      {
+        "receipt_id": "CH_013",
+        "country": "CH",
+        "merchant_name": "Starbucks Geneva Airport",
+        "date": "21.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Latte Grande", "price": 5.70},
+          {"description": "Panini Tomato Mozzarella", "price": 7.20},
+          {"description": "Split Bill 1/2", "price": -6.45}
+        ],
+        "subtotal": 6.45,
+        "tax_rate": 8.1,
+        "tax_amount": 0.52,
+        "total": 6.45,
+        "currency": "CHF",
+        "category": "restaurant",
+        "special_conditions": ["split_bill", "airport_location"],
+        "expected_extraction": {
+          "merchant": "Starbucks",
+          "date": "2025-01-21",
+          "total": 6.45,
+          "tax": 0.52,
+          "category": "restaurant",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "CH_014",
+        "country": "CH",
+        "merchant_name": "IKEA Restaurant Pratteln",
+        "date": "16.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Köttbullar mit Sauce", "price": 6.95},
+          {"description": "Kartoffelpüree", "price": 1.50},
+          {"description": "Preiselbeeren", "price": 0.50},
+          {"description": "Getränk 50cl", "price": 2.20}
+        ],
+        "subtotal": 10.22,
+        "tax_rate": 8.1,
+        "tax_amount": 0.83,
+        "total": 11.15,
+        "currency": "CHF",
+        "category": "restaurant",
+        "special_conditions": ["furniture_store_restaurant"],
+        "expected_extraction": {
+          "merchant": "IKEA Restaurant",
+          "date": "2025-03-16",
+          "total": 11.15,
+          "tax": 0.83,
+          "category": "restaurant",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "CH_015",
+        "country": "CH",
+        "merchant_name": "Postfinance ATM",
+        "date": "05.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Bargeld Bezug", "price": 200.00},
+          {"description": "Gebühr Fremdbank", "price": 2.00}
+        ],
+        "subtotal": 202.00,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 202.00,
+        "currency": "CHF",
+        "category": "banking",
+        "special_conditions": ["atm_receipt", "no_tax"],
+        "expected_extraction": {
+          "merchant": "Postfinance",
+          "date": "2025-02-05",
+          "total": 202.00,
+          "tax": 0.00,
+          "category": "banking",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "CH_016",
+        "country": "CH",
+        "merchant_name": "Zurcher Kantonalbank",
+        "date": "13.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Kontoführung Q1", "price": 15.00},
+          {"description": "Kreditkartengebühr", "price": 25.00}
+        ],
+        "subtotal": 37.04,
+        "tax_rate": 8.1,
+        "tax_amount": 3.00,
+        "total": 40.00,
+        "currency": "CHF",
+        "category": "banking",
+        "special_conditions": ["quarterly_fee"],
+        "expected_extraction": {
+          "merchant": "ZKB",
+          "date": "2025-01-13",
+          "total": 40.00,
+          "tax": 3.00,
+          "category": "banking",
+          "confidence": 0.88
+        }
+      },
+      {
+        "receipt_id": "CH_017",
+        "country": "CH",
+        "merchant_name": "Vögele Shoes Winterthur",
+        "date": "27.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Business Schuhe Leder", "price": 129.00},
+          {"description": "Schuhpflege Set", "price": 19.90},
+          {"description": "Rückgabe Garantie", "price": 4.90}
+        ],
+        "subtotal": 142.40,
+        "tax_rate": 8.1,
+        "tax_amount": 11.54,
+        "total": 153.80,
+        "currency": "CHF",
+        "category": "clothing",
+        "special_conditions": ["warranty_included"],
+        "expected_extraction": {
+          "merchant": "Vögele Shoes",
+          "date": "2025-02-27",
+          "total": 153.80,
+          "tax": 11.54,
+          "category": "clothing",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "CH_018",
+        "country": "CH",
+        "merchant_name": "McDonald's Luzern",
+        "date": "10.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Big Mac Menu", "price": 13.90},
+          {"description": "6er McNuggets", "price": 7.50},
+          {"description": "McFlurry Oreo", "price": 4.20}
+        ],
+        "subtotal": 23.72,
+        "tax_rate": 8.1,
+        "tax_amount": 1.92,
+        "total": 25.60,
+        "currency": "CHF",
+        "category": "restaurant",
+        "special_conditions": ["fast_food"],
+        "expected_extraction": {
+          "merchant": "McDonald's",
+          "date": "2025-03-10",
+          "total": 25.60,
+          "tax": 1.92,
+          "category": "restaurant",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "CH_019",
+        "country": "CH",
+        "merchant_name": "Apotheke Dr. Schmid",
+        "date": "06.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Rezept Antibiotikum", "price": 28.50},
+          {"description": "Selbstzahler Anteil", "price": -18.50},
+          {"description": "Patientenbeitrag", "price": 10.00}
+        ],
+        "subtotal": 19.51,
+        "tax_rate": 2.5,
+        "tax_amount": 0.49,
+        "total": 20.00,
+        "currency": "CHF",
+        "category": "pharmacy",
+        "special_conditions": ["prescription_medicine", "insurance_deduction"],
+        "expected_extraction": {
+          "merchant": "Apotheke Dr. Schmid",
+          "date": "2025-01-06",
+          "total": 20.00,
+          "tax": 0.49,
+          "category": "pharmacy",
+          "confidence": 0.87
+        }
+      },
+      {
+        "receipt_id": "CH_020",
+        "country": "CH",
+        "merchant_name": "Parkhaus City Zürich",
+        "date": "18.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Parken 4 Std 15 Min", "price": 17.00},
+          {"description": "Verlustticket", "price": 25.00}
+        ],
+        "subtotal": 38.89,
+        "tax_rate": 8.1,
+        "tax_amount": 3.15,
+        "total": 42.00,
+        "currency": "CHF",
+        "category": "transport",
+        "special_conditions": ["parking_fee", "lost_ticket_fee"],
+        "expected_extraction": {
+          "merchant": "Parkhaus City",
+          "date": "2025-02-18",
+          "total": 42.00,
+          "tax": 3.15,
+          "category": "transport",
+          "confidence": 0.90
+        }
+      }
+    ],
+
+    "DE": [
+      {
+        "receipt_id": "DE_001",
+        "country": "DE",
+        "merchant_name": "Restaurant Goldener Hirsch",
+        "date": "15.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Schnitzel Wiener Art", "price": 16.50},
+          {"description": "Pommes frites", "price": 4.50},
+          {"description": "Apfelschorle 0,4L", "price": 3.20},
+          {"description": "Kaffee", "price": 2.80}
+        ],
+        "subtotal": 22.69,
+        "tax_rate": 19.0,
+        "tax_amount": 4.31,
+        "total": 27.00,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["eat_in"],
+        "expected_extraction": {
+          "merchant": "Restaurant Goldener Hirsch",
+          "date": "2025-03-15",
+          "total": 27.00,
+          "tax": 4.31,
+          "category": "restaurant",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "DE_002",
+        "country": "DE",
+        "merchant_name": "EDEKA Markt Schmidt",
+        "date": "22.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Vollmilch 3,5% 1L", "price": 1.09},
+          {"description": "Schwarzbrot 500g", "price": 1.89},
+          {"description": "Bananen 1kg", "price": 1.99},
+          {"description": "Joghurt Natur", "price": 0.79},
+          {"description": "Pfand 0,25L Flasche", "price": 0.25}
+        ],
+        "subtotal": 5.34,
+        "tax_rate": 7.0,
+        "tax_amount": 0.35,
+        "total": 6.01,
+        "currency": "EUR",
+        "category": "grocery",
+        "special_conditions": ["bottle_deposit"],
+        "expected_extraction": {
+          "merchant": "EDEKA",
+          "date": "2025-02-22",
+          "total": 6.01,
+          "tax": 0.35,
+          "category": "grocery",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "DE_003",
+        "country": "DE",
+        "merchant_name": "Hotel Vier Jahreszeiten",
+        "date": "08.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Übernachtung Doppelzimmer", "price": 189.00},
+          {"description": "Frühstücksbuffet", "price": 24.50},
+          {"description": "Minibar", "price": 12.80}
+        ],
+        "subtotal": 190.25,
+        "tax_rate": 7.0,
+        "tax_amount": 13.32,
+        "total": 226.30,
+        "currency": "EUR",
+        "category": "hotel",
+        "special_conditions": ["accommodation_rate"],
+        "expected_extraction": {
+          "merchant": "Hotel Vier Jahreszeiten",
+          "date": "2025-01-08",
+          "total": 226.30,
+          "tax": 13.32,
+          "category": "hotel",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "DE_004",
+        "country": "DE",
+        "merchant_name": "Deutsche Bahn AG",
+        "date": "12.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "München Hbf - Berlin Hbf", "price": 89.00},
+          {"description": "Sitzplatzreservierung", "price": 4.50}
+        ],
+        "subtotal": 87.38,
+        "tax_rate": 7.0,
+        "tax_amount": 6.12,
+        "total": 93.50,
+        "currency": "EUR",
+        "category": "transport",
+        "special_conditions": ["reduced_vat_transport"],
+        "expected_extraction": {
+          "merchant": "Deutsche Bahn",
+          "date": "2025-03-12",
+          "total": 93.50,
+          "tax": 6.12,
+          "category": "transport",
+          "confidence": 0.96
+        }
+      },
+      {
+        "receipt_id": "DE_005",
+        "country": "DE",
+        "merchant_name": "Shell Tankstelle",
+        "date": "19.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Super E10 (38.2L)", "price": 55.82},
+          {"description": "AdBlue 5L", "price": 8.95},
+          {"description": "Kaffee To Go", "price": 1.89}
+        ],
+        "subtotal": 55.96,
+        "tax_rate": 19.0,
+        "tax_amount": 10.64,
+        "total": 66.66,
+        "currency": "EUR",
+        "category": "gas",
+        "special_conditions": ["fuel_purchase"],
+        "expected_extraction": {
+          "merchant": "Shell",
+          "date": "2025-02-19",
+          "total": 66.66,
+          "tax": 10.64,
+          "category": "gas",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "DE_006",
+        "country": "DE",
+        "merchant_name": "Café Einstein Berlin",
+        "date": "25.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Espresso doppio", "price": 3.50},
+          {"description": "Apfelstrudel", "price": 4.80},
+          {"description": "Zum Mitnehmen", "price": 0.00}
+        ],
+        "subtotal": 7.76,
+        "tax_rate": 7.0,
+        "tax_amount": 0.54,
+        "total": 8.30,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["takeaway", "reduced_vat"],
+        "expected_extraction": {
+          "merchant": "Café Einstein",
+          "date": "2025-01-25",
+          "total": 8.30,
+          "tax": 0.54,
+          "category": "restaurant",
+          "confidence": 0.89
+        }
+      },
+      {
+        "receipt_id": "DE_007",
+        "country": "DE",
+        "merchant_name": "C&A Hamburg",
+        "date": "03.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Herrenhemd langarm", "price": 29.99},
+          {"description": "Jeans Regular Fit", "price": 39.99},
+          {"description": "Sale Rabatt -20%", "price": -14.00}
+        ],
+        "subtotal": 46.21,
+        "tax_rate": 19.0,
+        "tax_amount": 8.78,
+        "total": 55.98,
+        "currency": "EUR",
+        "category": "clothing",
+        "special_conditions": ["sale_discount"],
+        "expected_extraction": {
+          "merchant": "C&A",
+          "date": "2025-03-03",
+          "total": 55.98,
+          "tax": 8.78,
+          "category": "clothing",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "DE_008",
+        "country": "DE",
+        "merchant_name": "Apotheke am Marktplatz",
+        "date": "17.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Aspirin Complex", "price": 8.95},
+          {"description": "Bepanthen Creme", "price": 12.30},
+          {"description": "Zuzahlung Krankenkasse", "price": -15.25}
+        ],
+        "subtotal": 5.61,
+        "tax_rate": 19.0,
+        "tax_amount": 1.07,
+        "total": 6.00,
+        "currency": "EUR",
+        "category": "pharmacy",
+        "special_conditions": ["insurance_copay"],
+        "expected_extraction": {
+          "merchant": "Apotheke am Marktplatz",
+          "date": "2025-02-17",
+          "total": 6.00,
+          "tax": 1.07,
+          "category": "pharmacy",
+          "confidence": 0.88
+        }
+      },
+      {
+        "receipt_id": "DE_009",
+        "country": "DE",
+        "merchant_name": "MediaMarkt Köln",
+        "date": "11.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Samsung Galaxy S24", "price": 849.00},
+          {"description": "Schutzhülle", "price": 24.99},
+          {"description": "Displayschutz", "price": 19.99},
+          {"description": "2 Jahre Garantie", "price": 89.00}
+        ],
+        "subtotal": 822.68,
+        "tax_rate": 19.0,
+        "tax_amount": 156.31,
+        "total": 982.98,
+        "currency": "EUR",
+        "category": "electronics",
+        "special_conditions": ["extended_warranty"],
+        "expected_extraction": {
+          "merchant": "MediaMarkt",
+          "date": "2025-01-11",
+          "total": 982.98,
+          "tax": 156.31,
+          "category": "electronics",
+          "confidence": 0.96
+        }
+      },
+      {
+        "receipt_id": "DE_010",
+        "country": "DE",
+        "merchant_name": "Taxi München e.K.",
+        "date": "28.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Fahrt Flughafen-Zentrum", "price": 42.50},
+          {"description": "Wartezeit 15 min", "price": 7.50},
+          {"description": "Kreditkartengebühr", "price": 1.00}
+        ],
+        "subtotal": 42.86,
+        "tax_rate": 7.0,
+        "tax_amount": 3.00,
+        "total": 51.00,
+        "currency": "EUR",
+        "category": "transport",
+        "special_conditions": ["taxi_service", "card_fee"],
+        "expected_extraction": {
+          "merchant": "Taxi München",
+          "date": "2025-02-28",
+          "total": 51.00,
+          "tax": 3.00,
+          "category": "transport",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "DE_011",
+        "country": "DE",
+        "merchant_name": "Burger King Dresden",
+        "date": "14.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Whopper Menu", "price": 8.99},
+          {"description": "6er King Nuggets", "price": 4.49},
+          {"description": "Hier essen", "price": 0.00}
+        ],
+        "subtotal": 11.30,
+        "tax_rate": 19.0,
+        "tax_amount": 2.15,
+        "total": 13.48,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["eat_in", "fast_food"],
+        "expected_extraction": {
+          "merchant": "Burger King",
+          "date": "2025-03-14",
+          "total": 13.48,
+          "tax": 2.15,
+          "category": "restaurant",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "DE_012",
+        "country": "DE",
+        "merchant_name": "ALDI SÜD",
+        "date": "09.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Bio Möhren 1kg", "price": 0.99},
+          {"description": "Hackfleisch gemischt", "price": 3.99},
+          {"description": "Nudeln 500g", "price": 0.79},
+          {"description": "Dosentomaten", "price": 0.89}
+        ],
+        "subtotal": 6.20,
+        "tax_rate": 7.0,
+        "tax_amount": 0.46,
+        "total": 6.66,
+        "currency": "EUR",
+        "category": "grocery",
+        "special_conditions": ["organic_mixed"],
+        "expected_extraction": {
+          "merchant": "ALDI SÜD",
+          "date": "2025-02-09",
+          "total": 6.66,
+          "tax": 0.46,
+          "category": "grocery",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "DE_013",
+        "country": "DE",
+        "merchant_name": "Starbucks Frankfurt Hbf",
+        "date": "21.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Cappuccino Venti", "price": 4.95},
+          {"description": "Blueberry Muffin", "price": 3.25},
+          {"description": "Hier genießen", "price": 0.00}
+        ],
+        "subtotal": 6.89,
+        "tax_rate": 19.0,
+        "tax_amount": 1.31,
+        "total": 8.20,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["eat_in", "train_station"],
+        "expected_extraction": {
+          "merchant": "Starbucks",
+          "date": "2025-01-21",
+          "total": 8.20,
+          "tax": 1.31,
+          "category": "restaurant",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "DE_014",
+        "country": "DE",
+        "merchant_name": "REWE Getränkemarkt",
+        "date": "16.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Mineralwasser 12x1L", "price": 2.99},
+          {"description": "Pfand 12x0,25", "price": 3.00},
+          {"description": "Bier Kasten 20x0,5L", "price": 15.99},
+          {"description": "Pfand Kasten + Flaschen", "price": 6.50}
+        ],
+        "subtotal": 25.12,
+        "tax_rate": 19.0,
+        "tax_amount": 4.77,
+        "total": 28.48,
+        "currency": "EUR",
+        "category": "grocery",
+        "special_conditions": ["bottle_deposits", "beverage_store"],
+        "expected_extraction": {
+          "merchant": "REWE Getränkemarkt",
+          "date": "2025-03-16",
+          "total": 28.48,
+          "tax": 4.77,
+          "category": "grocery",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "DE_015",
+        "country": "DE",
+        "merchant_name": "Sparkasse Geldautomat",
+        "date": "05.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Bargeldauszahlung", "price": 100.00},
+          {"description": "Fremdautomatengebühr", "price": 3.50}
+        ],
+        "subtotal": 103.50,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 103.50,
+        "currency": "EUR",
+        "category": "banking",
+        "special_conditions": ["atm_withdrawal", "foreign_bank_fee"],
+        "expected_extraction": {
+          "merchant": "Sparkasse",
+          "date": "2025-02-05",
+          "total": 103.50,
+          "tax": 0.00,
+          "category": "banking",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "DE_016",
+        "country": "DE",
+        "merchant_name": "Commerzbank",
+        "date": "13.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Kontoführungsgebühr", "price": 9.90},
+          {"description": "Kreditkartengebühr", "price": 29.90}
+        ],
+        "subtotal": 33.45,
+        "tax_rate": 19.0,
+        "tax_amount": 6.35,
+        "total": 39.80,
+        "currency": "EUR",
+        "category": "banking",
+        "special_conditions": ["monthly_fees"],
+        "expected_extraction": {
+          "merchant": "Commerzbank",
+          "date": "2025-01-13",
+          "total": 39.80,
+          "tax": 6.35,
+          "category": "banking",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "DE_017",
+        "country": "DE",
+        "merchant_name": "H&M Stuttgart",
+        "date": "27.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "T-Shirt Basic", "price": 7.99},
+          {"description": "Pullover Strick", "price": 24.99},
+          {"description": "Umtausch möglich bis", "price": 0.00}
+        ],
+        "subtotal": 27.73,
+        "tax_rate": 19.0,
+        "tax_amount": 5.27,
+        "total": 32.98,
+        "currency": "EUR",
+        "category": "clothing",
+        "special_conditions": ["return_policy_noted"],
+        "expected_extraction": {
+          "merchant": "H&M",
+          "date": "2025-02-27",
+          "total": 32.98,
+          "tax": 5.27,
+          "category": "clothing",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "DE_018",
+        "country": "DE",
+        "merchant_name": "Nordsee Bremen",
+        "date": "10.03.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Fischbrötchen Matjes", "price": 4.99},
+          {"description": "Backfisch-Portion", "price": 6.99},
+          {"description": "Cola 0,3L", "price": 2.49}
+        ],
+        "subtotal": 12.17,
+        "tax_rate": 19.0,
+        "tax_amount": 2.31,
+        "total": 14.47,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["seafood_fast_food"],
+        "expected_extraction": {
+          "merchant": "Nordsee",
+          "date": "2025-03-10",
+          "total": 14.47,
+          "tax": 2.31,
+          "category": "restaurant",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "DE_019",
+        "country": "DE",
+        "merchant_name": "DM Drogerie Markt",
+        "date": "06.01.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Shampoo Balea", "price": 1.95},
+          {"description": "Zahnpasta Theramed", "price": 1.45},
+          {"description": "Handcreme Nivea", "price": 2.99},
+          {"description": "10% Coupon", "price": -0.64}
+        ],
+        "subtotal": 4.61,
+        "tax_rate": 19.0,
+        "tax_amount": 0.88,
+        "total": 5.75,
+        "currency": "EUR",
+        "category": "pharmacy",
+        "special_conditions": ["drugstore_coupon"],
+        "expected_extraction": {
+          "merchant": "DM Drogerie",
+          "date": "2025-01-06",
+          "total": 5.75,
+          "tax": 0.88,
+          "category": "pharmacy",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "DE_020",
+        "country": "DE",
+        "merchant_name": "Parkhaus Stadtmitte",
+        "date": "18.02.2025",
+        "date_format": "DD.MM.YYYY",
+        "items": [
+          {"description": "Parken 3 Std 45 min", "price": 8.50},
+          {"description": "Parkschein verloren", "price": 15.00}
+        ],
+        "subtotal": 19.75,
+        "tax_rate": 19.0,
+        "tax_amount": 3.75,
+        "total": 23.50,
+        "currency": "EUR",
+        "category": "transport",
+        "special_conditions": ["parking_fine"],
+        "expected_extraction": {
+          "merchant": "Parkhaus Stadtmitte",
+          "date": "2025-02-18",
+          "total": 23.50,
+          "tax": 3.75,
+          "category": "transport",
+          "confidence": 0.89
+        }
+      }
+    ],
+
+    "FR": [
+      {
+        "receipt_id": "FR_001",
+        "country": "FR",
+        "merchant_name": "Le Petit Bistrot",
+        "date": "15/03/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Plat du jour - Coq au vin", "price": 18.50},
+          {"description": "Dessert - Tarte Tatin", "price": 7.50},
+          {"description": "Café", "price": 2.50},
+          {"description": "Vin rouge (25cl)", "price": 6.80}
+        ],
+        "subtotal": 29.17,
+        "tax_rate": 20.0,
+        "tax_amount": 5.83,
+        "total": 35.30,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["full_service_restaurant"],
+        "expected_extraction": {
+          "merchant": "Le Petit Bistrot",
+          "date": "2025-03-15",
+          "total": 35.30,
+          "tax": 5.83,
+          "category": "restaurant",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "FR_002",
+        "country": "FR",
+        "merchant_name": "Carrefour Market",
+        "date": "22/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Pain de campagne", "price": 1.85},
+          {"description": "Fromage Camembert", "price": 3.20},
+          {"description": "Yaourt nature x8", "price": 2.99},
+          {"description": "Pommes Golden 1kg", "price": 2.45}
+        ],
+        "subtotal": 9.41,
+        "tax_rate": 5.5,
+        "tax_amount": 0.52,
+        "total": 10.49,
+        "currency": "EUR",
+        "category": "grocery",
+        "special_conditions": ["food_reduced_vat"],
+        "expected_extraction": {
+          "merchant": "Carrefour Market",
+          "date": "2025-02-22",
+          "total": 10.49,
+          "tax": 0.52,
+          "category": "grocery",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "FR_003",
+        "country": "FR",
+        "merchant_name": "Hôtel de Ville Paris",
+        "date": "08/01/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Chambre double sup", "price": 245.00},
+          {"description": "Petit-déjeuner", "price": 28.00},
+          {"description": "Taxe de séjour", "price": 4.50}
+        ],
+        "subtotal": 254.17,
+        "tax_rate": 10.0,
+        "tax_amount": 25.42,
+        "total": 277.50,
+        "currency": "EUR",
+        "category": "hotel",
+        "special_conditions": ["tourist_tax", "hotel_intermediate_vat"],
+        "expected_extraction": {
+          "merchant": "Hôtel de Ville",
+          "date": "2025-01-08",
+          "total": 277.50,
+          "tax": 25.42,
+          "category": "hotel",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "FR_004",
+        "country": "FR",
+        "merchant_name": "SNCF Connect",
+        "date": "12/03/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Paris Gare de Lyon - Lyon", "price": 75.00},
+          {"description": "Réservation siège", "price": 4.00}
+        ],
+        "subtotal": 72.09,
+        "tax_rate": 10.0,
+        "tax_amount": 7.18,
+        "total": 79.00,
+        "currency": "EUR",
+        "category": "transport",
+        "special_conditions": ["train_ticket", "intermediate_vat"],
+        "expected_extraction": {
+          "merchant": "SNCF",
+          "date": "2025-03-12",
+          "total": 79.00,
+          "tax": 7.18,
+          "category": "transport",
+          "confidence": 0.96
+        }
+      },
+      {
+        "receipt_id": "FR_005",
+        "country": "FR",
+        "merchant_name": "Station Total Access",
+        "date": "19/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "SP98 (35.8L)", "price": 62.45},
+          {"description": "Lavage auto", "price": 8.00},
+          {"description": "Sandwich jambon", "price": 4.50}
+        ],
+        "subtotal": 62.46,
+        "tax_rate": 20.0,
+        "tax_amount": 12.49,
+        "total": 74.95,
+        "currency": "EUR",
+        "category": "gas",
+        "special_conditions": ["mixed_vat_rates"],
+        "expected_extraction": {
+          "merchant": "Total",
+          "date": "2025-02-19",
+          "total": 74.95,
+          "tax": 12.49,
+          "category": "gas",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "FR_006",
+        "country": "FR",
+        "merchant_name": "Café de Flore",
+        "date": "25/01/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Café crème", "price": 4.20},
+          {"description": "Croissant", "price": 2.80},
+          {"description": "Service 15%", "price": 1.05}
+        ],
+        "subtotal": 6.71,
+        "tax_rate": 20.0,
+        "tax_amount": 1.34,
+        "total": 8.05,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["service_charge", "tourist_area"],
+        "expected_extraction": {
+          "merchant": "Café de Flore",
+          "date": "2025-01-25",
+          "total": 8.05,
+          "tax": 1.34,
+          "category": "restaurant",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "FR_007",
+        "country": "FR",
+        "merchant_name": "Galeries Lafayette",
+        "date": "03/03/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Chemise homme", "price": 89.00},
+          {"description": "Cravate soie", "price": 45.00},
+          {"description": "Remise fidélité -10%", "price": -13.40}
+        ],
+        "subtotal": 100.50,
+        "tax_rate": 20.0,
+        "tax_amount": 20.10,
+        "total": 120.60,
+        "currency": "EUR",
+        "category": "clothing",
+        "special_conditions": ["loyalty_discount"],
+        "expected_extraction": {
+          "merchant": "Galeries Lafayette",
+          "date": "2025-03-03",
+          "total": 120.60,
+          "tax": 20.10,
+          "category": "clothing",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "FR_008",
+        "country": "FR",
+        "merchant_name": "Pharmacie Centrale",
+        "date": "17/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Doliprane 1000mg", "price": 3.95},
+          {"description": "Strepsils Miel", "price": 4.80},
+          {"description": "Remboursement SS", "price": -5.25}
+        ],
+        "subtotal": 2.96,
+        "tax_rate": 2.1,
+        "tax_amount": 0.06,
+        "total": 3.50,
+        "currency": "EUR",
+        "category": "pharmacy",
+        "special_conditions": ["medicine_super_reduced_vat", "social_security"],
+        "expected_extraction": {
+          "merchant": "Pharmacie Centrale",
+          "date": "2025-02-17",
+          "total": 3.50,
+          "tax": 0.06,
+          "category": "pharmacy",
+          "confidence": 0.88
+        }
+      },
+      {
+        "receipt_id": "FR_009",
+        "country": "FR",
+        "merchant_name": "Fnac Champs-Élysées",
+        "date": "11/01/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "iPhone 15 128GB", "price": 899.00},
+          {"description": "Coque protection", "price": 29.90},
+          {"description": "Extension garantie", "price": 129.00}
+        ],
+        "subtotal": 881.58,
+        "tax_rate": 20.0,
+        "tax_amount": 176.32,
+        "total": 1057.90,
+        "currency": "EUR",
+        "category": "electronics",
+        "special_conditions": ["extended_warranty"],
+        "expected_extraction": {
+          "merchant": "Fnac",
+          "date": "2025-01-11",
+          "total": 1057.90,
+          "tax": 176.32,
+          "category": "electronics",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "FR_010",
+        "country": "FR",
+        "merchant_name": "Taxi Parisien",
+        "date": "28/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Course CDG - 16e", "price": 58.50},
+          {"description": "Supplément bagages", "price": 3.00},
+          {"description": "Pourboire", "price": 6.50}
+        ],
+        "subtotal": 56.67,
+        "tax_rate": 20.0,
+        "tax_amount": 11.33,
+        "total": 68.00,
+        "currency": "EUR",
+        "category": "transport",
+        "special_conditions": ["airport_surcharge", "tip"],
+        "expected_extraction": {
+          "merchant": "Taxi Parisien",
+          "date": "2025-02-28",
+          "total": 68.00,
+          "tax": 11.33,
+          "category": "transport",
+          "confidence": 0.89
+        }
+      },
+      {
+        "receipt_id": "FR_011",
+        "country": "FR",
+        "merchant_name": "McDonald's Republique",
+        "date": "14/03/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Menu Big Mac", "price": 9.50},
+          {"description": "Happy Meal", "price": 5.20},
+          {"description": "McFlurry Oreo", "price": 3.80}
+        ],
+        "subtotal": 15.42,
+        "tax_rate": 20.0,
+        "tax_amount": 3.08,
+        "total": 18.50,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["fast_food"],
+        "expected_extraction": {
+          "merchant": "McDonald's",
+          "date": "2025-03-14",
+          "total": 18.50,
+          "tax": 3.08,
+          "category": "restaurant",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "FR_012",
+        "country": "FR",
+        "merchant_name": "Monoprix Nation",
+        "date": "09/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Vin Bordeaux 2022", "price": 12.90},
+          {"description": "Chocolat Lindt", "price": 4.50},
+          {"description": "Sac plastique", "price": 0.10}
+        ],
+        "subtotal": 15.67,
+        "tax_rate": 20.0,
+        "tax_amount": 3.13,
+        "total": 17.50,
+        "currency": "EUR",
+        "category": "grocery",
+        "special_conditions": ["plastic_bag_fee", "alcohol"],
+        "expected_extraction": {
+          "merchant": "Monoprix",
+          "date": "2025-02-09",
+          "total": 17.50,
+          "tax": 3.13,
+          "category": "grocery",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "FR_013",
+        "country": "FR",
+        "merchant_name": "Starbucks Opéra",
+        "date": "21/01/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Latte Grande", "price": 4.95},
+          {"description": "Muffin myrtilles", "price": 3.25},
+          {"description": "Addition partagée 1/2", "price": -4.10}
+        ],
+        "subtotal": 3.42,
+        "tax_rate": 20.0,
+        "tax_amount": 0.68,
+        "total": 4.10,
+        "currency": "EUR",
+        "category": "restaurant",
+        "special_conditions": ["split_bill"],
+        "expected_extraction": {
+          "merchant": "Starbucks",
+          "date": "2025-01-21",
+          "total": 4.10,
+          "tax": 0.68,
+          "category": "restaurant",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "FR_014",
+        "country": "FR",
+        "merchant_name": "Picard Surgelés",
+        "date": "16/03/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Pizza margherita", "price": 4.99},
+          {"description": "Légumes wok", "price": 3.45},
+          {"description": "Glace vanille 1L", "price": 5.20},
+          {"description": "Sac isotherme", "price": 0.50}
+        ],
+        "subtotal": 12.89,
+        "tax_rate": 5.5,
+        "tax_amount": 0.71,
+        "total": 14.14,
+        "currency": "EUR",
+        "category": "grocery",
+        "special_conditions": ["frozen_food", "insulated_bag"],
+        "expected_extraction": {
+          "merchant": "Picard Surgelés",
+          "date": "2025-03-16",
+          "total": 14.14,
+          "tax": 0.71,
+          "category": "grocery",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "FR_015",
+        "country": "FR",
+        "merchant_name": "Crédit Agricole ATM",
+        "date": "05/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Retrait espèces", "price": 150.00},
+          {"description": "Commission autre banque", "price": 2.50}
+        ],
+        "subtotal": 152.50,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 152.50,
+        "currency": "EUR",
+        "category": "banking",
+        "special_conditions": ["atm_withdrawal", "inter_bank_fee"],
+        "expected_extraction": {
+          "merchant": "Crédit Agricole",
+          "date": "2025-02-05",
+          "total": 152.50,
+          "tax": 0.00,
+          "category": "banking",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "FR_016",
+        "country": "FR",
+        "merchant_name": "BNP Paribas",
+        "date": "13/01/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Frais tenue compte", "price": 7.50},
+          {"description": "Cotisation CB", "price": 42.00}
+        ],
+        "subtotal": 41.25,
+        "tax_rate": 20.0,
+        "tax_amount": 8.25,
+        "total": 49.50,
+        "currency": "EUR",
+        "category": "banking",
+        "special_conditions": ["banking_fees"],
+        "expected_extraction": {
+          "merchant": "BNP Paribas",
+          "date": "2025-01-13",
+          "total": 49.50,
+          "tax": 8.25,
+          "category": "banking",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "FR_017",
+        "country": "FR",
+        "merchant_name": "Zara Rivoli",
+        "date": "27/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Pantalon femme", "price": 35.95},
+          {"description": "Top manches courtes", "price": 19.95},
+          {"description": "Échange possible 30j", "price": 0.00}
+        ],
+        "subtotal": 46.58,
+        "tax_rate": 20.0,
+        "tax_amount": 9.32,
+        "total": 55.90,
+        "currency": "EUR",
+        "category": "clothing",
+        "special_conditions": ["return_policy"],
+        "expected_extraction": {
+          "merchant": "Zara",
+          "date": "2025-02-27",
+          "total": 55.90,
+          "tax": 9.32,
+          "category": "clothing",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "FR_018",
+        "country": "FR",
+        "merchant_name": "Boulangerie Paul",
+        "date": "10/03/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Baguette tradition", "price": 1.30},
+          {"description": "Pain au chocolat x2", "price": 2.60},
+          {"description": "Quiche lorraine", "price": 4.80}
+        ],
+        "subtotal": 8.18,
+        "tax_rate": 5.5,
+        "tax_amount": 0.45,
+        "total": 8.70,
+        "currency": "EUR",
+        "category": "grocery",
+        "special_conditions": ["bakery", "food_reduced_vat"],
+        "expected_extraction": {
+          "merchant": "Boulangerie Paul",
+          "date": "2025-03-10",
+          "total": 8.70,
+          "tax": 0.45,
+          "category": "grocery",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "FR_019",
+        "country": "FR",
+        "merchant_name": "Sephora Champs-Élysées",
+        "date": "06/01/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Parfum Dior 50ml", "price": 89.00},
+          {"description": "Rouge à lèvres", "price": 35.00},
+          {"description": "Échantillons gratuits", "price": 0.00}
+        ],
+        "subtotal": 103.33,
+        "tax_rate": 20.0,
+        "tax_amount": 20.67,
+        "total": 124.00,
+        "currency": "EUR",
+        "category": "personal_care",
+        "special_conditions": ["free_samples", "luxury_goods"],
+        "expected_extraction": {
+          "merchant": "Sephora",
+          "date": "2025-01-06",
+          "total": 124.00,
+          "tax": 20.67,
+          "category": "personal_care",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "FR_020",
+        "country": "FR",
+        "merchant_name": "Parking Haussman",
+        "date": "18/02/2025",
+        "date_format": "DD/MM/YYYY",
+        "items": [
+          {"description": "Stationnement 2h15", "price": 6.75},
+          {"description": "Ticket perdu", "price": 20.00}
+        ],
+        "subtotal": 22.29,
+        "tax_rate": 20.0,
+        "tax_amount": 4.46,
+        "total": 26.75,
+        "currency": "EUR",
+        "category": "transport",
+        "special_conditions": ["parking_fine", "lost_ticket"],
+        "expected_extraction": {
+          "merchant": "Parking Haussman",
+          "date": "2025-02-18",
+          "total": 26.75,
+          "tax": 4.46,
+          "category": "transport",
+          "confidence": 0.88
+        }
+      }
+    ],
+
+    "JP": [
+      {
+        "receipt_id": "JP_001",
+        "country": "JP",
+        "merchant_name": "和食レストラン さくら",
+        "date": "2025/03/15",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "天ぷら定食", "price": 1800},
+          {"description": "味噌汁", "price": 150},
+          {"description": "ご飯大盛り", "price": 100},
+          {"description": "緑茶", "price": 200}
+        ],
+        "subtotal": 2083,
+        "tax_rate": 10.0,
+        "tax_amount": 208,
+        "total": 2250,
+        "currency": "JPY",
+        "category": "restaurant",
+        "special_conditions": ["eat_in_tax_10percent"],
+        "expected_extraction": {
+          "merchant": "和食レストラン さくら",
+          "date": "2025-03-15",
+          "total": 2250,
+          "tax": 208,
+          "category": "restaurant",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "JP_002",
+        "country": "JP",
+        "merchant_name": "セブン-イレブン新宿店",
+        "date": "2025/02/22",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "おにぎり ツナマヨ", "price": 120},
+          {"description": "サラダチキン", "price": 298},
+          {"description": "お茶 600ml", "price": 110},
+          {"description": "レジ袋", "price": 3}
+        ],
+        "subtotal": 486,
+        "tax_rate": 8.0,
+        "tax_amount": 39,
+        "total": 531,
+        "currency": "JPY",
+        "category": "grocery",
+        "special_conditions": ["convenience_store", "takeaway_8percent"],
+        "expected_extraction": {
+          "merchant": "セブン-イレブン",
+          "date": "2025-02-22",
+          "total": 531,
+          "tax": 39,
+          "category": "grocery",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "JP_003",
+        "country": "JP",
+        "merchant_name": "ホテルニューオータニ東京",
+        "date": "2025/01/08",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "シングルルーム宿泊", "price": 25000},
+          {"description": "朝食バイキング", "price": 3500},
+          {"description": "入湯税", "price": 150}
+        ],
+        "subtotal": 26000,
+        "tax_rate": 10.0,
+        "tax_amount": 2600,
+        "total": 28650,
+        "currency": "JPY",
+        "category": "hotel",
+        "special_conditions": ["hot_spring_tax"],
+        "expected_extraction": {
+          "merchant": "ホテルニューオータニ",
+          "date": "2025-01-08",
+          "total": 28650,
+          "tax": 2600,
+          "category": "hotel",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "JP_004",
+        "country": "JP",
+        "merchant_name": "JR東日本",
+        "date": "2025/03/12",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "東京→大阪 新幹線", "price": 13320},
+          {"description": "指定席券", "price": 850}
+        ],
+        "subtotal": 12882,
+        "tax_rate": 10.0,
+        "tax_amount": 1288,
+        "total": 14170,
+        "currency": "JPY",
+        "category": "transport",
+        "special_conditions": ["shinkansen_ticket"],
+        "expected_extraction": {
+          "merchant": "JR東日本",
+          "date": "2025-03-12",
+          "total": 14170,
+          "tax": 1288,
+          "category": "transport",
+          "confidence": 0.96
+        }
+      },
+      {
+        "receipt_id": "JP_005",
+        "country": "JP",
+        "merchant_name": "ENEOS セルフ渋谷SS",
+        "date": "2025/02/19",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "レギュラー (25.5L)", "price": 4335},
+          {"description": "洗車サービス", "price": 300},
+          {"description": "コーヒー缶", "price": 130}
+        ],
+        "subtotal": 4332,
+        "tax_rate": 10.0,
+        "tax_amount": 433,
+        "total": 4765,
+        "currency": "JPY",
+        "category": "gas",
+        "special_conditions": ["self_service_gas"],
+        "expected_extraction": {
+          "merchant": "ENEOS",
+          "date": "2025-02-19",
+          "total": 4765,
+          "tax": 433,
+          "category": "gas",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "JP_006",
+        "country": "JP",
+        "merchant_name": "スターバックス 表参道店",
+        "date": "2025/01/25",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "カフェラテ Tall", "price": 425},
+          {"description": "チョコクッキー", "price": 280},
+          {"description": "店内利用", "price": 0}
+        ],
+        "subtotal": 641,
+        "tax_rate": 10.0,
+        "tax_amount": 64,
+        "total": 705,
+        "currency": "JPY",
+        "category": "restaurant",
+        "special_conditions": ["eat_in_higher_tax"],
+        "expected_extraction": {
+          "merchant": "スターバックス",
+          "date": "2025-01-25",
+          "total": 705,
+          "tax": 64,
+          "category": "restaurant",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "JP_007",
+        "country": "JP",
+        "merchant_name": "ユニクロ銀座店",
+        "date": "2025/03/03",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "エアリズムTシャツ", "price": 1290},
+          {"description": "ジーンズ", "price": 3990},
+          {"description": "値引きセール -20%", "price": -1056}
+        ],
+        "subtotal": 3840,
+        "tax_rate": 10.0,
+        "tax_amount": 384,
+        "total": 4224,
+        "currency": "JPY",
+        "category": "clothing",
+        "special_conditions": ["sale_discount"],
+        "expected_extraction": {
+          "merchant": "ユニクロ",
+          "date": "2025-03-03",
+          "total": 4224,
+          "tax": 384,
+          "category": "clothing",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "JP_008",
+        "country": "JP",
+        "merchant_name": "薬のヒグチ",
+        "date": "2025/02/17",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "風邪薬パブロン", "price": 1380},
+          {"description": "マスク50枚入", "price": 498},
+          {"description": "のど飴", "price": 200}
+        ],
+        "subtotal": 1889,
+        "tax_rate": 10.0,
+        "tax_amount": 189,
+        "total": 2078,
+        "currency": "JPY",
+        "category": "pharmacy",
+        "special_conditions": ["over_counter_medicine"],
+        "expected_extraction": {
+          "merchant": "薬のヒグチ",
+          "date": "2025-02-17",
+          "total": 2078,
+          "tax": 189,
+          "category": "pharmacy",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "JP_009",
+        "country": "JP",
+        "merchant_name": "ヨドバシカメラ新宿",
+        "date": "2025/01/11",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "iPhone 15 128GB", "price": 124800},
+          {"description": "ケース", "price": 2980},
+          {"description": "延長保証3年", "price": 8900},
+          {"description": "ポイント還元", "price": -12480}
+        ],
+        "subtotal": 112000,
+        "tax_rate": 10.0,
+        "tax_amount": 11200,
+        "total": 124200,
+        "currency": "JPY",
+        "category": "electronics",
+        "special_conditions": ["point_system", "extended_warranty"],
+        "expected_extraction": {
+          "merchant": "ヨドバシカメラ",
+          "date": "2025-01-11",
+          "total": 124200,
+          "tax": 11200,
+          "category": "electronics",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "JP_010",
+        "country": "JP",
+        "merchant_name": "東京無線タクシー",
+        "date": "2025/02/28",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "羽田空港→新宿", "price": 4800},
+          {"description": "高速料金", "price": 320},
+          {"description": "深夜料金", "price": 1040}
+        ],
+        "subtotal": 5600,
+        "tax_rate": 10.0,
+        "tax_amount": 560,
+        "total": 6160,
+        "currency": "JPY",
+        "category": "transport",
+        "special_conditions": ["airport_taxi", "night_surcharge"],
+        "expected_extraction": {
+          "merchant": "東京無線タクシー",
+          "date": "2025-02-28",
+          "total": 6160,
+          "tax": 560,
+          "category": "transport",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "JP_011",
+        "country": "JP",
+        "merchant_name": "マクドナルド新宿三丁目店",
+        "date": "2025/03/14",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "ビッグマックセット", "price": 690},
+          {"description": "チキンナゲット5個", "price": 200},
+          {"description": "お持ち帰り", "price": 0}
+        ],
+        "subtotal": 815,
+        "tax_rate": 8.0,
+        "tax_amount": 65,
+        "total": 890,
+        "currency": "JPY",
+        "category": "restaurant",
+        "special_conditions": ["takeaway_reduced_tax"],
+        "expected_extraction": {
+          "merchant": "マクドナルド",
+          "date": "2025-03-14",
+          "total": 890,
+          "tax": 65,
+          "category": "restaurant",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "JP_012",
+        "country": "JP",
+        "merchant_name": "イオン幕張店",
+        "date": "2025/02/09",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "米5kg", "price": 1980},
+          {"description": "醤油1L", "price": 298},
+          {"description": "卵10個", "price": 238},
+          {"description": "レジ袋大", "price": 5}
+        ],
+        "subtotal": 2332,
+        "tax_rate": 8.0,
+        "tax_amount": 187,
+        "total": 2521,
+        "currency": "JPY",
+        "category": "grocery",
+        "special_conditions": ["food_reduced_tax", "shopping_bag_fee"],
+        "expected_extraction": {
+          "merchant": "イオン",
+          "date": "2025-02-09",
+          "total": 2521,
+          "tax": 187,
+          "category": "grocery",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "JP_013",
+        "country": "JP",
+        "merchant_name": "スターバックス東京駅店",
+        "date": "2025/01/21",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "ドリップコーヒーTall", "price": 350},
+          {"description": "サンドイッチ", "price": 450},
+          {"description": "会計分割 1/2", "price": -400}
+        ],
+        "subtotal": 364,
+        "tax_rate": 10.0,
+        "tax_amount": 36,
+        "total": 400,
+        "currency": "JPY",
+        "category": "restaurant",
+        "special_conditions": ["split_bill", "eat_in"],
+        "expected_extraction": {
+          "merchant": "スターバックス",
+          "date": "2025-01-21",
+          "total": 400,
+          "tax": 36,
+          "category": "restaurant",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "JP_014",
+        "country": "JP",
+        "merchant_name": "無印良品渋谷店",
+        "date": "2025/03/16",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "オーガニックコットンTシャツ", "price": 1290},
+          {"description": "ジーンズ", "price": 2990},
+          {"description": "MUJI会員割引 -5%", "price": -214}
+        ],
+        "subtotal": 3697,
+        "tax_rate": 10.0,
+        "tax_amount": 370,
+        "total": 4066,
+        "currency": "JPY",
+        "category": "clothing",
+        "special_conditions": ["member_discount"],
+        "expected_extraction": {
+          "merchant": "無印良品",
+          "date": "2025-03-16",
+          "total": 4066,
+          "tax": 370,
+          "category": "clothing",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "JP_015",
+        "country": "JP",
+        "merchant_name": "三井住友銀行ATM",
+        "date": "2025/02/05",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "現金引出し", "price": 30000},
+          {"description": "時間外手数料", "price": 220}
+        ],
+        "subtotal": 30220,
+        "tax_rate": 0.0,
+        "tax_amount": 0,
+        "total": 30220,
+        "currency": "JPY",
+        "category": "banking",
+        "special_conditions": ["after_hours_fee", "no_tax"],
+        "expected_extraction": {
+          "merchant": "三井住友銀行",
+          "date": "2025-02-05",
+          "total": 30220,
+          "tax": 0,
+          "category": "banking",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "JP_016",
+        "country": "JP",
+        "merchant_name": "みずほ銀行",
+        "date": "2025/01/13",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "口座維持手数料", "price": 1100},
+          {"description": "クレジットカード年会費", "price": 1375}
+        ],
+        "subtotal": 2250,
+        "tax_rate": 10.0,
+        "tax_amount": 225,
+        "total": 2475,
+        "currency": "JPY",
+        "category": "banking",
+        "special_conditions": ["annual_fees"],
+        "expected_extraction": {
+          "merchant": "みずほ銀行",
+          "date": "2025-01-13",
+          "total": 2475,
+          "tax": 225,
+          "category": "banking",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "JP_017",
+        "country": "JP",
+        "merchant_name": "H&M原宿店",
+        "date": "2025/02/27",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "ニット", "price": 2999},
+          {"description": "スカート", "price": 1999},
+          {"description": "返品可能30日", "price": 0}
+        ],
+        "subtotal": 4544,
+        "tax_rate": 10.0,
+        "tax_amount": 454,
+        "total": 4998,
+        "currency": "JPY",
+        "category": "clothing",
+        "special_conditions": ["return_policy"],
+        "expected_extraction": {
+          "merchant": "H&M",
+          "date": "2025-02-27",
+          "total": 4998,
+          "tax": 454,
+          "category": "clothing",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "JP_018",
+        "country": "JP",
+        "merchant_name": "吉野家牛丼",
+        "date": "2025/03/10",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "牛丼 並盛", "price": 426},
+          {"description": "味噌汁", "price": 60},
+          {"description": "卵", "price": 70}
+        ],
+        "subtotal": 506,
+        "tax_rate": 10.0,
+        "tax_amount": 50,
+        "total": 556,
+        "currency": "JPY",
+        "category": "restaurant",
+        "special_conditions": ["beef_bowl_chain", "eat_in"],
+        "expected_extraction": {
+          "merchant": "吉野家",
+          "date": "2025-03-10",
+          "total": 556,
+          "tax": 50,
+          "category": "restaurant",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "JP_019",
+        "country": "JP",
+        "merchant_name": "コスメデコルテ銀座",
+        "date": "2025/01/06",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "ファンデーション", "price": 6600},
+          {"description": "口紅", "price": 3300},
+          {"description": "サンプル無料", "price": 0}
+        ],
+        "subtotal": 9000,
+        "tax_rate": 10.0,
+        "tax_amount": 900,
+        "total": 9900,
+        "currency": "JPY",
+        "category": "personal_care",
+        "special_conditions": ["luxury_cosmetics", "free_samples"],
+        "expected_extraction": {
+          "merchant": "コスメデコルテ",
+          "date": "2025-01-06",
+          "total": 9900,
+          "tax": 900,
+          "category": "personal_care",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "JP_020",
+        "country": "JP",
+        "merchant_name": "タイムズパーキング新宿",
+        "date": "2025/02/18",
+        "date_format": "YYYY/MM/DD",
+        "items": [
+          {"description": "駐車料金 3時間30分", "price": 1050},
+          {"description": "駐車券紛失料金", "price": 2000}
+        ],
+        "subtotal": 2773,
+        "tax_rate": 10.0,
+        "tax_amount": 277,
+        "total": 3050,
+        "currency": "JPY",
+        "category": "transport",
+        "special_conditions": ["parking_fine", "lost_ticket"],
+        "expected_extraction": {
+          "merchant": "タイムズパーキング",
+          "date": "2025-02-18",
+          "total": 3050,
+          "tax": 277,
+          "category": "transport",
+          "confidence": 0.88
+        }
+      }
+    ],
+
+    "US": [
+      {
+        "receipt_id": "US_001",
+        "country": "US",
+        "merchant_name": "The Olive Garden",
+        "date": "03/15/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Chicken Parmigiana", "price": 16.99},
+          {"description": "Caesar Salad", "price": 8.99},
+          {"description": "Iced Tea", "price": 2.99},
+          {"description": "Tiramisu", "price": 6.99}
+        ],
+        "subtotal": 35.96,
+        "tax_rate": 8.25,
+        "tax_amount": 2.97,
+        "total": 38.93,
+        "currency": "USD",
+        "category": "restaurant",
+        "special_conditions": ["state_sales_tax"],
+        "expected_extraction": {
+          "merchant": "The Olive Garden",
+          "date": "2025-03-15",
+          "total": 38.93,
+          "tax": 2.97,
+          "category": "restaurant",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "US_002",
+        "country": "US",
+        "merchant_name": "Walmart Supercenter",
+        "date": "02/22/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Milk Gallon 2%", "price": 3.48},
+          {"description": "Wonder Bread", "price": 1.98},
+          {"description": "Bananas (2.5 lbs)", "price": 1.47},
+          {"description": "Greek Yogurt 4-pack", "price": 4.98}
+        ],
+        "subtotal": 11.91,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 11.91,
+        "currency": "USD",
+        "category": "grocery",
+        "special_conditions": ["tax_exempt_food"],
+        "expected_extraction": {
+          "merchant": "Walmart",
+          "date": "2025-02-22",
+          "total": 11.91,
+          "tax": 0.00,
+          "category": "grocery",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "US_003",
+        "country": "US",
+        "merchant_name": "Marriott Downtown",
+        "date": "01/08/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "King Room (1 night)", "price": 189.00},
+          {"description": "Resort Fee", "price": 35.00},
+          {"description": "Parking", "price": 25.00},
+          {"description": "City Tax", "price": 4.95}
+        ],
+        "subtotal": 233.59,
+        "tax_rate": 14.75,
+        "tax_amount": 34.45,
+        "total": 253.95,
+        "currency": "USD",
+        "category": "hotel",
+        "special_conditions": ["resort_fee", "occupancy_tax"],
+        "expected_extraction": {
+          "merchant": "Marriott",
+          "date": "2025-01-08",
+          "total": 253.95,
+          "tax": 34.45,
+          "category": "hotel",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "US_004",
+        "country": "US",
+        "merchant_name": "Amtrak",
+        "date": "03/12/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "NYC Penn - Washington DC", "price": 89.00},
+          {"description": "Reserved Coach Seat", "price": 15.00}
+        ],
+        "subtotal": 104.00,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 104.00,
+        "currency": "USD",
+        "category": "transport",
+        "special_conditions": ["interstate_transport", "no_tax"],
+        "expected_extraction": {
+          "merchant": "Amtrak",
+          "date": "2025-03-12",
+          "total": 104.00,
+          "tax": 0.00,
+          "category": "transport",
+          "confidence": 0.96
+        }
+      },
+      {
+        "receipt_id": "US_005",
+        "country": "US",
+        "merchant_name": "Shell Gas Station",
+        "date": "02/19/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Regular Gas (12.5 gal)", "price": 43.75},
+          {"description": "Car Wash Premium", "price": 12.99},
+          {"description": "Red Bull", "price": 2.99}
+        ],
+        "subtotal": 54.95,
+        "tax_rate": 6.0,
+        "tax_amount": 0.95,
+        "total": 59.73,
+        "currency": "USD",
+        "category": "gas",
+        "special_conditions": ["fuel_tax_included"],
+        "expected_extraction": {
+          "merchant": "Shell",
+          "date": "2025-02-19",
+          "total": 59.73,
+          "tax": 0.95,
+          "category": "gas",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "US_006",
+        "country": "US",
+        "merchant_name": "Starbucks Coffee",
+        "date": "01/25/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Venti Latte", "price": 5.65},
+          {"description": "Blueberry Scone", "price": 2.95},
+          {"description": "Tip", "price": 1.50}
+        ],
+        "subtotal": 9.31,
+        "tax_rate": 8.75,
+        "tax_amount": 0.75,
+        "total": 10.10,
+        "currency": "USD",
+        "category": "restaurant",
+        "special_conditions": ["tip_added"],
+        "expected_extraction": {
+          "merchant": "Starbucks",
+          "date": "2025-01-25",
+          "total": 10.10,
+          "tax": 0.75,
+          "category": "restaurant",
+          "confidence": 0.92
+        }
+      },
+      {
+        "receipt_id": "US_007",
+        "country": "US",
+        "merchant_name": "Macy's Herald Square",
+        "date": "03/03/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Men's Dress Shirt", "price": 49.99},
+          {"description": "Silk Tie", "price": 29.99},
+          {"description": "Store Discount -25%", "price": -19.99}
+        ],
+        "subtotal": 54.54,
+        "tax_rate": 8.25,
+        "tax_amount": 4.50,
+        "total": 59.99,
+        "currency": "USD",
+        "category": "clothing",
+        "special_conditions": ["store_discount"],
+        "expected_extraction": {
+          "merchant": "Macy's",
+          "date": "2025-03-03",
+          "total": 59.99,
+          "tax": 4.50,
+          "category": "clothing",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "US_008",
+        "country": "US",
+        "merchant_name": "CVS Pharmacy",
+        "date": "02/17/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Tylenol Extra Strength", "price": 8.99},
+          {"description": "Band-Aids", "price": 4.49},
+          {"description": "CVS Brand Vitamins", "price": 12.99},
+          {"description": "Insurance Copay", "price": -15.00}
+        ],
+        "subtotal": 10.61,
+        "tax_rate": 6.25,
+        "tax_amount": 0.86,
+        "total": 11.47,
+        "currency": "USD",
+        "category": "pharmacy",
+        "special_conditions": ["insurance_discount"],
+        "expected_extraction": {
+          "merchant": "CVS Pharmacy",
+          "date": "2025-02-17",
+          "total": 11.47,
+          "tax": 0.86,
+          "category": "pharmacy",
+          "confidence": 0.90
+        }
+      },
+      {
+        "receipt_id": "US_009",
+        "country": "US",
+        "merchant_name": "Best Buy Union Square",
+        "date": "01/11/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "iPhone 15 Pro 256GB", "price": 1199.00},
+          {"description": "MagSafe Case", "price": 49.99},
+          {"description": "Geek Squad Setup", "price": 79.99},
+          {"description": "Trade-in Credit", "price": -200.00}
+        ],
+        "subtotal": 1041.79,
+        "tax_rate": 8.875,
+        "tax_amount": 92.46,
+        "total": 1128.98,
+        "currency": "USD",
+        "category": "electronics",
+        "special_conditions": ["trade_in_credit"],
+        "expected_extraction": {
+          "merchant": "Best Buy",
+          "date": "2025-01-11",
+          "total": 1128.98,
+          "tax": 92.46,
+          "category": "electronics",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "US_010",
+        "country": "US",
+        "merchant_name": "Yellow Cab #4567",
+        "date": "02/28/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "JFK Airport to Manhattan", "price": 52.00},
+          {"description": "Tolls", "price": 6.50},
+          {"description": "Tip", "price": 12.00}
+        ],
+        "subtotal": 70.50,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 70.50,
+        "currency": "USD",
+        "category": "transport",
+        "special_conditions": ["taxi_service", "tip_cash"],
+        "expected_extraction": {
+          "merchant": "Yellow Cab",
+          "date": "2025-02-28",
+          "total": 70.50,
+          "tax": 0.00,
+          "category": "transport",
+          "confidence": 0.89
+        }
+      },
+      {
+        "receipt_id": "US_011",
+        "country": "US",
+        "merchant_name": "McDonald's Times Square",
+        "date": "03/14/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Big Mac Meal Large", "price": 10.99},
+          {"description": "10pc McNuggets", "price": 4.99},
+          {"description": "Apple Pie", "price": 1.29}
+        ],
+        "subtotal": 15.87,
+        "tax_rate": 8.25,
+        "tax_amount": 1.31,
+        "total": 17.27,
+        "currency": "USD",
+        "category": "restaurant",
+        "special_conditions": ["fast_food"],
+        "expected_extraction": {
+          "merchant": "McDonald's",
+          "date": "2025-03-14",
+          "total": 17.27,
+          "tax": 1.31,
+          "category": "restaurant",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "US_012",
+        "country": "US",
+        "merchant_name": "Whole Foods Market",
+        "date": "02/09/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Organic Spinach", "price": 4.99},
+          {"description": "Free Range Eggs", "price": 5.99},
+          {"description": "Kombucha GT's", "price": 3.99},
+          {"description": "Paper Bag -0.10", "price": -0.10}
+        ],
+        "subtotal": 14.87,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 14.87,
+        "currency": "USD",
+        "category": "grocery",
+        "special_conditions": ["organic_food", "bag_credit"],
+        "expected_extraction": {
+          "merchant": "Whole Foods",
+          "date": "2025-02-09",
+          "total": 14.87,
+          "tax": 0.00,
+          "category": "grocery",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "US_013",
+        "country": "US",
+        "merchant_name": "Starbucks Penn Station",
+        "date": "01/21/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Grande Pike Place", "price": 2.35},
+          {"description": "Bacon Egg Sandwich", "price": 4.95},
+          {"description": "Split Payment 1/2", "price": -3.65}
+        ],
+        "subtotal": 3.35,
+        "tax_rate": 8.25,
+        "tax_amount": 0.30,
+        "total": 3.65,
+        "currency": "USD",
+        "category": "restaurant",
+        "special_conditions": ["split_bill", "train_station"],
+        "expected_extraction": {
+          "merchant": "Starbucks",
+          "date": "2025-01-21",
+          "total": 3.65,
+          "tax": 0.30,
+          "category": "restaurant",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "US_014",
+        "country": "US",
+        "merchant_name": "Target San Francisco",
+        "date": "03/16/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Laundry Detergent", "price": 11.99},
+          {"description": "Paper Towels", "price": 8.99},
+          {"description": "Shampoo", "price": 6.99},
+          {"description": "RedCard Discount 5%", "price": -1.40}
+        ],
+        "subtotal": 24.31,
+        "tax_rate": 8.5,
+        "tax_amount": 2.27,
+        "total": 26.57,
+        "currency": "USD",
+        "category": "household",
+        "special_conditions": ["loyalty_card_discount"],
+        "expected_extraction": {
+          "merchant": "Target",
+          "date": "2025-03-16",
+          "total": 26.57,
+          "tax": 2.27,
+          "category": "household",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "US_015",
+        "country": "US",
+        "merchant_name": "Wells Fargo ATM",
+        "date": "02/05/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Cash Withdrawal", "price": 200.00},
+          {"description": "ATM Fee", "price": 2.50},
+          {"description": "Foreign Bank Fee", "price": 3.00}
+        ],
+        "subtotal": 205.50,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 205.50,
+        "currency": "USD",
+        "category": "banking",
+        "special_conditions": ["atm_fees", "no_tax"],
+        "expected_extraction": {
+          "merchant": "Wells Fargo",
+          "date": "2025-02-05",
+          "total": 205.50,
+          "tax": 0.00,
+          "category": "banking",
+          "confidence": 0.95
+        }
+      },
+      {
+        "receipt_id": "US_016",
+        "country": "US",
+        "merchant_name": "Chase Bank",
+        "date": "01/13/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Monthly Service Fee", "price": 12.00},
+          {"description": "Overdraft Fee", "price": 35.00}
+        ],
+        "subtotal": 47.00,
+        "tax_rate": 0.0,
+        "tax_amount": 0.00,
+        "total": 47.00,
+        "currency": "USD",
+        "category": "banking",
+        "special_conditions": ["banking_fees", "overdraft"],
+        "expected_extraction": {
+          "merchant": "Chase Bank",
+          "date": "2025-01-13",
+          "total": 47.00,
+          "tax": 0.00,
+          "category": "banking",
+          "confidence": 0.93
+        }
+      },
+      {
+        "receipt_id": "US_017",
+        "country": "US",
+        "merchant_name": "Gap Fifth Avenue",
+        "date": "02/27/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Khaki Pants", "price": 59.95},
+          {"description": "Cotton T-Shirt", "price": 19.95},
+          {"description": "30 Day Return Policy", "price": 0.00}
+        ],
+        "subtotal": 73.54,
+        "tax_rate": 8.25,
+        "tax_amount": 6.59,
+        "total": 79.90,
+        "currency": "USD",
+        "category": "clothing",
+        "special_conditions": ["return_policy_noted"],
+        "expected_extraction": {
+          "merchant": "Gap",
+          "date": "2025-02-27",
+          "total": 79.90,
+          "tax": 6.59,
+          "category": "clothing",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "US_018",
+        "country": "US",
+        "merchant_name": "Subway Downtown",
+        "date": "03/10/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Footlong Turkey Club", "price": 8.99},
+          {"description": "Chips", "price": 1.89},
+          {"description": "Large Drink", "price": 2.39}
+        ],
+        "subtotal": 12.25,
+        "tax_rate": 7.25,
+        "tax_amount": 0.89,
+        "total": 13.27,
+        "currency": "USD",
+        "category": "restaurant",
+        "special_conditions": ["fast_casual"],
+        "expected_extraction": {
+          "merchant": "Subway",
+          "date": "2025-03-10",
+          "total": 13.27,
+          "tax": 0.89,
+          "category": "restaurant",
+          "confidence": 0.94
+        }
+      },
+      {
+        "receipt_id": "US_019",
+        "country": "US",
+        "merchant_name": "Sephora SOHO",
+        "date": "01/06/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Foundation Charlotte Tilbury", "price": 44.00},
+          {"description": "Lipstick Fenty Beauty", "price": 20.00},
+          {"description": "Beauty Insider Points", "price": -5.00}
+        ],
+        "subtotal": 54.30,
+        "tax_rate": 8.25,
+        "tax_amount": 4.87,
+        "total": 59.00,
+        "currency": "USD",
+        "category": "personal_care",
+        "special_conditions": ["loyalty_points_redemption"],
+        "expected_extraction": {
+          "merchant": "Sephora",
+          "date": "2025-01-06",
+          "total": 59.00,
+          "tax": 4.87,
+          "category": "personal_care",
+          "confidence": 0.91
+        }
+      },
+      {
+        "receipt_id": "US_020",
+        "country": "US",
+        "merchant_name": "ParkWhiz Garage #23",
+        "date": "02/18/2025",
+        "date_format": "MM/DD/YYYY",
+        "items": [
+          {"description": "Parking 4 hrs", "price": 28.00},
+          {"description": "Lost Ticket Fee", "price": 25.00}
+        ],
+        "subtotal": 48.84,
+        "tax_rate": 8.25,
+        "tax_amount": 4.41,
+        "total": 53.00,
+        "currency": "USD",
+        "category": "transport",
+        "special_conditions": ["parking_app", "lost_ticket_penalty"],
+        "expected_extraction": {
+          "merchant": "ParkWhiz",
+          "date": "2025-02-18",
+          "total": 53.00,
+          "tax": 4.41,
+          "category": "transport",
+          "confidence": 0.88
+        }
+      }
+    ]
+  },
+
+  "validation_scenarios": [
+    {
+      "test_name": "tax_calculation_accuracy",
+      "description": "Verify that tax calculations are mathematically correct",
+      "test_receipts": ["CH_001", "DE_002", "FR_003", "JP_004", "US_005"],
+      "validation_rule": "subtotal * (tax_rate / 100) ≈ tax_amount (within 0.05 tolerance)",
+      "expected_pass_rate": 0.95
+    },
+    {
+      "test_name": "date_format_parsing",
+      "description": "Test date parsing across different regional formats",
+      "test_receipts": ["CH_002", "DE_003", "FR_004", "JP_005", "US_006"],
+      "validation_rule": "Date correctly parsed and normalized to ISO format",
+      "expected_pass_rate": 0.98
+    },
+    {
+      "test_name": "merchant_name_extraction",
+      "description": "Verify accurate merchant name extraction",
+      "test_receipts": ["CH_007", "DE_008", "FR_009", "JP_010", "US_011"],
+      "validation_rule": "Fuzzy match score > 0.8 with expected merchant name",
+      "expected_pass_rate": 0.90
+    },
+    {
+      "test_name": "category_classification",
+      "description": "Test automatic expense categorization",
+      "test_receipts": ["CH_012", "DE_013", "FR_014", "JP_015", "US_016"],
+      "validation_rule": "Assigned category matches expected category",
+      "expected_pass_rate": 0.85
+    },
+    {
+      "test_name": "special_conditions_handling",
+      "description": "Verify handling of edge cases and special conditions",
+      "test_receipts": ["CH_006", "DE_006", "FR_013", "JP_013", "US_013"],
+      "validation_rule": "Special conditions properly identified and handled",
+      "expected_pass_rate": 0.80
+    }
+  ],
+
+  "performance_benchmarks": {
+    "ocr_accuracy": {
+      "clear_receipts": 0.98,
+      "faded_receipts": 0.85,
+      "crumpled_receipts": 0.75,
+      "handwritten_additions": 0.70
+    },
+    "extraction_speed": {
+      "simple_receipts": "< 1 second",
+      "complex_receipts": "< 3 seconds",
+      "multilingual_receipts": "< 5 seconds"
+    },
+    "confidence_thresholds": {
+      "auto_accept": 0.90,
+      "human_review": 0.70,
+      "manual_entry": 0.50
+    }
+  }
+}

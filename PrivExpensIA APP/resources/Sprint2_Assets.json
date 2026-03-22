@@ -1,0 +1,250 @@
+{
+  "version": "1.0.0",
+  "sprint": "Sprint 2",
+  "lastUpdated": "2025-01-11",
+  "description": "Design assets and specifications for Sprint 2 implementation",
+  
+  "colorPalette": {
+    "primary": {
+      "main": "#6437E3",
+      "light": "#8B66EA",
+      "dark": "#4A2AAA",
+      "contrast": "#FFFFFF"
+    },
+    "secondary": {
+      "main": "#00BCD4",
+      "light": "#4DD0E1",
+      "dark": "#0097A7",
+      "contrast": "#FFFFFF"
+    },
+    "categories": {
+      "food": "#4CAF50",
+      "restaurant": "#FF9800",
+      "hotel": "#9C27B0",
+      "transport": "#2196F3",
+      "taxi": "#FFC107",
+      "public_transport": "#00BCD4",
+      "gas": "#795548",
+      "parking": "#607D8B",
+      "office_supplies": "#3F51B5",
+      "entertainment": "#E91E63",
+      "training": "#009688",
+      "travel": "#FF5722",
+      "phone": "#8BC34A",
+      "internet": "#03A9F4",
+      "software": "#673AB7",
+      "hardware": "#455A64",
+      "other": "#9E9E9E"
+    },
+    "status": {
+      "draft": "#9E9E9E",
+      "pending": "#FFC107",
+      "approved": "#4CAF50",
+      "rejected": "#F44336",
+      "reimbursed": "#00BCD4",
+      "processing": "#FF9800"
+    },
+    "semantic": {
+      "error": "#F44336",
+      "warning": "#FF9800",
+      "info": "#2196F3",
+      "success": "#4CAF50"
+    }
+  },
+  
+  "icons": {
+    "navigation": {
+      "home": "house.fill",
+      "expenses": "doc.text.fill",
+      "reports": "chart.bar.fill",
+      "settings": "gearshape.fill",
+      "help": "questionmark.circle.fill",
+      "logout": "arrow.right.square.fill"
+    },
+    "actions": {
+      "add": "plus.circle.fill",
+      "edit": "pencil.circle.fill",
+      "delete": "trash.fill",
+      "save": "checkmark.circle.fill",
+      "cancel": "xmark.circle.fill",
+      "scan": "camera.fill",
+      "search": "magnifyingglass",
+      "filter": "line.3.horizontal.decrease.circle",
+      "export": "square.and.arrow.up",
+      "import": "square.and.arrow.down"
+    },
+    "categories": {
+      "note": "Use emoji icons from CategoryTemplates.json"
+    }
+  },
+  
+  "typography": {
+    "fonts": {
+      "primary": "SF Pro Display",
+      "secondary": "SF Pro Text",
+      "monospace": "SF Mono"
+    },
+    "sizes": {
+      "largeTitle": 34,
+      "title1": 28,
+      "title2": 22,
+      "title3": 20,
+      "headline": 17,
+      "body": 17,
+      "callout": 16,
+      "subheadline": 15,
+      "footnote": 13,
+      "caption1": 12,
+      "caption2": 11
+    }
+  },
+  
+  "spacing": {
+    "unit": 8,
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "xxl": 48
+  },
+  
+  "components": {
+    "button": {
+      "height": {
+        "large": 50,
+        "medium": 44,
+        "small": 32
+      },
+      "cornerRadius": 8,
+      "minWidth": 64
+    },
+    "card": {
+      "cornerRadius": 12,
+      "shadowRadius": 8,
+      "shadowOpacity": 0.1,
+      "padding": 16
+    },
+    "textField": {
+      "height": 44,
+      "cornerRadius": 8,
+      "borderWidth": 1
+    },
+    "receiptScanner": {
+      "frameColor": "#6437E3",
+      "frameWidth": 2,
+      "cornerMarkLength": 40,
+      "guidesColor": "#FFFFFF80"
+    }
+  },
+  
+  "animations": {
+    "duration": {
+      "instant": 0.1,
+      "fast": 0.25,
+      "normal": 0.35,
+      "slow": 0.5
+    },
+    "spring": {
+      "damping": 0.8,
+      "stiffness": 300
+    },
+    "curves": {
+      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+      "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+  
+  "reportTemplates": {
+    "monthly": {
+      "sections": ["summary", "by_category", "by_status", "details"],
+      "charts": ["pie", "bar", "line"],
+      "exportFormats": ["pdf", "excel", "csv"]
+    },
+    "quarterly": {
+      "sections": ["executive_summary", "trends", "comparisons", "forecast"],
+      "charts": ["stacked_bar", "area", "heatmap"],
+      "exportFormats": ["pdf", "powerpoint"]
+    }
+  },
+  
+  "quickActions": {
+    "fab": {
+      "icon": "plus",
+      "color": "#6437E3",
+      "size": 56,
+      "position": "bottom-right",
+      "margin": 16
+    },
+    "menu": [
+      {
+        "id": "scan_receipt",
+        "icon": "camera.fill",
+        "label": "Scan Receipt"
+      },
+      {
+        "id": "manual_entry",
+        "icon": "pencil",
+        "label": "Manual Entry"
+      },
+      {
+        "id": "quick_expense",
+        "icon": "bolt.fill",
+        "label": "Quick Expense"
+      }
+    ]
+  },
+  
+  "launchScreen": {
+    "logo": "PrivExpensIA_Logo",
+    "backgroundColor": "#FFFFFF",
+    "progressColor": "#6437E3",
+    "animationDuration": 2.0
+  },
+  
+  "onboarding": {
+    "screens": [
+      {
+        "id": "welcome",
+        "image": "onboarding_welcome",
+        "title": "Welcome to PrivExpensIA",
+        "description": "Simplify your expense management"
+      },
+      {
+        "id": "scan",
+        "image": "onboarding_scan",
+        "title": "Scan Receipts Instantly",
+        "description": "AI-powered receipt scanning"
+      },
+      {
+        "id": "organize",
+        "image": "onboarding_organize",
+        "title": "Stay Organized",
+        "description": "Automatic categorization and VAT calculation"
+      },
+      {
+        "id": "report",
+        "image": "onboarding_report",
+        "title": "Generate Reports",
+        "description": "Professional reports in seconds"
+      }
+    ]
+  },
+  
+  "accessibility": {
+    "minimumTouchTarget": 44,
+    "contrastRatio": {
+      "normal": 4.5,
+      "large": 3.0
+    },
+    "voiceOver": {
+      "enabled": true,
+      "hints": true
+    },
+    "dynamicType": {
+      "supported": true,
+      "maxSize": "xxxLarge"
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "description": "Advanced extraction rules for receipt parsing",
+  
+  "patterns": {
+    "amount": {
+      "currencies": {
+        "CHF": {
+          "patterns": [
+            "CHF\\s*([0-9]+[',.]?[0-9]*)",
+            "([0-9]+[',.]?[0-9]*)\\s*CHF",
+            "Fr\\.?\\s*([0-9]+[',.]?[0-9]*)",
+            "SFr\\.?\\s*([0-9]+[',.]?[0-9]*)"
+          ],
+          "decimal_separator": ".",
+          "thousands_separator": "'"
+        },
+        "EUR": {
+          "patterns": [
+            "EUR\\s*([0-9]+[',.]?[0-9]*)",
+            "€\\s*([0-9]+[',.]?[0-9]*)",
+            "([0-9]+[',.]?[0-9]*)\\s*€",
+            "([0-9]+[',.]?[0-9]*)\\s*EUR"
+          ],
+          "decimal_separator": ",",
+          "thousands_separator": "."
+        },
+        "USD": {
+          "patterns": [
+            "\\$\\s*([0-9]+[',.]?[0-9]*)",
+            "USD\\s*([0-9]+[',.]?[0-9]*)",
+            "([0-9]+[',.]?[0-9]*)\\s*USD",
+            "US\\$\\s*([0-9]+[',.]?[0-9]*)"
+          ],
+          "decimal_separator": ".",
+          "thousands_separator": ","
+        },
+        "JPY": {
+          "patterns": [
+            "¥\\s*([0-9]+)",
+            "￥\\s*([0-9]+)",
+            "([0-9]+)\\s*円",
+            "JPY\\s*([0-9]+)"
+          ],
+          "decimal_separator": null,
+          "thousands_separator": ","
+        },
+        "GBP": {
+          "patterns": [
+            "£\\s*([0-9]+[',.]?[0-9]*)",
+            "GBP\\s*([0-9]+[',.]?[0-9]*)",
+            "([0-9]+[',.]?[0-9]*)\\s*GBP"
+          ],
+          "decimal_separator": ".",
+          "thousands_separator": ","
+        }
+      },
+      "total_keywords": {
+        "en": ["total", "amount due", "grand total", "balance due"],
+        "fr": ["total", "montant total", "total ttc", "à payer"],
+        "de": ["gesamt", "gesamtbetrag", "summe", "endbetrag"],
+        "it": ["totale", "importo totale", "totale da pagare"],
+        "ja": ["合計", "総額", "お会計", "合計金額"]
+      },
+      "subtotal_keywords": {
+        "en": ["subtotal", "sub-total", "net amount"],
+        "fr": ["sous-total", "montant ht", "total ht"],
+        "de": ["zwischensumme", "nettobetrag"],
+        "it": ["subtotale", "imponibile"],
+        "ja": ["小計", "税抜"]
+      }
+    },
+    
+    "date": {
+      "formats": [
+        {
+          "pattern": "\\d{2}\\.\\d{2}\\.\\d{4}",
+          "format": "dd.MM.yyyy",
+          "regions": ["CH", "DE", "AT"]
+        },
+        {
+          "pattern": "\\d{2}/\\d{2}/\\d{4}",
+          "format": "dd/MM/yyyy",
+          "regions": ["FR", "IT", "ES"]
+        },
+        {
+          "pattern": "\\d{2}/\\d{2}/\\d{4}",
+          "format": "MM/dd/yyyy",
+          "regions": ["US"]
+        },
+        {
+          "pattern": "\\d{4}年\\d{1,2}月\\d{1,2}日",
+          "format": "yyyy年MM月dd日",
+          "regions": ["JP"]
+        },
+        {
+          "pattern": "\\d{4}-\\d{2}-\\d{2}",
+          "format": "yyyy-MM-dd",
+          "regions": ["ISO", "KR"]
+        },
+        {
+          "pattern": "\\d{1,2}\\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s+\\d{4}",
+          "format": "d MMM yyyy",
+          "regions": ["UK", "US"]
+        }
+      ],
+      "keywords": {
+        "en": ["date", "dated", "transaction date"],
+        "fr": ["date", "le", "du"],
+        "de": ["datum", "am", "vom"],
+        "it": ["data", "il", "del"],
+        "ja": ["日付", "日時"]
+      }
+    },
+    
+    "time": {
+      "patterns": [
+        "\\d{1,2}:\\d{2}(:\\d{2})?",
+        "\\d{1,2}h\\d{2}",
+        "\\d{1,2}[:.][0-9]{2}\\s*(AM|PM|am|pm)"
+      ],
+      "keywords": {
+        "en": ["time", "at"],
+        "fr": ["heure", "à"],
+        "de": ["zeit", "uhrzeit", "um"],
+        "it": ["ora", "alle"],
+        "ja": ["時刻", "時間"]
+      }
+    },
+    
+    "merchant": {
+      "extraction_rules": [
+        {
+          "priority": 1,
+          "location": "header",
+          "patterns": [
+            "^([A-Z][A-Za-z0-9\\s&.-]+)(?=\\n)",
+            "^(.+?)\\n(?=.*[Aa]ddress|.*[Ss]tr\\.?|.*[Pp]latz)"
+          ]
+        },
+        {
+          "priority": 2,
+          "location": "near_logo",
+          "max_lines": 3
+        },
+        {
+          "priority": 3,
+          "location": "before_items",
+          "max_lines": 5
+        }
+      ],
+      "cleaning_rules": [
+        "Remove 'GmbH', 'AG', 'SA', 'Inc', 'Ltd' at end",
+        "Trim whitespace",
+        "Remove special characters except &.-",
+        "Title case normalization"
+      ]
+    },
+    
+    "vat_number": {
+      "patterns": {
+        "CH": "CHE-?\\d{3}\\.?\\d{3}\\.?\\d{3}\\s*(MWST|TVA|IVA)?",
+        "DE": "DE\\s?\\d{9}",
+        "FR": "FR\\s?[A-Z0-9]{2}\\s?\\d{9}",
+        "IT": "IT\\s?\\d{11}",
+        "GB": "GB\\s?\\d{9}(\\d{3})?",
+        "AT": "ATU\\s?\\d{8}",
+        "NL": "NL\\s?\\d{9}B\\d{2}",
+        "BE": "BE\\s?0?\\d{9}",
+        "ES": "ES\\s?[A-Z]\\d{7}[A-Z0-9]",
+        "JP": "T\\d{13}"
+      },
+      "keywords": [
+        "VAT", "TVA", "MwSt", "MWST", "IVA", "BTW",
+        "VAT ID", "VAT No", "Tax ID", "GST"
+      ]
+    },
+    
+    "receipt_number": {
+      "patterns": [
+        "(?:Receipt|Invoice|Trans|Ticket|Bill)\\s*(?:No|#|Number)?\\s*:?\\s*([A-Z0-9-]+)",
+        "(?:Reçu|Facture|Quittung|Rechnung)\\s*(?:Nr|N°)?\\s*:?\\s*([A-Z0-9-]+)",
+        "(?:レシート|領収書)\\s*(?:番号)?\\s*:?\\s*([A-Z0-9-]+)",
+        "#\\s*([A-Z0-9-]+)"
+      ],
+      "formats": {
+        "alphanumeric": "[A-Z]{2,4}-\\d{4,10}",
+        "numeric": "\\d{6,12}",
+        "composite": "\\d{4}-\\d{2}-\\d{2}-\\d{4,6}"
+      }
+    },
+    
+    "items": {
+      "line_patterns": [
+        {
+          "type": "quantity_description_price",
+          "pattern": "(\\d+)\\s+(.+?)\\s+([0-9]+[.,]\\d{2})"
+        },
+        {
+          "type": "description_price",
+          "pattern": "(.+?)\\s+([0-9]+[.,]\\d{2})$"
+        },
+        {
+          "type": "code_description_price",
+          "pattern": "([A-Z0-9]{3,})\\s+(.+?)\\s+([0-9]+[.,]\\d{2})"
+        }
+      ],
+      "price_alignment": {
+        "right_aligned": true,
+        "decimal_aligned": true,
+        "column_detection": true
+      }
+    },
+    
+    "tax": {
+      "line_detection": {
+        "keywords": {
+          "en": ["tax", "vat", "gst", "sales tax"],
+          "fr": ["tva", "taxe"],
+          "de": ["mwst", "mehrwertsteuer", "ust"],
+          "it": ["iva", "imposta"],
+          "ja": ["消費税", "税"]
+        },
+        "patterns": [
+          "(?:Tax|VAT|TVA|MwSt|IVA)\\s*@?\\s*(\\d+(?:[.,]\\d+)?)\\s*%",
+          "(?:Tax|VAT|TVA|MwSt|IVA)\\s*\\(?\\s*(\\d+(?:[.,]\\d+)?)\\s*%\\s*\\)?\\s*:?\\s*([0-9]+[.,]\\d{2})"
+        ]
+      },
+      "calculation_validation": {
+        "tolerance": 0.01,
+        "rounding_rules": {
+          "CH": "0.05",
+          "EU": "0.01",
+          "JP": "1"
+        }
+      }
+    }
+  },
+  
+  "extraction_order": [
+    "merchant",
+    "date",
+    "time",
+    "vat_number",
+    "receipt_number",
+    "items",
+    "tax",
+    "subtotal",
+    "total"
+  ],
+  
+  "confidence_thresholds": {
+    "high": 0.9,
+    "medium": 0.7,
+    "low": 0.5,
+    "reject": 0.3
+  },
+  
+  "validation_rules": {
+    "total_calculation": {
+      "formula": "subtotal + tax = total",
+      "tolerance": 0.02
+    },
+    "date_validation": {
+      "not_future": true,
+      "max_age_days": 365
+    },
+    "amount_validation": {
+      "min": 0.01,
+      "max": 999999.99,
+      "currency_required": true
+    }
+  }
+}

@@ -1,0 +1,435 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "categories": {
+    "food": {
+      "icon": "🍽️",
+      "color": "#4CAF50",
+      "translations": {
+        "fr-CH": "Alimentation",
+        "de-CH": "Lebensmittel",
+        "it-CH": "Alimentari",
+        "en": "Food",
+        "ja": "食料品",
+        "ko": "식료품",
+        "sk": "Potraviny",
+        "es": "Alimentación"
+      },
+      "defaultVAT": {
+        "CH": 2.5,
+        "DE": 7,
+        "FR": 5.5,
+        "JP": 8,
+        "US": "varies"
+      }
+    },
+    "restaurant": {
+      "icon": "🍴",
+      "color": "#FF9800",
+      "translations": {
+        "fr-CH": "Restaurant",
+        "de-CH": "Restaurant",
+        "it-CH": "Ristorante",
+        "en": "Restaurant",
+        "ja": "飲食店",
+        "ko": "식당",
+        "sk": "Reštaurácia",
+        "es": "Restaurante"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 10,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "hotel": {
+      "icon": "🏨",
+      "color": "#9C27B0",
+      "translations": {
+        "fr-CH": "Hôtel",
+        "de-CH": "Hotel",
+        "it-CH": "Hotel",
+        "en": "Hotel",
+        "ja": "宿泊",
+        "ko": "숙박",
+        "sk": "Hotel",
+        "es": "Hotel"
+      },
+      "defaultVAT": {
+        "CH": 3.7,
+        "DE": 7,
+        "FR": 10,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "transport": {
+      "icon": "🚗",
+      "color": "#2196F3",
+      "translations": {
+        "fr-CH": "Transport",
+        "de-CH": "Transport",
+        "it-CH": "Trasporto",
+        "en": "Transport",
+        "ja": "交通費",
+        "ko": "교통",
+        "sk": "Doprava",
+        "es": "Transporte"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 10,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "taxi": {
+      "icon": "🚕",
+      "color": "#FFC107",
+      "translations": {
+        "fr-CH": "Taxi",
+        "de-CH": "Taxi",
+        "it-CH": "Taxi",
+        "en": "Taxi",
+        "ja": "タクシー",
+        "ko": "택시",
+        "sk": "Taxi",
+        "es": "Taxi"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 7,
+        "FR": 10,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "public_transport": {
+      "icon": "🚌",
+      "color": "#00BCD4",
+      "translations": {
+        "fr-CH": "Transports publics",
+        "de-CH": "Öffentlicher Verkehr",
+        "it-CH": "Trasporti pubblici",
+        "en": "Public Transport",
+        "ja": "公共交通機関",
+        "ko": "대중교통",
+        "sk": "Verejná doprava",
+        "es": "Transporte público"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 7,
+        "FR": 10,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "gas": {
+      "icon": "⛽",
+      "color": "#795548",
+      "translations": {
+        "fr-CH": "Essence",
+        "de-CH": "Benzin",
+        "it-CH": "Benzina",
+        "en": "Gas",
+        "ja": "ガソリン",
+        "ko": "주유",
+        "sk": "Benzín",
+        "es": "Gasolina"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "parking": {
+      "icon": "🅿️",
+      "color": "#607D8B",
+      "translations": {
+        "fr-CH": "Parking",
+        "de-CH": "Parkplatz",
+        "it-CH": "Parcheggio",
+        "en": "Parking",
+        "ja": "駐車場",
+        "ko": "주차",
+        "sk": "Parkovanie",
+        "es": "Aparcamiento"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "office_supplies": {
+      "icon": "📎",
+      "color": "#3F51B5",
+      "translations": {
+        "fr-CH": "Fournitures de bureau",
+        "de-CH": "Büromaterial",
+        "it-CH": "Forniture per ufficio",
+        "en": "Office Supplies",
+        "ja": "事務用品",
+        "ko": "사무용품",
+        "sk": "Kancelárske potreby",
+        "es": "Material de oficina"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "entertainment": {
+      "icon": "🎭",
+      "color": "#E91E63",
+      "translations": {
+        "fr-CH": "Divertissement",
+        "de-CH": "Unterhaltung",
+        "it-CH": "Intrattenimento",
+        "en": "Entertainment",
+        "ja": "接待交際費",
+        "ko": "접대",
+        "sk": "Zábava",
+        "es": "Entretenimiento"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "training": {
+      "icon": "📚",
+      "color": "#009688",
+      "translations": {
+        "fr-CH": "Formation",
+        "de-CH": "Schulung",
+        "it-CH": "Formazione",
+        "en": "Training",
+        "ja": "研修",
+        "ko": "교육",
+        "sk": "Školenie",
+        "es": "Formación"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "travel": {
+      "icon": "✈️",
+      "color": "#FF5722",
+      "translations": {
+        "fr-CH": "Voyage",
+        "de-CH": "Reise",
+        "it-CH": "Viaggio",
+        "en": "Travel",
+        "ja": "出張",
+        "ko": "출장",
+        "sk": "Cestovanie",
+        "es": "Viaje"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 10,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "phone": {
+      "icon": "📱",
+      "color": "#8BC34A",
+      "translations": {
+        "fr-CH": "Téléphone",
+        "de-CH": "Telefon",
+        "it-CH": "Telefono",
+        "en": "Phone",
+        "ja": "電話",
+        "ko": "전화",
+        "sk": "Telefón",
+        "es": "Teléfono"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "internet": {
+      "icon": "🌐",
+      "color": "#03A9F4",
+      "translations": {
+        "fr-CH": "Internet",
+        "de-CH": "Internet",
+        "it-CH": "Internet",
+        "en": "Internet",
+        "ja": "インターネット",
+        "ko": "인터넷",
+        "sk": "Internet",
+        "es": "Internet"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "software": {
+      "icon": "💻",
+      "color": "#673AB7",
+      "translations": {
+        "fr-CH": "Logiciel",
+        "de-CH": "Software",
+        "it-CH": "Software",
+        "en": "Software",
+        "ja": "ソフトウェア",
+        "ko": "소프트웨어",
+        "sk": "Softvér",
+        "es": "Software"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "hardware": {
+      "icon": "🖥️",
+      "color": "#455A64",
+      "translations": {
+        "fr-CH": "Matériel",
+        "de-CH": "Hardware",
+        "it-CH": "Hardware",
+        "en": "Hardware",
+        "ja": "ハードウェア",
+        "ko": "하드웨어",
+        "sk": "Hardvér",
+        "es": "Hardware"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    },
+    "other": {
+      "icon": "📋",
+      "color": "#9E9E9E",
+      "translations": {
+        "fr-CH": "Autre",
+        "de-CH": "Sonstiges",
+        "it-CH": "Altro",
+        "en": "Other",
+        "ja": "その他",
+        "ko": "기타",
+        "sk": "Iné",
+        "es": "Otro"
+      },
+      "defaultVAT": {
+        "CH": 8.1,
+        "DE": 19,
+        "FR": 20,
+        "JP": 10,
+        "US": "varies"
+      }
+    }
+  },
+  "quickExpenseTemplates": {
+    "coffee": {
+      "category": "food",
+      "icon": "☕",
+      "translations": {
+        "fr-CH": "Café",
+        "de-CH": "Kaffee",
+        "it-CH": "Caffè",
+        "en": "Coffee",
+        "ja": "コーヒー",
+        "ko": "커피",
+        "sk": "Káva",
+        "es": "Café"
+      }
+    },
+    "lunch": {
+      "category": "restaurant",
+      "icon": "🍱",
+      "translations": {
+        "fr-CH": "Déjeuner",
+        "de-CH": "Mittagessen",
+        "it-CH": "Pranzo",
+        "en": "Lunch",
+        "ja": "昼食",
+        "ko": "점심",
+        "sk": "Obed",
+        "es": "Almuerzo"
+      }
+    },
+    "dinner": {
+      "category": "restaurant",
+      "icon": "🍽️",
+      "translations": {
+        "fr-CH": "Dîner",
+        "de-CH": "Abendessen",
+        "it-CH": "Cena",
+        "en": "Dinner",
+        "ja": "夕食",
+        "ko": "저녁",
+        "sk": "Večera",
+        "es": "Cena"
+      }
+    },
+    "train": {
+      "category": "public_transport",
+      "icon": "🚆",
+      "translations": {
+        "fr-CH": "Train",
+        "de-CH": "Zug",
+        "it-CH": "Treno",
+        "en": "Train",
+        "ja": "電車",
+        "ko": "기차",
+        "sk": "Vlak",
+        "es": "Tren"
+      }
+    },
+    "flight": {
+      "category": "travel",
+      "icon": "✈️",
+      "translations": {
+        "fr-CH": "Vol",
+        "de-CH": "Flug",
+        "it-CH": "Volo",
+        "en": "Flight",
+        "ja": "フライト",
+        "ko": "항공",
+        "sk": "Let",
+        "es": "Vuelo"
+      }
+    }
+  }
+}

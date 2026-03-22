@@ -1,0 +1,479 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "countries": {
+    "CH": {
+      "name": "Switzerland",
+      "currency": "CHF",
+      "vatRates": {
+        "standard": 8.1,
+        "reduced": 2.5,
+        "accommodation": 3.7,
+        "special": 2.5
+      },
+      "categories": {
+        "food": {
+          "rate": 2.5,
+          "type": "reduced",
+          "description": "Basic food items and non-alcoholic beverages"
+        },
+        "restaurant": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Restaurant and catering services"
+        },
+        "hotel": {
+          "rate": 3.7,
+          "type": "accommodation",
+          "description": "Hotel accommodation and lodging"
+        },
+        "transport": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Transportation services"
+        },
+        "taxi": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Taxi and ride services"
+        },
+        "public_transport": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Public transportation"
+        },
+        "gas": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Fuel and gas"
+        },
+        "parking": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Parking fees"
+        },
+        "office_supplies": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Office materials and supplies"
+        },
+        "entertainment": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Entertainment and leisure"
+        },
+        "training": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Training and education services"
+        },
+        "software": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Software and digital services"
+        },
+        "hardware": {
+          "rate": 8.1,
+          "type": "standard",
+          "description": "Computer hardware and equipment"
+        }
+      }
+    },
+    "DE": {
+      "name": "Germany",
+      "currency": "EUR",
+      "vatRates": {
+        "standard": 19,
+        "reduced": 7
+      },
+      "categories": {
+        "food": {
+          "rate": 7,
+          "type": "reduced",
+          "description": "Food and non-alcoholic beverages"
+        },
+        "restaurant": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Restaurant services (eat-in)",
+          "note": "Reduced to 7% for takeaway"
+        },
+        "hotel": {
+          "rate": 7,
+          "type": "reduced",
+          "description": "Hotel accommodation"
+        },
+        "transport": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Long-distance transport",
+          "note": "Local public transport is 7%"
+        },
+        "taxi": {
+          "rate": 7,
+          "type": "reduced",
+          "description": "Taxi services (local transport)"
+        },
+        "public_transport": {
+          "rate": 7,
+          "type": "reduced",
+          "description": "Public transport (local)"
+        },
+        "gas": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Fuel and gas"
+        },
+        "parking": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Parking services"
+        },
+        "office_supplies": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Office supplies"
+        },
+        "entertainment": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Entertainment services"
+        },
+        "training": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Training and education",
+          "note": "May be exempt for certain educational services"
+        },
+        "software": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Software and digital services"
+        },
+        "hardware": {
+          "rate": 19,
+          "type": "standard",
+          "description": "Computer hardware"
+        }
+      }
+    },
+    "FR": {
+      "name": "France",
+      "currency": "EUR",
+      "vatRates": {
+        "standard": 20,
+        "intermediate": 10,
+        "reduced": 5.5,
+        "super_reduced": 2.1
+      },
+      "categories": {
+        "food": {
+          "rate": 5.5,
+          "type": "reduced",
+          "description": "Food products"
+        },
+        "restaurant": {
+          "rate": 10,
+          "type": "intermediate",
+          "description": "Restaurant services",
+          "note": "5.5% for takeaway food"
+        },
+        "hotel": {
+          "rate": 10,
+          "type": "intermediate",
+          "description": "Hotel accommodation"
+        },
+        "transport": {
+          "rate": 10,
+          "type": "intermediate",
+          "description": "Passenger transport"
+        },
+        "taxi": {
+          "rate": 10,
+          "type": "intermediate",
+          "description": "Taxi services"
+        },
+        "public_transport": {
+          "rate": 10,
+          "type": "intermediate",
+          "description": "Public transportation"
+        },
+        "gas": {
+          "rate": 20,
+          "type": "standard",
+          "description": "Fuel and gas"
+        },
+        "parking": {
+          "rate": 20,
+          "type": "standard",
+          "description": "Parking services"
+        },
+        "office_supplies": {
+          "rate": 20,
+          "type": "standard",
+          "description": "Office supplies"
+        },
+        "entertainment": {
+          "rate": 20,
+          "type": "standard",
+          "description": "Entertainment services",
+          "note": "5.5% for certain cultural events"
+        },
+        "training": {
+          "rate": 20,
+          "type": "standard",
+          "description": "Training services"
+        },
+        "software": {
+          "rate": 20,
+          "type": "standard",
+          "description": "Software and digital services"
+        },
+        "hardware": {
+          "rate": 20,
+          "type": "standard",
+          "description": "Computer hardware"
+        }
+      }
+    },
+    "JP": {
+      "name": "Japan",
+      "currency": "JPY",
+      "vatRates": {
+        "standard": 10,
+        "reduced": 8
+      },
+      "categories": {
+        "food": {
+          "rate": 8,
+          "type": "reduced",
+          "description": "Food and beverages (excluding alcohol)"
+        },
+        "restaurant": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Restaurant services (eat-in)",
+          "note": "8% for takeaway"
+        },
+        "hotel": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Hotel accommodation"
+        },
+        "transport": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Transportation services"
+        },
+        "taxi": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Taxi services"
+        },
+        "public_transport": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Public transportation"
+        },
+        "gas": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Fuel and gas"
+        },
+        "parking": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Parking services"
+        },
+        "office_supplies": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Office supplies"
+        },
+        "entertainment": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Entertainment services"
+        },
+        "training": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Training and education"
+        },
+        "software": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Software and digital services"
+        },
+        "hardware": {
+          "rate": 10,
+          "type": "standard",
+          "description": "Computer hardware"
+        }
+      }
+    },
+    "US": {
+      "name": "United States",
+      "currency": "USD",
+      "vatRates": {
+        "note": "Sales tax varies by state and locality"
+      },
+      "states": {
+        "CA": {
+          "name": "California",
+          "baseTax": 7.25,
+          "avgTotalTax": 8.85,
+          "note": "Additional district taxes may apply"
+        },
+        "NY": {
+          "name": "New York",
+          "baseTax": 4,
+          "avgTotalTax": 8.52,
+          "note": "NYC adds 4.5% local tax"
+        },
+        "TX": {
+          "name": "Texas",
+          "baseTax": 6.25,
+          "avgTotalTax": 8.20,
+          "note": "Local jurisdictions can add up to 2%"
+        },
+        "FL": {
+          "name": "Florida",
+          "baseTax": 6,
+          "avgTotalTax": 7.01,
+          "note": "Counties may add additional tax"
+        },
+        "WA": {
+          "name": "Washington",
+          "baseTax": 6.5,
+          "avgTotalTax": 9.29,
+          "note": "High local taxes in some areas"
+        },
+        "OR": {
+          "name": "Oregon",
+          "baseTax": 0,
+          "avgTotalTax": 0,
+          "note": "No state sales tax"
+        },
+        "MT": {
+          "name": "Montana",
+          "baseTax": 0,
+          "avgTotalTax": 0,
+          "note": "No state sales tax"
+        },
+        "NH": {
+          "name": "New Hampshire",
+          "baseTax": 0,
+          "avgTotalTax": 0,
+          "note": "No state sales tax"
+        },
+        "DE": {
+          "name": "Delaware",
+          "baseTax": 0,
+          "avgTotalTax": 0,
+          "note": "No state sales tax"
+        },
+        "AK": {
+          "name": "Alaska",
+          "baseTax": 0,
+          "avgTotalTax": 1.76,
+          "note": "No state tax, but local taxes exist"
+        }
+      },
+      "categories": {
+        "food": {
+          "note": "Often exempt or reduced in many states"
+        },
+        "restaurant": {
+          "note": "Generally taxed at standard rate"
+        },
+        "hotel": {
+          "note": "Often subject to additional occupancy taxes"
+        },
+        "transport": {
+          "note": "Varies by state and type"
+        },
+        "gas": {
+          "note": "Subject to specific fuel taxes, not sales tax"
+        },
+        "software": {
+          "note": "Taxability varies significantly by state"
+        }
+      }
+    }
+  },
+  "specialRules": {
+    "CH": {
+      "thresholds": {
+        "registration": 100000,
+        "currency": "CHF",
+        "description": "Businesses must register for VAT if annual turnover exceeds CHF 100,000"
+      },
+      "exceptions": {
+        "medical": "Medical services generally exempt",
+        "education": "Educational services exempt",
+        "insurance": "Insurance services exempt",
+        "financial": "Most financial services exempt"
+      }
+    },
+    "DE": {
+      "thresholds": {
+        "registration": 22000,
+        "currency": "EUR",
+        "description": "Small business threshold is EUR 22,000 annual turnover"
+      },
+      "exceptions": {
+        "medical": "Medical services exempt",
+        "books": "Books and newspapers at 7% reduced rate",
+        "takeaway": "Restaurant takeaway at 7% (vs 19% eat-in)",
+        "public_transport": "Short-distance public transport at 7%"
+      }
+    },
+    "FR": {
+      "thresholds": {
+        "goods": 85800,
+        "services": 34400,
+        "currency": "EUR",
+        "description": "Different thresholds for goods and services"
+      },
+      "exceptions": {
+        "medical": "Medical services exempt",
+        "books": "Books at 5.5% reduced rate",
+        "newspapers": "Newspapers at 2.1% super-reduced rate",
+        "medicines": "Reimbursable medicines at 2.1%",
+        "cultural": "Theater and cinema at 5.5%"
+      }
+    },
+    "JP": {
+      "thresholds": {
+        "registration": 10000000,
+        "currency": "JPY",
+        "description": "Businesses with turnover under JPY 10 million may be exempt"
+      },
+      "exceptions": {
+        "medical": "Medical services exempt",
+        "education": "Educational services exempt",
+        "residential_rent": "Residential rent exempt",
+        "takeaway": "Restaurant takeaway at 8% reduced rate"
+      }
+    },
+    "US": {
+      "exceptions": {
+        "food": "Groceries often exempt in many states",
+        "prescription": "Prescription drugs often exempt",
+        "clothing": "Clothing exempt in some states (e.g., PA, NJ)",
+        "services": "Many services not taxed in various states",
+        "digital": "Digital goods taxation varies widely by state"
+      }
+    }
+  },
+  "metadata": {
+    "sources": [
+      "Official government tax websites",
+      "OECD Tax Database 2024",
+      "PwC Worldwide Tax Summaries"
+    ],
+    "disclaimer": "Tax rates are subject to change. Always verify with official sources for current rates.",
+    "lastVerified": "2025-01-11"
+  }
+}

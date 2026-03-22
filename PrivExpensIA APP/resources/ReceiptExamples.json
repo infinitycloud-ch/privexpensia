@@ -1,0 +1,173 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "description": "Sample receipt formats by region for testing and validation",
+  "regions": {
+    "CH": {
+      "country": "Switzerland",
+      "currency": "CHF",
+      "dateFormat": "dd.MM.yyyy",
+      "example": {
+        "merchant": "Migros Zürich HB",
+        "date": "11.01.2025",
+        "items": [
+          {"name": "Sandwich Club", "price": 8.50, "vat": "2.5%"},
+          {"name": "Coca-Cola 0.5L", "price": 3.20, "vat": "2.5%"},
+          {"name": "Apfel Bio", "price": 2.80, "vat": "2.5%"}
+        ],
+        "subtotal": 14.50,
+        "vatAmount": 0.36,
+        "total": 14.50,
+        "vatNumber": "CHE-123.456.789 MWST",
+        "receiptNumber": "001-2025-0111-4567"
+      }
+    },
+    "DE": {
+      "country": "Germany",
+      "currency": "EUR",
+      "dateFormat": "dd.MM.yyyy",
+      "example": {
+        "merchant": "REWE München Hbf",
+        "date": "11.01.2025",
+        "items": [
+          {"name": "Belegtes Brötchen", "price": 3.99, "vat": "7%"},
+          {"name": "Kaffee to go", "price": 2.49, "vat": "19%"},
+          {"name": "Mineralwasser 0.5L", "price": 1.29, "vat": "19%"}
+        ],
+        "subtotal": 7.77,
+        "vatBreakdown": {
+          "7%": 0.26,
+          "19%": 0.59
+        },
+        "total": 7.77,
+        "vatNumber": "DE123456789",
+        "receiptNumber": "KN-2025-0111-8901"
+      }
+    },
+    "FR": {
+      "country": "France",
+      "currency": "EUR",
+      "dateFormat": "dd/MM/yyyy",
+      "example": {
+        "merchant": "Carrefour Paris Montparnasse",
+        "date": "11/01/2025",
+        "items": [
+          {"name": "Sandwich Jambon", "price": 4.50, "vat": "5.5%"},
+          {"name": "Eau Evian 50cl", "price": 1.80, "vat": "5.5%"},
+          {"name": "Journal Le Monde", "price": 2.60, "vat": "2.1%"}
+        ],
+        "subtotal": 8.90,
+        "vatBreakdown": {
+          "2.1%": 0.05,
+          "5.5%": 0.33
+        },
+        "total": 8.90,
+        "vatNumber": "FR12345678901",
+        "siret": "123 456 789 00012",
+        "receiptNumber": "TIC-2025-0111-3456"
+      }
+    },
+    "JP": {
+      "country": "Japan",
+      "currency": "JPY",
+      "dateFormat": "yyyy年MM月dd日",
+      "example": {
+        "merchant": "セブンイレブン 東京駅前店",
+        "date": "2025年01月11日",
+        "items": [
+          {"name": "おにぎり鮭", "price": 150, "vat": "8%"},
+          {"name": "サンドイッチ", "price": 398, "vat": "8%"},
+          {"name": "コーヒー", "price": 110, "vat": "8%"}
+        ],
+        "subtotal": 658,
+        "vatAmount": 49,
+        "total": 707,
+        "receiptNumber": "レシート番号：2025-0111-5678",
+        "storeNumber": "店舗：10234"
+      }
+    },
+    "US": {
+      "country": "United States",
+      "currency": "USD",
+      "dateFormat": "MM/dd/yyyy",
+      "example_NY": {
+        "merchant": "Starbucks Times Square",
+        "date": "01/11/2025",
+        "state": "NY",
+        "items": [
+          {"name": "Caffe Latte Grande", "price": 5.75},
+          {"name": "Croissant", "price": 3.95}
+        ],
+        "subtotal": 9.70,
+        "salesTax": "8.875%",
+        "taxAmount": 0.86,
+        "total": 10.56,
+        "receiptNumber": "TRX-2025011-9876"
+      },
+      "example_CA": {
+        "merchant": "Whole Foods San Francisco",
+        "date": "01/11/2025",
+        "state": "CA",
+        "items": [
+          {"name": "Organic Salad", "price": 12.99},
+          {"name": "Kombucha", "price": 4.99}
+        ],
+        "subtotal": 17.98,
+        "salesTax": "8.625%",
+        "taxAmount": 1.55,
+        "total": 19.53,
+        "receiptNumber": "WF-SF-20250111-4321"
+      }
+    },
+    "GB": {
+      "country": "United Kingdom",
+      "currency": "GBP",
+      "dateFormat": "dd/MM/yyyy",
+      "example": {
+        "merchant": "Tesco Express London",
+        "date": "11/01/2025",
+        "items": [
+          {"name": "Meal Deal", "price": 3.50, "vat": "0%"},
+          {"name": "Coffee", "price": 2.95, "vat": "20%"}
+        ],
+        "subtotal": 6.45,
+        "vatAmount": 0.49,
+        "total": 6.45,
+        "vatNumber": "GB123456789",
+        "receiptNumber": "LON-2025-0111-6789"
+      }
+    }
+  },
+  "commonFields": {
+    "all_regions": [
+      "merchant_name",
+      "date",
+      "total_amount",
+      "receipt_number"
+    ],
+    "vat_regions": [
+      "CH", "DE", "FR", "JP", "GB"
+    ],
+    "sales_tax_regions": [
+      "US"
+    ]
+  },
+  "vatFormats": {
+    "CH": {
+      "format": "CHE-XXX.XXX.XXX MWST",
+      "name": "Mehrwertsteuer"
+    },
+    "DE": {
+      "format": "DEXXXXXXXXX",
+      "name": "Umsatzsteuer"
+    },
+    "FR": {
+      "format": "FRXXXXXXXXXXX",
+      "name": "TVA"
+    },
+    "GB": {
+      "format": "GBXXXXXXXXX",
+      "name": "VAT"
+    }
+  }
+}

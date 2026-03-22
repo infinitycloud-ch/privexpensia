@@ -1,0 +1,202 @@
+{
+  "version": "1.0",
+  "description": "Swiss receipt test dataset for extraction validation",
+  "created": "2026-01-15",
+  "testCases": [
+    {
+      "id": "migros_01",
+      "description": "Migros supermarket - standard format",
+      "text": "MIGROS\nRue du Marché 12\n1204 Genève\n\nLait entier 1L          3.50\nPain mi-blanc           2.80\nBananes 1kg             2.95\nFromage Gruyère         8.75\n------------------------\nTOTAL CHF              18.00\nTVA 2.5%                0.44\n\n15.01.2026 14:32\nMerci de votre visite!",
+      "expected": {
+        "merchant": "Migros",
+        "amount": 18.00,
+        "taxAmount": 0.44,
+        "category": "food",
+        "currency": "CHF",
+        "date": "2026-01-15"
+      }
+    },
+    {
+      "id": "coop_01",
+      "description": "Coop supermarket - Swiss German format",
+      "text": "Coop\nBahnhofstrasse 45\n8001 Zürich\n\nMilch 1L                3.20\nBrot Ruchbrot           3.50\nÄpfel 1kg               4.80\nJoghurt Nature          1.90\n\nTotal                  13.40\ninkl. MwSt 2.5%         0.33\n\nDatum: 14.01.26\nZeit: 09:15\nDanke für Ihren Einkauf",
+      "expected": {
+        "merchant": "Coop",
+        "amount": 13.40,
+        "taxAmount": 0.33,
+        "category": "food",
+        "currency": "CHF",
+        "date": "2026-01-14"
+      }
+    },
+    {
+      "id": "denner_01",
+      "description": "Denner discount - minimal format",
+      "text": "DENNER\nAv. de la Gare 8\n1003 Lausanne\n\nBière 6x50cl           12.90\nChips sel               3.40\nPizza surgelée          5.90\n\nSomme CHF              22.20\n\n13/01/2026",
+      "expected": {
+        "merchant": "Denner",
+        "amount": 22.20,
+        "taxAmount": 0,
+        "category": "food",
+        "currency": "CHF",
+        "date": "2026-01-13"
+      }
+    },
+    {
+      "id": "restaurant_01",
+      "description": "Restaurant - French format with tip",
+      "text": "LE CAFÉ DU SOLEIL\nPlace du Bourg 3\n1950 Sion\nTél: +41 27 323 45 67\n\nTable 5 - 2 couverts\n\nFondue moitié-moitié   48.00\nSalade verte            8.50\nCarafe vin blanc       24.00\nDessert du jour        12.00\n------------------------\nSous-total             92.50\nTVA 8.1%                7.49\n------------------------\nTOTAL à payer          92.50\n\nService non compris\n\n12 janvier 2026\nMerci et à bientôt!",
+      "expected": {
+        "merchant": "Le Café Du Soleil",
+        "amount": 92.50,
+        "taxAmount": 7.49,
+        "category": "restaurant",
+        "currency": "CHF",
+        "date": "2026-01-12"
+      }
+    },
+    {
+      "id": "restaurant_02",
+      "description": "McDonald's - fast food format",
+      "text": "McDonald's\nCentre Balexert\n1214 Vernier\n\nBig Mac Menu            13.90\nMcFlurry Oreo            4.90\n\nTotal CHF              18.80\nTVA 8.1% incluse\n\n11.01.2026 12:45\nBon appétit!",
+      "expected": {
+        "merchant": "McDonald's",
+        "amount": 18.80,
+        "taxAmount": 0,
+        "category": "restaurant",
+        "currency": "CHF",
+        "date": "2026-01-11"
+      }
+    },
+    {
+      "id": "cff_01",
+      "description": "CFF/SBB train ticket",
+      "text": "CFF | SBB | FFS\nBillet de transport\n\nGenève - Zürich HB\nVia Bern\n2ème classe\nAller simple\n\nAdulte 1x\nPrix: CHF 87.00\n\nValable le 10.01.2026\nN° billet: 7834521\n\nTVA 8.1% incluse",
+      "expected": {
+        "merchant": "CFF",
+        "amount": 87.00,
+        "taxAmount": 0,
+        "category": "transport",
+        "currency": "CHF",
+        "date": "2026-01-10"
+      }
+    },
+    {
+      "id": "tpg_01",
+      "description": "TPG public transport ticket",
+      "text": "TPG\nTransports Publics Genevois\n\nTicket journée\nZone 10 Tout Genève\n\nMontant: Fr. 10.60\n\n09/01/2026 07:30\nTerminal: Cornavin",
+      "expected": {
+        "merchant": "TPG",
+        "amount": 10.60,
+        "taxAmount": 0,
+        "category": "transport",
+        "currency": "CHF",
+        "date": "2026-01-09"
+      }
+    },
+    {
+      "id": "amavita_01",
+      "description": "Amavita pharmacy",
+      "text": "Amavita\nPharmacie de la Gare\nRue du Mont-Blanc 14\n1201 Genève\n\nDafalgan 1g x20        12.90\nVitamine C 1000mg       8.50\nCrème mains             6.80\n\nTotal CHF              28.20\nTVA 2.5%                0.69\n\n08.01.2026\nPortez-vous bien!",
+      "expected": {
+        "merchant": "Amavita",
+        "amount": 28.20,
+        "taxAmount": 0.69,
+        "category": "health",
+        "currency": "CHF",
+        "date": "2026-01-08"
+      }
+    },
+    {
+      "id": "sunstore_01",
+      "description": "Sun Store pharmacy - German",
+      "text": "Sun Store\nApotheke Bahnhof\nBahnhofplatz 2\n3011 Bern\n\nAspirin 500mg          15.60\nNasenspray              9.90\n\nGesamt                 25.50\nMwSt 2.5%               0.62\n\n07.01.26 16:22\nGute Besserung!",
+      "expected": {
+        "merchant": "Sun Store",
+        "amount": 25.50,
+        "taxAmount": 0.62,
+        "category": "health",
+        "currency": "CHF",
+        "date": "2026-01-07"
+      }
+    },
+    {
+      "id": "manor_01",
+      "description": "Manor department store",
+      "text": "MANOR\nRue de Rive 15\n1204 Genève\n\nChemise homme          89.00\nCravate soie           45.00\nChaussettes 3x         24.90\n\nTOTAL                 158.90\nTVA 8.1%               12.87\n\nDate: 06/01/2026\nVendeur: M. Dupont",
+      "expected": {
+        "merchant": "Manor",
+        "amount": 158.90,
+        "taxAmount": 12.87,
+        "category": "shopping",
+        "currency": "CHF",
+        "date": "2026-01-06"
+      }
+    },
+    {
+      "id": "digitec_01",
+      "description": "Digitec electronics - online order",
+      "text": "digitec\nwww.digitec.ch\n\nCommande #8834521\n\nApple AirPods Pro     279.00\nCâble USB-C 2m         19.90\n\nSous-total            298.90\nLivraison               0.00\n------------------------\nTotal CHF             298.90\n\n05.01.2026\nMerci pour votre commande!",
+      "expected": {
+        "merchant": "Digitec",
+        "amount": 298.90,
+        "taxAmount": 0,
+        "category": "shopping",
+        "currency": "CHF",
+        "date": "2026-01-05"
+      }
+    },
+    {
+      "id": "swisscom_01",
+      "description": "Swisscom mobile",
+      "text": "Swisscom\nFacture mensuelle\n\nSwisscom inOne mobile\nNuméro: 079 123 45 67\n\nAbonnement janvier     65.00\nOptions                 0.00\n\nMontant dû CHF         65.00\nTVA 8.1% incluse\n\nDate facture: 4 janvier 2026",
+      "expected": {
+        "merchant": "Swisscom",
+        "amount": 65.00,
+        "taxAmount": 0,
+        "category": "telecom",
+        "currency": "CHF",
+        "date": "2026-01-04"
+      }
+    },
+    {
+      "id": "parking_01",
+      "description": "Parking receipt",
+      "text": "PARKING CORNAVIN\nGenève\n\nEntrée:  03.01.2026 08:15\nSortie:  03.01.2026 18:30\nDurée:   10h15\n\nTarif: 2.50/h\n\nA PAYER: CHF 25.00\n\nMerci de votre visite",
+      "expected": {
+        "merchant": "Parking Cornavin",
+        "amount": 25.00,
+        "taxAmount": 0,
+        "category": "transport",
+        "currency": "CHF",
+        "date": "2026-01-03"
+      }
+    },
+    {
+      "id": "starbucks_01",
+      "description": "Starbucks coffee",
+      "text": "STARBUCKS\nGare de Genève\n\nGrande Latte            6.90\nCroissant               3.50\n\nTOTAL                  10.40\n\n02/01/2026 08:12\nEnjoy!",
+      "expected": {
+        "merchant": "Starbucks",
+        "amount": 10.40,
+        "taxAmount": 0,
+        "category": "restaurant",
+        "currency": "CHF",
+        "date": "2026-01-02"
+      }
+    },
+    {
+      "id": "migrolino_01",
+      "description": "Migrolino convenience store",
+      "text": "Migrolino\nStation-service Esso\nRoute de Meyrin 45\n1217 Meyrin\n\nSandwich poulet         7.90\nCoca-Cola 50cl          3.20\nChewing-gum             2.50\n\nTotal Fr.              13.60\n\n01.01.26 22:45",
+      "expected": {
+        "merchant": "Migrolino",
+        "amount": 13.60,
+        "taxAmount": 0,
+        "category": "food",
+        "currency": "CHF",
+        "date": "2026-01-01"
+      }
+    }
+  ]
+}

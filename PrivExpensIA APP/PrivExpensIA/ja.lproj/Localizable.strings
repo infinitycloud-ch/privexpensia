@@ -1,0 +1,642 @@
+/* 
+  Localizable.strings
+  PrivExpenses
+  
+  日本語 (ja)
+  Generated for PrivExpenses - Sprint 1
+*/
+
+/* === NAVIGATION & MENUS === */
+"app.title" = "PrivExpenses";
+"menu.home" = "ホーム";
+"menu.expenses" = "経費";
+"menu.reports" = "レポート";
+"menu.settings" = "設定";
+"menu.help" = "ヘルプ";
+"menu.logout" = "ログアウト";
+
+/* === HOME SCREEN === */
+"home.good_morning" = "おはようございます";
+"home.good_afternoon" = "こんにちは";
+"home.good_evening" = "こんばんは";
+"home.todays_spending" = "今日の支出";
+"home.budget_left" = "予算残高";
+"home.weekly_average" = "週平均";
+"home.saved" = "節約額";
+"home.activity" = "アクティビティ";
+"home.recent_expenses" = "最近の支出";
+"home.period.week" = "週";
+
+/* === ACTIONS === */
+"action.add" = "追加";
+"action.edit" = "編集";
+"action.delete" = "削除";
+"action.save" = "保存";
+"action.cancel" = "キャンセル";
+"action.submit" = "送信";
+"action.approve" = "承認";
+"action.reject" = "却下";
+"action.export" = "エクスポート";
+"action.import" = "インポート";
+"action.scan" = "スキャン";
+"action.search" = "検索";
+"action.filter" = "フィルタ";
+"action.refresh" = "更新";
+"action.select" = "選択";
+"action.close" = "閉じる";
+
+/* === EXPENSE FORM === */
+"expense.title" = "経費項目";
+"expense.amount" = "金額";
+"expense.date" = "日付";
+"expense.category" = "カテゴリー";
+"expense.merchant" = "店舗";
+"expense.description" = "説明";
+"expense.receipt" = "領収書";
+"expense.vat" = "消費税";
+"expense.currency" = "通貨";
+"expense.payment_method" = "支払方法";
+"expense.status" = "ステータス";
+"expense.total" = "合計";
+"expense.subtotal" = "小計";
+"expense.vat_amount" = "消費税額";
+
+/* === CATEGORIES === */
+"category.food" = "食料品";
+"category.restaurant" = "飲食店";
+"category.hotel" = "宿泊";
+"category.transport" = "交通費";
+"category.taxi" = "タクシー";
+"category.public_transport" = "公共交通機関";
+"category.gas" = "ガソリン";
+"category.parking" = "駐車場";
+"category.office_supplies" = "事務用品";
+"category.entertainment" = "接待交際費";
+"category.training" = "研修";
+"category.travel" = "出張";
+"category.phone" = "電話";
+"category.internet" = "インターネット";
+"category.software" = "ソフトウェア";
+"category.hardware" = "ハードウェア";
+"category.other" = "その他";
+
+/* === STATUS === */
+"status.draft" = "下書き";
+"status.pending" = "承認待ち";
+"status.approved" = "承認済み";
+"status.rejected" = "却下";
+"status.reimbursed" = "精算済み";
+"status.processing" = "処理中";
+
+/* === PAYMENT METHODS === */
+"payment.cash" = "現金";
+"payment.credit_card" = "クレジットカード";
+"payment.debit_card" = "デビットカード";
+"payment.company_card" = "法人カード";
+"payment.bank_transfer" = "銀行振込";
+"payment.check" = "小切手";
+
+/* === MESSAGES === */
+"message.welcome" = "PrivExpensesへようこそ";
+"message.loading" = "読み込み中...";
+"message.saving" = "保存中...";
+"message.success" = "正常に完了しました";
+"message.error" = "エラーが発生しました";
+"message.confirm_delete" = "この経費を削除してもよろしいですか？";
+"message.no_expenses" = "経費が見つかりません";
+"message.receipt_uploaded" = "領収書をアップロードしました";
+"message.expense_saved" = "経費を保存しました";
+"message.expense_submitted" = "経費を承認申請しました";
+"message.scanning_receipt" = "領収書をスキャン中...";
+
+/* === ERRORS === */
+"error.required_field" = "必須項目です";
+"error.invalid_amount" = "無効な金額";
+"error.invalid_date" = "無効な日付";
+"error.network" = "ネットワーク接続エラー";
+"error.upload_failed" = "アップロード失敗";
+"error.scan_failed" = "領収書のスキャン失敗";
+"error.unauthorized" = "権限がありません";
+"error.server_error" = "サーバーエラー";
+"error.invalid_receipt" = "無効または読み取れない領収書";
+"error.duplicate_expense" = "この経費は重複している可能性があります";
+
+/* === FILTERS & SEARCH === */
+"filter.all" = "すべて";
+"filter.today" = "今日";
+"filter.this_week" = "今週";
+"filter.this_month" = "今月";
+"filter.this_year" = "今年";
+"filter.custom_range" = "期間指定";
+"search.placeholder" = "経費を検索...";
+
+/* === REPORTS === */
+"report.title" = "経費レポート";
+"report.period" = "期間";
+"report.total_expenses" = "経費合計";
+"report.by_category" = "カテゴリー別";
+"report.by_month" = "月別";
+"report.export_pdf" = "PDFエクスポート";
+"report.export_excel" = "Excelエクスポート";
+
+/* === SETTINGS === */
+"settings.profile" = "プロフィール";
+"settings.notifications" = "通知";
+"settings.currency" = "デフォルト通貨";
+"settings.language" = "言語";
+"settings.vat_settings" = "消費税設定";
+"settings.sync" = "同期";
+"settings.about" = "アプリについて";
+"settings.privacy" = "プライバシー";
+"settings.terms" = "利用規約";
+
+/* === RECEIPT SCANNING === */
+"scan.instructions" = "枠内に領収書を配置してください";
+"scan.processing" = "処理中...";
+"scan.extracting" = "データ抽出中...";
+"scan.complete" = "スキャン完了";
+"scan.retry" = "再試行";
+
+/* === FORMATTING === */
+"format.currency.jpy" = "¥%@";
+"format.date" = "yyyy年MM月dd日";
+"format.time" = "HH:mm";
+"format.datetime" = "yyyy年MM月dd日 HH:mm";
+"format.percentage" = "%@%%";
+
+/* === ACCESSIBILITY === */
+"accessibility.add_expense" = "新規経費追加";
+"accessibility.scan_receipt" = "領収書をスキャン";
+"accessibility.expense_image" = "領収書画像";
+"accessibility.delete_expense" = "この経費を削除";
+"accessibility.approve_expense" = "この経費を承認";
+
+/* === ADDITIONAL UI KEYS === */
+"greeting_morning" = "おはようございます";
+"greeting_afternoon" = "こんにちは";
+"greeting_evening" = "こんばんは";
+"today_spending" = "今日の支出";
+"settings_title" = "設定";
+"settings_subtitle" = "体験をカスタマイズ";
+"notification_label" = "通知";
+"currency_label" = "通貨";
+"language_label" = "言語";
+"expense_title" = "経費";
+"scan_title" = "領収書をスキャン";
+"statistics_title" = "統計";
+
+/* === MISSING KEYS === */
+"notifications_label" = "通知";
+"notifications_subtitle" = "プッシュ通知を管理";
+"dark_mode_label" = "ダークモード";
+"dark_mode_subtitle" = "ダークテーマに切り替え";
+
+/* === TAB BAR === */
+"tab_home" = "ホーム";
+"tab_expenses" = "経費";
+"tab_scan" = "スキャン";
+"tab_stats" = "統計";
+"tab_settings" = "設定";
+
+/* === NEW LOCALIZATION KEYS === */
+"app_name" = "PrivExpenses";
+"app_tagline" = "スマート経費記録";
+"app_version" = "バージョン 1.0.0 (ビルド 1)";
+
+/* === SCANNER === */
+"scan_receipt" = "領収書をスキャン";
+"scan_receipt_subtitle" = "領収書の読み取り方法を選択";
+"scan_option_camera" = "カメラ";
+"scan_option_camera_description" = "カメラで領収書をスキャン";
+"scan_option_library" = "フォトライブラリ";
+"scan_option_library_description" = "写真から選択";
+"scan_option_files" = "ファイル";
+"scan_option_files_description" = "PDFまたは画像ファイルをインポート";
+"scan_tip" = "ヒント: 最良の結果を得るには、十分な照明で領収書全体を撮影してください";
+"processing_receipt" = "領収書を処理中";
+"processing_receipt_ai" = "AIで情報を抽出中...";
+"receipt_scanned" = "領収書をスキャンしました";
+"ai_confidence" = "AI信頼度: %d%%";
+"save_expense" = "経費を保存";
+"choose_from_library" = "ライブラリから選択";
+
+/* === EXPENSES === */
+"expenses_title" = "経費";
+"expenses_empty_title" = "経費がありません";
+"expenses_empty_message" = "+ ボタンをタップして最初の領収書をスキャンしてください";
+"add_expense" = "経費を追加";
+"total_amount" = "合計金額";
+"tax" = "税金";
+"items" = "項目";
+"delete_expense" = "経費を削除";
+"delete_expense_confirmation" = "この経費を削除してもよろしいですか？この操作は元に戻せません。";
+"save_changes" = "変更を保存";
+
+/* === BUTTONS === */
+"button_back" = "戻る";
+"button_cancel" = "キャンセル";
+"button_done" = "完了";
+"button_edit" = "編集";
+"button_retry" = "再試行";
+"button_skip" = "スキップ";
+"button_next" = "次へ";
+"get_started" = "開始";
+
+/* === ONBOARDING === */
+"camera_access_title" = "カメラアクセス";
+"camera_access_description" = "PrivExpensesは領収書をスキャンするためにカメラアクセスが必要です。すべての処理はデバイス上で行われます。";
+"allow_camera_access" = "カメラアクセスを許可";
+"not_now" = "今は許可しない";
+
+/* === FEEDBACK === */
+"feedback_title" = "ベータフィードバック";
+"feedback_subtitle" = "PrivExpensesの改善にご協力ください";
+"feedback_rating_question" = "あなたの体験を評価してください";
+"feedback_category" = "カテゴリー";
+"feedback_your_feedback" = "あなたのフィードバック";
+"feedback_placeholder" = "ご意見をお聞かせください...";
+"feedback_submit" = "フィードバックを送信";
+"feedback_thank_you" = "ありがとうございます！";
+"feedback_thank_you_message" = "あなたのフィードバックによりPrivExpensesが改善されます";
+
+/* === CREDITS === */
+"credits_about" = "アプリについて";
+"credits_about_description" = "PrivExpensesは高度なAIとOCR技術を使用して領収書から情報を自動抽出する賢い経費記録アプリです。データは100%プライベートでデバイス上に保存されます。";
+"credits_team" = "チーム";
+"credits_technologies" = "技術";
+"credits_legal" = "法的情報";
+"credits_copyright" = "© 2025 Minh-Tam Dang. All rights reserved.";
+"credits_privacy_statement" = "このアプリは外部サービスを使用しません。すべてのデータ処理はデバイス上で行われ、データの収集、保存、送信は行われません。";
+/* === AI MODE === */
+"ai_mode_title" = "AIモード";
+"ai_mode_fast_description" = "⚡ 高速モード - 瞬時";
+"ai_mode_qwen_description" = "🤖 Qwen AI - 最高精度 (~2秒)";
+
+/* === CURRENCY FORMATS === */
+"format.currency.chf" = "CHF %@";
+"format.currency.eur" = "€ %@";
+"format.currency.gbp" = "£ %@";
+"format.currency.usd" = "$ %@";
+
+/* === HOME SCREEN DAYS === */
+"home.day.fri" = "金";
+"home.day.mon" = "月";
+"home.day.sat" = "土";
+"home.day.sun" = "日";
+"home.day.thu" = "木";
+"home.day.tue" = "火";
+"home.day.wed" = "水";
+
+/* === HOME SCREEN TIME === */
+"home.days_ago" = "%d日前";
+"home.hours_ago" = "%d時間前";
+"home.just_now" = "たった今";
+"home.minutes_ago" = "%d分前";
+
+/* === HOME SCREEN PERIODS === */
+"home.period.day" = "日";
+"home.period.month" = "月";
+"home.period.week" = "週";
+"home.period.year" = "年";
+"home.see_all" = "すべて表示";
+
+/* === SETTINGS ADVANCED === */
+"settings.ai_mode" = "AIモード";
+"settings.ai_mode_subtitle" = "領収書解析に人工知能を使用";
+"settings.dark_mode" = "ダークモード";
+"settings.export_data" = "データをエクスポート";
+"settings.faceid" = "Face ID";
+"settings.faceid_subtitle" = "Face IDでロック解除";
+"settings.help_support" = "ヘルプとサポート";
+"settings.made_with" = "AIとプライバシーで作成";
+"settings.preferences" = "設定";
+"settings.premium_member" = "プレミアムメンバー";
+"settings.privacy_policy" = "プライバシーポリシー";
+"settings.privacy_security" = "プライバシーとセキュリティ";
+"settings.private_mode" = "プライベートモード";
+"settings.private_mode_subtitle" = "機密情報を非表示";
+"settings.scans" = "スキャン";
+"settings.sign_out" = "サインアウト";
+"settings.terms_of_service" = "利用規約";
+"settings.total" = "合計";
+"settings.version" = "バージョン";
+"settings.icloud_sync" = "iCloud同期";
+"settings.icloud_sync_subtitle" = "デバイス間でデータを同期";
+"settings.export_data" = "データをエクスポート";
+"settings.clear_cache" = "キャッシュをクリア";
+"settings.rate_app" = "アプリを評価";
+"settings.credits" = "クレジット";
+
+/* === STATISTICS === */
+"stats.by_category" = "カテゴリー別";
+"stats.period.month" = "月";
+"stats.period.week" = "週";
+"stats.period.year" = "年";
+"stats.spending_trend" = "支出トレンド";
+"stats.title" = "統計";
+"stats.total_spent" = "合計支出";
+"stats.vs_last_period" = "前期間比";
+
+/* === SPRINT 3 - FEEDBACK & EXPORT === */
+
+/* Extraction Error Messages (Task 650) */
+"extraction.error.title" = "抽出失敗";
+"extraction.error.message" = "レシートを読み取れませんでした。より鮮明な画像で再試行してください。";
+"extraction.error.tips_title" = "より良い結果のためのヒント";
+"extraction.error.tip_lighting" = "十分な照明を確保";
+"extraction.error.tip_frame" = "レシート全体を撮影";
+"extraction.error.tip_steady" = "スキャン中は動かさない";
+"extraction.error.tip_readable" = "テキストが読めることを確認";
+"extraction.error.retry_camera" = "カメラで再試行";
+
+/* Confidence Indicator (Task 652) */
+"confidence.high" = "高信頼度";
+"confidence.medium" = "中信頼度";
+"confidence.low" = "低信頼度";
+
+/* Edit Mode (Task 651) */
+"edit.button" = "編集";
+"edit.hint" = "フィールドをタップして編集";
+"expense.field.merchant" = "店舗";
+"expense.field.amount" = "金額";
+
+/* Onboarding Additional Pages (Task 653) */
+"onboarding.budget.title" = "予算と統計";
+"onboarding.budget.description" = "支出制限を設定し、美しいチャートで支出を追跡。支出習慣のインサイトを取得。";
+"onboarding.export.title" = "エクスポートとレポート";
+"onboarding.export.description" = "プロフェッショナルな経費レポートを作成し、PDFまたはCSVでエクスポート。";
+
+/* Export (Tasks 654-655) */
+"export.loading" = "エクスポート中...";
+"export.pdf.title" = "経費レポート";
+"export.pdf.generated" = "作成日";
+"export.pdf.total" = "合計";
+"export.pdf.items" = "件";
+"export.pdf.footer" = "PrivExpensesで作成";
+
+/* Scanner Hint (BUG 657) */
+"scanner.hint.title" = "スキャンのヒント";
+"scanner.hint.message" = "レシートをスキャン後、「保持」をタップし、「保存」をタップして処理します。";
+"scanner.hint.ok" = "了解!";
+
+/* === SPRINT 5 - AI ASSISTANT & ADVANCED KEYS === */
+
+/* AI Assistant */
+"ai.ask_question" = "質問を入力してください...";
+"ai.thinking" = "AIが考えています...";
+"ai.assistant_title" = "AIアシスタント";
+"ai.context.home" = "ホーム - 概要";
+"ai.context.expenses" = "経費";
+"ai.context.statistics" = "統計";
+"ai.context.settings" = "設定";
+"ai.context.scanner" = "スキャナー";
+"ai.welcome" = "こんにちは！私はAIアシスタントです。お金の管理をどのようにお手伝いしましょうか？";
+"ai.error" = "申し訳ありません、技術的な問題が発生しています。後でもう一度お試しください。";
+"ai.help_hint" = "試してみてください：「今月いくら使った？」や「経費を追加するには？」";
+"ai.processing" = "処理中...";
+"ai.done" = "完了";
+
+/* Assistant Greetings */
+"assistant.greeting_1" = "こんにちは！お金の管理をお手伝いします。今日は何をお手伝いしましょうか？";
+"assistant.greeting_2" = "こんにちは！あなたのファイナンシャルアシスタントです。どうぞお気軽にどうぞ。";
+"assistant.greeting_3" = "こんにちは！一緒にお金を最適化しましょう。何を知りたいですか？";
+"assistant.welcome_message" = "こんにちは！私はあなたのファイナンシャルアシスタントです。今日は経費管理をどのようにお手伝いしましょうか？👋";
+
+/* Budget Advanced */
+"budget.daily" = "1日の予算";
+"budget.weekly" = "週間予算";
+"budget.monthly" = "月間予算";
+"budget.yearly" = "年間予算";
+"budget.used" = "使用済み";
+"budget.remaining" = "残り";
+"budget.set_daily" = "1日の予算を設定";
+"budget.set_weekly" = "週間予算を設定";
+"budget.set_monthly" = "月間予算を設定";
+"budget.set_yearly" = "年間予算を設定";
+"budget.status.excellent" = "素晴らしい管理";
+"budget.status.good" = "順調";
+"budget.status.warning" = "上限に近づいています";
+"budget.status.danger" = "予算オーバー";
+"budget.insight.limit_reached" = "予算上限に達しました";
+"budget.insight.approaching" = "予算上限に近づいています";
+
+/* Budget Types */
+"budget.type.daily" = "日次";
+"budget.type.weekly" = "週次";
+"budget.type.monthly" = "月次";
+"budget.type.yearly" = "年次";
+
+/* Budget Setup */
+"budget.setup.title" = "月間予算";
+"budget.setup.subtitle" = "支出上限を設定";
+"budget.setup.set_button" = "予算を設定";
+
+/* Budget Insights */
+"budget.insight.spending_fast" = "支出が予定より20%速いペース";
+"budget.insight.great_savings" = "今月は素晴らしい節約ペース";
+"budget.insight.low_daily" = "1日あたり10未満の残り";
+
+/* Buttons */
+"button.done" = "完了";
+"button.cancel" = "キャンセル";
+"button.create" = "作成";
+"button.delete" = "削除";
+"cancel" = "キャンセル";
+"save" = "保存";
+
+/* Chat */
+"chat.greeting" = "こんにちは！👋";
+"chat.help_prompt" = "経費の分析をお手伝いします。\n質問してください！";
+
+/* Common */
+"common.cancel" = "キャンセル";
+"common.done" = "完了";
+"common.ok" = "OK";
+
+/* Expense Advanced */
+"expense.add_title" = "経費を追加";
+"expense.scan_receipt" = "領収書をスキャン";
+"expense.manual_entry" = "手動入力";
+"expense.unknown_merchant" = "不明";
+"expense.save_button" = "経費を保存";
+"expense.tax_format" = "税金：%@";
+"expense.field.date" = "日付";
+"expense.field.category" = "カテゴリー";
+"expense.field.payment" = "支払い";
+"expense.field.tax" = "税金";
+"expense.field.items" = "項目";
+"expense.field.merchant" = "店舗";
+"expense.field.amount" = "金額";
+"expenses.total_format" = "合計：%@";
+
+/* Expenses Reports */
+"expenses.reports.title" = "レポート";
+"expenses.reports.generate" = "レポートを作成";
+"expenses.reports.period" = "期間";
+"expenses.reports.from" = "開始";
+"expenses.reports.to" = "終了";
+"expenses.reports.archived" = "アーカイブ済み";
+"expenses.reports.empty" = "レポートなし";
+"expenses.reports.created" = "レポート作成完了";
+"expenses.thumbnails.empty" = "画像付きの領収書なし";
+"expenses.view_mode.list" = "リスト";
+"expenses.view_mode.thumbnails" = "サムネイル";
+
+/* Export */
+"export.title" = "エクスポート";
+"export.generate_auto_report" = "自動レポートを作成";
+"export.pdf" = "PDFをエクスポート";
+"export.csv" = "CSVをエクスポート";
+"export.loading" = "エクスポート中...";
+"export.pdf.title" = "経費レポート";
+"export.pdf.generated" = "作成日";
+"export.pdf.total" = "合計";
+"export.pdf.items" = "件";
+"export.pdf.footer" = "PrivExpensesで作成";
+
+/* Report Advanced */
+"report.items_count" = "%d件";
+"report.expenses_count" = "%d件の経費";
+"report.details_title" = "レポート詳細";
+"report.create_title" = "レポートを作成";
+"report.title_placeholder" = "レポートタイトル";
+"report.date_from" = "開始日";
+"report.date_to" = "終了日";
+
+/* Scan */
+"scan.complete_title" = "スキャン完了";
+"scan.complete_message" = "領収書の処理が完了しました";
+
+/* Onboarding */
+"onboarding.scanning.title" = "スマート領収書スキャン";
+"onboarding.scanning.description" = "高度なAI搭載OCR技術で領収書を瞬時にキャプチャしてデジタル化";
+"onboarding.ai.title" = "AI搭載インテリジェンス";
+"onboarding.ai.description" = "デバイス上のAIが店舗、金額、税金を自動抽出し、経費を分類";
+"onboarding.privacy.title" = "100%プライベート＆安全";
+"onboarding.privacy.description" = "すべての処理はデバイス上で行われます。財務データはiPhoneから出ません";
+"onboarding.budget.title" = "予算と統計";
+"onboarding.budget.description" = "支出制限を設定し、美しいチャートで支出を追跡。支出習慣のインサイトを取得。";
+"onboarding.export.title" = "エクスポートとレポート";
+"onboarding.export.description" = "プロフェッショナルな経費レポートを作成し、PDFまたはCSVでエクスポート。";
+
+/* Periods */
+"period.week" = "週";
+"period.month" = "月";
+"period.year" = "年";
+
+/* Statistics */
+"statistics.title" = "統計";
+"statistics.current_period" = "現在の期間";
+"statistics.total_spent" = "合計支出";
+"statistics.this_period" = "この期間";
+"statistics.average" = "平均";
+
+/* Lists */
+"list.and_more" = "... 他%d件";
+
+/* Edit Mode */
+"edit.button" = "編集";
+"edit.hint" = "フィールドをタップして編集";
+
+/* Alerts */
+"alert.cloud_vision" = "Cloud Vision";
+"alert.corrections_applied" = "修正を適用しました";
+"alert.enhance_ai" = "AIを強化";
+
+/* Home Advanced */
+"home.today" = "今日";
+"home.recent_activity" = "最近のアクティビティ";
+"home.current_report" = "今月のレポート";
+"home.hour_ago" = "1時間前";
+"home.minute_ago" = "1分前";
+"home.yesterday" = "昨日";
+
+/* Performance */
+"performance.title" = "🎯 パフォーマンスモニター";
+
+/* Settings Advanced */
+"settings.select_currency" = "通貨を選択";
+"settings.select_language" = "言語を選択";
+"settings_currency" = "通貨";
+"settings_language" = "言語";
+
+/* === SETTINGS CLOUD VISION === */
+"settings.cloud_vision.title" = "クラウドビジョンAI";
+"settings.cloud_vision.enable" = "クラウドビジョンを有効化";
+"settings.cloud_vision.subtitle" = "レシートに強力なクラウドAIを使用";
+"settings.cloud_vision.test" = "クラウドビジョンをテスト";
+"settings.provider" = "プロバイダー";
+"settings.api_key_openai" = "OpenAI APIキー";
+"settings.api_key_groq" = "Groq APIキー";
+"settings.api_key_placeholder" = "APIキーを入力...";
+"settings.api_key_configured" = "APIキー設定済み";
+
+/* === EXPORT PDF === */
+"export.pdf.title" = "経費レポート";
+"export.pdf.generated" = "作成日";
+"export.pdf.total" = "合計";
+"export.pdf.items" = "件";
+"export.pdf.footer" = "PrivExpensesで作成";
+
+/* === EXPORT PDF COLUMNS === */
+"export.column.date" = "日付";
+"export.column.merchant" = "店舗";
+"export.column.amount" = "金額";
+"export.column.tax" = "税金";
+"export.column.category" = "カテゴリー";
+"export.unknown" = "不明";
+"export.other" = "その他";
+
+/* === ALERTS === */
+"alert.corrections_applied" = "修正が適用されました";
+"alert.enhance_ai" = "AI強化";
+"alert.cloud_vision" = "クラウドビジョン";
+"alert.cloud_vision_success" = "分析成功：";
+"alert.cloud_vision_error" = "クラウドビジョンエラー";
+
+/* === BUTTONS === */
+"button.done" = "完了";
+
+/* === RECEIPT PREVIEW === */
+"receipt.preview.title" = "スキャンしたレシート";
+"receipt.preview.expand" = "拡大";
+"receipt.preview.verify_hint" = "抽出データがレシートと一致しているか確認してください";
+"receipt.fullscreen.zoom_hint" = "ピンチでズーム • ダブルタップでリセット";
+
+/* === RESULT AUTO-CLOSE === */
+"result.auto_close" = "自動で閉じます...";
+"result.tap_to_stay" = "タップして留まる";
+"result.enhance_with_ai" = "AIで改善";
+
+/* === SCAN RESULT DELETE === */
+"delete.confirmation.title" = "この支出を削除しますか？";
+"delete.confirmation.message" = "スキャンした支出は完全に削除されます。";
+
+/* === 書類アーカイブ (SPRINT 13) === */
+"document.archive.title" = "書類";
+"document.processing" = "書類を処理中...";
+"document.filter.tous" = "すべて";
+"document.filter.factures" = "請求書";
+"document.filter.admin" = "管理";
+"document.empty" = "書類がありません";
+"document.empty.hint" = "請求書や管理書類をスキャンしてアーカイブ";
+"document.summary" = "概要";
+"document.view" = "表示";
+"document.type.invoice" = "請求書";
+"document.type.admin" = "管理書類";
+"document.title" = "タイトル";
+"button.delete" = "削除";
+"button.edit" = "編集";
+"expense.field.amount" = "金額";
+"expense.field.date" = "日付";
+"search" = "検索";
+
+// MARK: - Search Indexing
+"search.result" = "件";
+"search.results" = "件";
+"search.in_content" = "本文検索";
+"search.match.title" = "タイトル";
+"search.match.summary" = "要約";
+"search.match.content" = "本文";
+"search.no_results" = "結果なし";
+"search.no_results.hint" = "別のキーワードを試すか、スペルを確認してください";

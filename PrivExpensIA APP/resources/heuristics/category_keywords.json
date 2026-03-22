@@ -1,0 +1,238 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "description": "Keywords for automatic expense categorization",
+  
+  "categories": {
+    "food": {
+      "priority": 5,
+      "keywords": {
+        "en": ["grocery", "supermarket", "food", "market", "organic", "bakery", "butcher", "fresh"],
+        "fr": ["alimentation", "supermarché", "épicerie", "marché", "bio", "boulangerie", "boucherie", "frais"],
+        "de": ["lebensmittel", "supermarkt", "nahrung", "markt", "bio", "bäckerei", "metzger", "frisch"],
+        "it": ["alimentari", "supermercato", "cibo", "mercato", "biologico", "panetteria", "macelleria"],
+        "ja": ["食料品", "スーパー", "食品", "市場", "オーガニック", "パン屋", "肉屋"]
+      },
+      "merchant_patterns": [
+        "migros", "coop", "denner", "aldi", "lidl", "rewe", "edeka", 
+        "carrefour", "auchan", "tesco", "sainsbury", "walmart", "whole foods"
+      ],
+      "item_indicators": [
+        "milk", "bread", "fruit", "vegetable", "meat", "cheese",
+        "lait", "pain", "fruits", "légumes", "viande", "fromage",
+        "milch", "brot", "obst", "gemüse", "fleisch", "käse"
+      ]
+    },
+    
+    "restaurant": {
+      "priority": 4,
+      "keywords": {
+        "en": ["restaurant", "cafe", "bistro", "diner", "eat", "dining", "meal", "lunch", "dinner"],
+        "fr": ["restaurant", "café", "bistro", "brasserie", "repas", "déjeuner", "dîner"],
+        "de": ["restaurant", "café", "bistro", "gasthof", "essen", "mittagessen", "abendessen"],
+        "it": ["ristorante", "caffè", "bistro", "trattoria", "pranzo", "cena"],
+        "ja": ["レストラン", "カフェ", "ビストロ", "食堂", "ランチ", "ディナー", "飲食"]
+      },
+      "merchant_patterns": [
+        "restaurant", "cafe", "coffee", "starbucks", "mcdonald", "burger",
+        "pizza", "sushi", "asian", "italian", "french", "mexican", "indian"
+      ],
+      "item_indicators": [
+        "menu", "plat", "dish", "beverage", "drink", "wine", "beer",
+        "entrée", "main", "dessert", "coffee", "tea"
+      ]
+    },
+    
+    "hotel": {
+      "priority": 3,
+      "keywords": {
+        "en": ["hotel", "accommodation", "lodging", "inn", "resort", "motel", "hostel", "airbnb"],
+        "fr": ["hôtel", "hébergement", "logement", "auberge", "resort", "motel", "hostel"],
+        "de": ["hotel", "unterkunft", "übernachtung", "gasthof", "resort", "motel", "hostel"],
+        "it": ["hotel", "alloggio", "albergo", "ostello", "resort", "motel"],
+        "ja": ["ホテル", "宿泊", "旅館", "民宿", "ホステル"]
+      },
+      "merchant_patterns": [
+        "hotel", "inn", "resort", "marriott", "hilton", "hyatt", "sheraton",
+        "holiday inn", "ibis", "novotel", "mercure", "airbnb", "booking"
+      ],
+      "item_indicators": [
+        "room", "night", "stay", "check-in", "check-out", "breakfast",
+        "chambre", "nuit", "séjour", "zimmer", "übernachtung"
+      ]
+    },
+    
+    "transport": {
+      "priority": 6,
+      "keywords": {
+        "en": ["transport", "travel", "trip", "journey", "commute", "transfer"],
+        "fr": ["transport", "voyage", "trajet", "déplacement", "transfert"],
+        "de": ["transport", "reise", "fahrt", "verkehr", "transfer"],
+        "it": ["trasporto", "viaggio", "tragitto", "spostamento"],
+        "ja": ["交通", "移動", "旅行", "通勤"]
+      },
+      "subcategories": {
+        "taxi": {
+          "keywords": ["taxi", "uber", "lyft", "cab", "ride"],
+          "merchant_patterns": ["taxi", "uber", "lyft", "bolt", "grab", "didi"]
+        },
+        "public_transport": {
+          "keywords": ["bus", "train", "metro", "subway", "tram", "transit"],
+          "merchant_patterns": ["sbb", "cff", "ratp", "tfl", "mta", "deutsche bahn", "sncf"]
+        },
+        "gas": {
+          "keywords": ["gas", "fuel", "petrol", "diesel", "station"],
+          "merchant_patterns": ["shell", "bp", "esso", "total", "agip", "aral", "eneos"]
+        },
+        "parking": {
+          "keywords": ["parking", "park", "garage"],
+          "merchant_patterns": ["parking", "parkhaus", "garage", "p+r", "park"]
+        },
+        "flight": {
+          "keywords": ["flight", "airline", "airport"],
+          "merchant_patterns": ["swiss", "lufthansa", "air france", "british airways", "united", "delta"]
+        }
+      }
+    },
+    
+    "office_supplies": {
+      "priority": 7,
+      "keywords": {
+        "en": ["office", "stationery", "supplies", "paper", "pen", "printer", "ink"],
+        "fr": ["bureau", "papeterie", "fournitures", "papier", "stylo", "imprimante"],
+        "de": ["büro", "büromaterial", "papier", "stift", "drucker", "tinte"],
+        "it": ["ufficio", "cancelleria", "forniture", "carta", "penna", "stampante"],
+        "ja": ["オフィス", "文房具", "事務用品", "紙", "ペン", "プリンター"]
+      },
+      "merchant_patterns": [
+        "staples", "office depot", "officeworks", "papyrus", "viking"
+      ],
+      "item_indicators": [
+        "paper", "envelope", "folder", "notebook", "pen", "pencil",
+        "stapler", "clips", "post-it", "marker", "tape"
+      ]
+    },
+    
+    "entertainment": {
+      "priority": 8,
+      "keywords": {
+        "en": ["entertainment", "leisure", "recreation", "fun", "event", "show", "cinema", "theater"],
+        "fr": ["divertissement", "loisir", "récréation", "événement", "spectacle", "cinéma", "théâtre"],
+        "de": ["unterhaltung", "freizeit", "veranstaltung", "show", "kino", "theater"],
+        "it": ["intrattenimento", "svago", "evento", "spettacolo", "cinema", "teatro"],
+        "ja": ["エンターテイメント", "娯楽", "レジャー", "イベント", "映画", "劇場"]
+      },
+      "merchant_patterns": [
+        "cinema", "theater", "concert", "museum", "gallery", "netflix", "spotify",
+        "ticketmaster", "eventbrite", "stubhub"
+      ]
+    },
+    
+    "training": {
+      "priority": 9,
+      "keywords": {
+        "en": ["training", "course", "education", "learning", "workshop", "seminar", "conference"],
+        "fr": ["formation", "cours", "éducation", "apprentissage", "atelier", "séminaire", "conférence"],
+        "de": ["schulung", "kurs", "bildung", "lernen", "workshop", "seminar", "konferenz"],
+        "it": ["formazione", "corso", "educazione", "apprendimento", "workshop", "seminario"],
+        "ja": ["研修", "コース", "教育", "学習", "ワークショップ", "セミナー", "会議"]
+      },
+      "merchant_patterns": [
+        "udemy", "coursera", "linkedin learning", "skillshare", "masterclass",
+        "university", "college", "school", "academy", "institute"
+      ]
+    },
+    
+    "phone": {
+      "priority": 10,
+      "keywords": {
+        "en": ["phone", "mobile", "cellular", "telecom", "call", "data"],
+        "fr": ["téléphone", "mobile", "cellulaire", "télécom", "appel", "données"],
+        "de": ["telefon", "handy", "mobilfunk", "telekom", "anruf", "daten"],
+        "it": ["telefono", "cellulare", "mobile", "telecom", "chiamata", "dati"],
+        "ja": ["電話", "携帯", "モバイル", "通信", "通話", "データ"]
+      },
+      "merchant_patterns": [
+        "verizon", "at&t", "t-mobile", "vodafone", "orange", "swisscom",
+        "sunrise", "salt", "o2", "ee", "three", "docomo", "softbank"
+      ]
+    },
+    
+    "internet": {
+      "priority": 11,
+      "keywords": {
+        "en": ["internet", "broadband", "wifi", "isp", "connection", "network"],
+        "fr": ["internet", "haut débit", "wifi", "connexion", "réseau"],
+        "de": ["internet", "breitband", "wifi", "verbindung", "netzwerk"],
+        "it": ["internet", "banda larga", "wifi", "connessione", "rete"],
+        "ja": ["インターネット", "ブロードバンド", "WiFi", "接続", "ネットワーク"]
+      },
+      "merchant_patterns": [
+        "comcast", "spectrum", "cox", "bt", "virgin media", "upc", "init7"
+      ]
+    },
+    
+    "software": {
+      "priority": 12,
+      "keywords": {
+        "en": ["software", "app", "application", "subscription", "license", "saas", "cloud"],
+        "fr": ["logiciel", "application", "abonnement", "licence", "saas", "cloud"],
+        "de": ["software", "app", "anwendung", "abonnement", "lizenz", "saas", "cloud"],
+        "it": ["software", "app", "applicazione", "abbonamento", "licenza", "saas", "cloud"],
+        "ja": ["ソフトウェア", "アプリ", "サブスクリプション", "ライセンス", "クラウド"]
+      },
+      "merchant_patterns": [
+        "microsoft", "adobe", "google", "apple", "dropbox", "slack", "zoom",
+        "salesforce", "office 365", "github", "atlassian", "figma"
+      ]
+    },
+    
+    "hardware": {
+      "priority": 13,
+      "keywords": {
+        "en": ["hardware", "computer", "laptop", "device", "equipment", "electronics", "gadget"],
+        "fr": ["matériel", "ordinateur", "portable", "appareil", "équipement", "électronique"],
+        "de": ["hardware", "computer", "laptop", "gerät", "ausrüstung", "elektronik"],
+        "it": ["hardware", "computer", "portatile", "dispositivo", "attrezzatura", "elettronica"],
+        "ja": ["ハードウェア", "コンピュータ", "ノートパソコン", "デバイス", "機器", "電子機器"]
+      },
+      "merchant_patterns": [
+        "apple store", "best buy", "mediamarkt", "saturn", "fnac", "darty",
+        "currys", "pc world", "dell", "hp", "lenovo", "asus"
+      ]
+    }
+  },
+  
+  "categorization_rules": {
+    "priority_order": "lower_number_first",
+    "keyword_matching": {
+      "algorithm": "fuzzy_match",
+      "threshold": 0.8,
+      "case_sensitive": false
+    },
+    "multi_category_resolution": {
+      "method": "highest_confidence",
+      "confidence_calculation": [
+        "keyword_matches * 0.4",
+        "merchant_match * 0.4",
+        "item_indicators * 0.2"
+      ]
+    },
+    "fallback_category": "other"
+  },
+  
+  "special_cases": {
+    "split_bills": {
+      "indicators": ["split", "shared", "divided", "partagé", "geteilt"],
+      "handling": "prompt_user_for_percentage"
+    },
+    "tips": {
+      "indicators": ["tip", "gratuity", "pourboire", "trinkgeld", "mancia"],
+      "handling": "include_in_total"
+    },
+    "deposits": {
+      "indicators": ["deposit", "caution", "kaution", "deposito"],
+      "handling": "flag_as_refundable"
+    }
+  }
+}

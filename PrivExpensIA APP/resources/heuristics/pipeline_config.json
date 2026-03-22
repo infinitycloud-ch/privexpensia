@@ -1,0 +1,576 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "description": "Production-ready pipeline integration configuration for unified heuristic and AI-based receipt extraction",
+  
+  "pipeline_architecture": {
+    "description": "Multi-stage extraction pipeline with intelligent fallback strategies",
+    "stages": [
+      {
+        "stage": 1,
+        "name": "preprocessing",
+        "description": "Image quality assessment and OCR text preprocessing",
+        "timeout_ms": 1000,
+        "required": true
+      },
+      {
+        "stage": 2,
+        "name": "heuristic_extraction",
+        "description": "Rule-based extraction using pattern matching",
+        "timeout_ms": 500,
+        "required": true,
+        "parallel_execution": true
+      },
+      {
+        "stage": 3,
+        "name": "confidence_evaluation",
+        "description": "Evaluate heuristic results and determine AI necessity",
+        "timeout_ms": 100,
+        "required": true
+      },
+      {
+        "stage": 4,
+        "name": "ai_extraction",
+        "description": "Qwen2.5-based extraction for complex/ambiguous cases",
+        "timeout_ms": 3000,
+        "required": false,
+        "condition": "confidence_score < 0.90 || has_conflicts || complex_receipt"
+      },
+      {
+        "stage": 5,
+        "name": "result_fusion",
+        "description": "Merge heuristic and AI results with conflict resolution",
+        "timeout_ms": 200,
+        "required": true
+      },
+      {
+        "stage": 6,
+        "name": "validation",
+        "description": "Final validation and confidence scoring",
+        "timeout_ms": 300,
+        "required": true
+      }
+    ],
+    
+    "execution_modes": {
+      "fast": {
+        "description": "Heuristics-only mode for high-confidence receipts",
+        "stages": [1, 2, 3, 6],
+        "max_total_time_ms": 2000
+      },
+      "balanced": {
+        "description": "Default mode with selective AI usage",
+        "stages": [1, 2, 3, 4, 5, 6],
+        "max_total_time_ms": 5000
+      },
+      "thorough": {
+        "description": "Full pipeline with AI validation for critical receipts",
+        "stages": [1, 2, 3, 4, 5, 6],
+        "ai_validation_required": true,
+        "max_total_time_ms": 8000
+      }
+    }
+  },
+  
+  "extraction_strategies": {
+    "heuristic_only": {
+      "description": "Use only rule-based extraction",
+      "conditions": [
+        "confidence_score >= 0.95",
+        "no_conflicts",
+        "standard_format",
+        "supported_language",
+        "clear_image_quality"
+      ],
+      "expected_accuracy": 0.92,
+      "average_time_ms": 200,
+      "use_cases": [
+        "Standard supermarket receipts",
+        "Chain restaurant receipts", 
+        "Gas station receipts",
+        "Known merchant formats"
+      ]
+    },
+    
+    "ai_only": {
+      "description": "Skip heuristics and use AI directly",
+      "conditions": [
+        "handwritten_receipt",
+        "unsupported_language",
+        "damaged_receipt",
+        "complex_layout",
+        "multiple_currencies"
+      ],
+      "expected_accuracy": 0.87,
+      "average_time_ms": 2500,
+      "use_cases": [
+        "Handwritten receipts",
+        "Foreign language receipts",
+        "Damaged/faded receipts",
+        "Complex multi-page receipts"
+      ]
+    },
+    
+    "hybrid": {
+      "description": "Combine heuristic and AI results intelligently",
+      "conditions": [
+        "0.70 <= confidence_score < 0.95",
+        "partial_conflicts",
+        "medium_complexity",
+        "ambiguous_fields"
+      ],
+      "expected_accuracy": 0.95,
+      "average_time_ms": 1200,
+      "use_cases": [
+        "Receipts with some unclear fields",
+        "New merchant formats",
+        "Mixed language content",
+        "Partially damaged receipts"
+      ]
+    }
+  },
+  
+  "fusion_strategy": {
+    "description": "Rules for combining heuristic and AI extraction results",
+    
+    "field_priority_matrix": {
+      "date": {
+        "heuristic_weight": 0.8,
+        "ai_weight": 0.2,
+        "reasoning": "Date patterns are usually well-defined and heuristics excel here"
+      },
+      "total": {
+        "heuristic_weight": 0.7,
+        "ai_weight": 0.3,
+        "reasoning": "Total amount patterns are reliable, but AI helps with edge cases"
+      },
+      "merchant": {
+        "heuristic_weight": 0.4,
+        "ai_weight": 0.6,
+        "reasoning": "Merchant names vary widely, AI better at context understanding"
+      },
+      "currency": {
+        "heuristic_weight": 0.9,
+        "ai_weight": 0.1,
+        "reasoning": "Currency symbols are well-defined patterns"
+      },
+      "tax_rate": {
+        "heuristic_weight": 0.8,
+        "ai_weight": 0.2,
+        "reasoning": "Tax patterns are standardized by country"
+      },
+      "tax_amount": {
+        "heuristic_weight": 0.6,
+        "ai_weight": 0.4,
+        "reasoning": "Tax calculations benefit from both approaches"
+      },
+      "items": {
+        "heuristic_weight": 0.3,
+        "ai_weight": 0.7,
+        "reasoning": "Item extraction requires context understanding"
+      },
+      "category": {
+        "heuristic_weight": 0.2,
+        "ai_weight": 0.8,
+        "reasoning": "Category assignment benefits from semantic understanding"
+      },
+      "vat_number": {
+        "heuristic_weight": 0.9,
+        "ai_weight": 0.1,
+        "reasoning": "VAT numbers follow strict country-specific patterns"
+      }
+    },
+    
+    "conflict_resolution": {
+      "rules": [
+        {
+          "field": "total",
+          "strategy": "mathematical_validation",
+          "description": "Use subtotal + tax calculation to resolve conflicts"
+        },
+        {
+          "field": "date",
+          "strategy": "format_confidence",
+          "description": "Prefer result with higher format pattern match"
+        },
+        {
+          "field": "merchant",
+          "strategy": "length_and_position",
+          "description": "Prefer longer name from header position"
+        },
+        {
+          "field": "currency",
+          "strategy": "context_validation",
+          "description": "Validate against merchant location and country"
+        },
+        {
+          "field": "tax_rate",
+          "strategy": "country_standards",
+          "description": "Validate against known tax rates for country/category"
+        },
+        {
+          "field": "items",
+          "strategy": "count_and_consistency",
+          "description": "Prefer result with more items if totals match"
+        }
+      ],
+      
+      "tie_breaking": {
+        "default_strategy": "ai_preference",
+        "confidence_threshold": 0.1,
+        "description": "If confidence difference is < 0.1, prefer AI result for semantic fields, heuristic for pattern fields"
+      }
+    },
+    
+    "quality_gates": {
+      "mathematical_consistency": {
+        "description": "Ensure subtotal + tax = total within tolerance",
+        "tolerance": 0.02,
+        "required": true
+      },
+      "date_validity": {
+        "description": "Validate date is reasonable (not future, within 5 years)",
+        "max_future_days": 1,
+        "max_past_years": 5,
+        "required": true
+      },
+      "currency_consistency": {
+        "description": "Ensure all amounts use same currency",
+        "check_fields": ["total", "subtotal", "tax_amount", "items"],
+        "required": true
+      },
+      "field_completeness": {
+        "description": "Check minimum required fields are present",
+        "required_fields": ["date", "merchant", "total", "currency"],
+        "optional_high_value": ["tax_rate", "tax_amount", "category"],
+        "required": true
+      }
+    }
+  },
+  
+  "confidence_scoring": {
+    "description": "Comprehensive confidence scoring methodology",
+    
+    "thresholds": {
+      "auto_accept": 0.90,
+      "ai_verification_needed": 0.70,
+      "manual_review": 0.50,
+      "reject": 0.30
+    },
+    
+    "scoring_components": {
+      "extraction_confidence": {
+        "weight": 0.4,
+        "description": "Confidence from extraction method (heuristic pattern match strength or AI model confidence)"
+      },
+      "cross_validation": {
+        "weight": 0.25,
+        "description": "Agreement between multiple extraction methods"
+      },
+      "mathematical_consistency": {
+        "weight": 0.20,
+        "description": "Tax calculations and totals add up correctly"
+      },
+      "format_compliance": {
+        "weight": 0.10,
+        "description": "Fields match expected formats for country/language"
+      },
+      "completeness": {
+        "weight": 0.05,
+        "description": "Percentage of expected fields successfully extracted"
+      }
+    },
+    
+    "penalties": {
+      "field_conflicts": -0.15,
+      "math_inconsistency": -0.25,
+      "format_violations": -0.10,
+      "missing_critical_fields": -0.20,
+      "extraction_timeout": -0.10
+    },
+    
+    "bonuses": {
+      "perfect_math": 0.10,
+      "all_methods_agree": 0.15,
+      "known_merchant_format": 0.05,
+      "multiple_validation_passes": 0.08
+    }
+  },
+  
+  "performance_optimization": {
+    "description": "Production optimization strategies for speed and accuracy",
+    
+    "caching": {
+      "merchant_patterns": {
+        "enabled": true,
+        "ttl_hours": 24,
+        "max_entries": 10000,
+        "description": "Cache successful merchant extraction patterns"
+      },
+      "ai_model_responses": {
+        "enabled": true,
+        "ttl_minutes": 30,
+        "cache_key": "text_hash + model_version",
+        "description": "Cache AI responses for identical receipt texts"
+      },
+      "heuristic_results": {
+        "enabled": true,
+        "ttl_minutes": 10,
+        "description": "Cache heuristic extraction results for duplicate processing"
+      }
+    },
+    
+    "batch_processing": {
+      "enabled": true,
+      "batch_size": 5,
+      "max_wait_time_ms": 500,
+      "description": "Group similar receipts for batch AI processing",
+      "grouping_criteria": [
+        "same_merchant",
+        "same_country",
+        "same_language",
+        "similar_complexity"
+      ]
+    },
+    
+    "resource_allocation": {
+      "heuristic_threads": 4,
+      "ai_model_instances": 2,
+      "max_concurrent_extractions": 10,
+      "memory_limit_mb": 512,
+      "description": "Resource limits to prevent system overload"
+    },
+    
+    "early_termination": {
+      "enabled": true,
+      "conditions": [
+        "heuristic_confidence >= 0.95",
+        "no_conflicts_detected",
+        "all_required_fields_extracted",
+        "math_validation_passed"
+      ],
+      "description": "Skip AI processing when heuristics provide excellent results"
+    }
+  },
+  
+  "country_specific_configurations": {
+    "CH": {
+      "description": "Switzerland - Multi-language, complex VAT structure",
+      "languages": ["de", "fr", "it", "en"],
+      "currency": "CHF",
+      "decimal_separator": ".",
+      "thousands_separator": "'",
+      "date_formats": ["dd.MM.yyyy", "dd/MM/yyyy"],
+      "vat_rates": [2.5, 3.7, 8.1],
+      "heuristic_strength": "high",
+      "ai_usage_threshold": 0.85,
+      "special_handling": [
+        "multilingual_receipts",
+        "rounding_to_5_cents",
+        "complex_vat_structure"
+      ]
+    },
+    
+    "DE": {
+      "description": "Germany - Standard EU format",
+      "languages": ["de", "en"],
+      "currency": "EUR",
+      "decimal_separator": ",",
+      "thousands_separator": ".",
+      "date_formats": ["dd.MM.yyyy", "dd/MM/yyyy"],
+      "vat_rates": [7, 19],
+      "heuristic_strength": "high",
+      "ai_usage_threshold": 0.80,
+      "special_handling": [
+        "take_away_vs_dine_in_tax",
+        "pfand_deposits"
+      ]
+    },
+    
+    "JP": {
+      "description": "Japan - Unique format and currency",
+      "languages": ["ja", "en"],
+      "currency": "JPY",
+      "decimal_separator": null,
+      "thousands_separator": ",",
+      "date_formats": ["yyyy年MM月dd日", "yyyy/MM/dd"],
+      "vat_rates": [8, 10],
+      "heuristic_strength": "medium",
+      "ai_usage_threshold": 0.75,
+      "special_handling": [
+        "mixed_kanji_numbers",
+        "consumption_tax_variations",
+        "no_decimal_currency"
+      ]
+    },
+    
+    "US": {
+      "description": "United States - Sales tax variations",
+      "languages": ["en", "es"],
+      "currency": "USD",
+      "decimal_separator": ".",
+      "thousands_separator": ",",
+      "date_formats": ["MM/dd/yyyy", "MM-dd-yyyy"],
+      "vat_rates": "variable",
+      "heuristic_strength": "high",
+      "ai_usage_threshold": 0.82,
+      "special_handling": [
+        "state_specific_tax_rates",
+        "tip_calculations",
+        "sales_tax_variations"
+      ]
+    }
+  },
+  
+  "category_specific_rules": {
+    "food": {
+      "heuristic_reliability": 0.85,
+      "common_patterns": ["supermarket_chains", "grocery_keywords"],
+      "ai_helps_with": ["organic_vs_regular", "item_categorization"],
+      "validation_rules": ["low_vat_rate_expected"]
+    },
+    
+    "restaurant": {
+      "heuristic_reliability": 0.78,
+      "common_patterns": ["table_numbers", "service_charges"],
+      "ai_helps_with": ["cuisine_type", "meal_timing"],
+      "validation_rules": ["standard_vat_rate", "tip_detection"]
+    },
+    
+    "hotel": {
+      "heuristic_reliability": 0.82,
+      "common_patterns": ["accommodation_keywords", "night_pricing"],
+      "ai_helps_with": ["service_breakdown", "city_tax"],
+      "validation_rules": ["accommodation_vat_rate", "multi_day_stays"]
+    },
+    
+    "transport": {
+      "heuristic_reliability": 0.90,
+      "common_patterns": ["route_information", "transport_operators"],
+      "ai_helps_with": ["transfer_vs_direct", "time_zones"],
+      "validation_rules": ["distance_pricing", "zone_based_fares"]
+    },
+    
+    "office_supplies": {
+      "heuristic_reliability": 0.83,
+      "common_patterns": ["item_codes", "bulk_pricing"],
+      "ai_helps_with": ["product_descriptions", "bulk_vs_individual"],
+      "validation_rules": ["standard_vat_rate", "quantity_pricing"]
+    }
+  },
+  
+  "error_handling": {
+    "description": "Comprehensive error handling and recovery strategies",
+    
+    "timeout_handling": {
+      "heuristic_timeout": {
+        "action": "return_partial_results",
+        "fallback": "ai_extraction",
+        "timeout_ms": 1000
+      },
+      "ai_timeout": {
+        "action": "use_heuristic_results",
+        "confidence_penalty": 0.2,
+        "timeout_ms": 5000
+      },
+      "total_pipeline_timeout": {
+        "action": "return_best_available",
+        "timeout_ms": 10000
+      }
+    },
+    
+    "extraction_failures": {
+      "no_text_extracted": {
+        "action": "return_error",
+        "error_code": "OCR_FAILED",
+        "retry_with_preprocessing": true
+      },
+      "no_patterns_matched": {
+        "action": "force_ai_extraction",
+        "confidence_cap": 0.5
+      },
+      "ai_model_unavailable": {
+        "action": "heuristic_only",
+        "add_warning": true
+      }
+    },
+    
+    "validation_failures": {
+      "math_inconsistency": {
+        "action": "recalculate_and_warn",
+        "confidence_penalty": 0.15
+      },
+      "invalid_date": {
+        "action": "date_correction_heuristics",
+        "fallback": "manual_review"
+      },
+      "missing_critical_fields": {
+        "action": "request_manual_review",
+        "required_fields": ["date", "merchant", "total", "currency"]
+      }
+    },
+    
+    "retry_strategies": {
+      "max_retries": 2,
+      "backoff_strategy": "exponential",
+      "retry_conditions": [
+        "temporary_ai_failure",
+        "network_timeout",
+        "processing_overload"
+      ]
+    }
+  },
+  
+  "monitoring_and_logging": {
+    "description": "Production monitoring configuration",
+    
+    "performance_metrics": {
+      "extraction_time_by_method": true,
+      "accuracy_by_country": true,
+      "accuracy_by_category": true,
+      "confidence_score_distribution": true,
+      "pipeline_stage_timing": true,
+      "error_rates_by_type": true
+    },
+    
+    "logging_levels": {
+      "extraction_results": "INFO",
+      "performance_timing": "DEBUG",
+      "error_details": "ERROR",
+      "confidence_scoring": "DEBUG",
+      "pipeline_decisions": "INFO"
+    },
+    
+    "alerting_thresholds": {
+      "accuracy_below": 0.85,
+      "average_processing_time_above_ms": 3000,
+      "error_rate_above_percent": 5,
+      "ai_timeout_rate_above_percent": 10
+    }
+  },
+  
+  "feature_flags": {
+    "description": "Production feature toggles for gradual rollout",
+    
+    "pipeline_features": {
+      "enable_ai_extraction": true,
+      "enable_result_fusion": true,
+      "enable_batch_processing": false,
+      "enable_caching": true,
+      "enable_early_termination": true
+    },
+    
+    "experimental_features": {
+      "enable_ml_confidence_scoring": false,
+      "enable_adaptive_thresholds": false,
+      "enable_receipt_similarity_matching": false,
+      "enable_merchant_learning": false
+    },
+    
+    "rollout_percentages": {
+      "full_pipeline": 100,
+      "ai_only_mode": 0,
+      "experimental_fusion": 10
+    }
+  }
+}

@@ -1,0 +1,629 @@
+/*
+  Localizable.strings
+  PrivExpenses
+
+  한국어 (ko)
+  Generated for PrivExpenses - Sprint 1
+*/
+
+/* === NAVIGATION & MENUS === */
+"app.title" = "PrivExpenses";
+"menu.home" = "홈";
+"menu.expenses" = "비용";
+"menu.reports" = "보고서";
+"menu.settings" = "설정";
+"menu.help" = "도움말";
+"menu.logout" = "로그아웃";
+
+/* === HOME SCREEN === */
+"home.good_morning" = "좋은 아침";
+"home.good_afternoon" = "좋은 오후";
+"home.good_evening" = "좋은 저녁";
+"home.todays_spending" = "오늘 지출";
+"home.budget_left" = "남은 예산";
+"home.weekly_average" = "주간 평균";
+"home.saved" = "절약됨";
+"home.activity" = "활동";
+"home.recent_expenses" = "최근 지출";
+"home.period.week" = "주";
+"home.day.mon" = "월";
+"home.day.tue" = "화";
+"home.day.wed" = "수";
+"home.day.thu" = "목";
+"home.day.fri" = "금";
+"home.day.sat" = "토";
+"home.day.sun" = "일";
+
+/* === ACTIONS === */
+"action.add" = "추가";
+"action.edit" = "편집";
+"action.delete" = "삭제";
+"action.save" = "저장";
+"action.cancel" = "취소";
+"action.submit" = "제출";
+"action.approve" = "승인";
+"action.reject" = "거부";
+"action.export" = "데이터 내보내기";
+"action.import" = "가져오기";
+"action.scan" = "스캔";
+"action.search" = "검색";
+"action.filter" = "필터";
+"action.refresh" = "새로고침";
+"action.select" = "선택";
+"action.close" = "닫기";
+
+/* === EXPENSE FORM === */
+"expense.title" = "비용 제목";
+"expense.amount" = "금액";
+"expense.date" = "날짜";
+"expense.category" = "카테고리";
+"expense.merchant" = "가맹점";
+"expense.description" = "설명";
+"expense.receipt" = "영수증";
+"expense.vat" = "부가세";
+"expense.currency" = "통화";
+"expense.payment_method" = "결제 방법";
+"expense.status" = "상태";
+"expense.total" = "합계";
+"expense.subtotal" = "소계";
+"expense.vat_amount" = "부가세액";
+
+/* === CATEGORIES === */
+"category.food" = "식료품";
+"category.restaurant" = "식당";
+"category.hotel" = "숙박";
+"category.transport" = "교통";
+"category.taxi" = "택시";
+"category.public_transport" = "대중교통";
+"category.gas" = "주유";
+"category.parking" = "주차";
+"category.office_supplies" = "사무용품";
+"category.entertainment" = "접대";
+"category.training" = "교육";
+"category.travel" = "출장";
+"category.phone" = "전화";
+"category.internet" = "인터넷";
+"category.software" = "소프트웨어";
+"category.hardware" = "하드웨어";
+"category.other" = "기타";
+
+/* === STATUS === */
+"status.draft" = "초안";
+"status.pending" = "대기중";
+"status.approved" = "승인됨";
+"status.rejected" = "거부됨";
+"status.reimbursed" = "정산됨";
+"status.processing" = "처리중";
+
+/* === PAYMENT METHODS === */
+"payment.cash" = "현금";
+"payment.credit_card" = "신용카드";
+"payment.debit_card" = "체크카드";
+"payment.company_card" = "법인카드";
+"payment.bank_transfer" = "계좌이체";
+"payment.check" = "수표";
+
+/* === MESSAGES === */
+"message.welcome" = "PrivExpenses에 오신 것을 환영합니다";
+"message.loading" = "로딩중...";
+"message.saving" = "저장중...";
+"message.success" = "작업이 완료되었습니다";
+"message.error" = "오류가 발생했습니다";
+"message.confirm_delete" = "이 비용을 삭제하시겠습니까?";
+"message.no_expenses" = "비용이 없습니다";
+"message.receipt_uploaded" = "영수증이 업로드되었습니다";
+"message.expense_saved" = "비용이 저장되었습니다";
+"message.expense_submitted" = "비용이 승인 요청되었습니다";
+"message.scanning_receipt" = "영수증 스캔중...";
+
+/* === ERRORS === */
+"error.required_field" = "필수 입력 항목입니다";
+"error.invalid_amount" = "잘못된 금액";
+"error.invalid_date" = "잘못된 날짜";
+"error.network" = "네트워크 연결 오류";
+"error.upload_failed" = "업로드 실패";
+"error.scan_failed" = "영수증 스캔 실패";
+"error.unauthorized" = "권한 없음";
+"error.server_error" = "서버 오류";
+"error.invalid_receipt" = "잘못된 또는 읽을 수 없는 영수증";
+"error.duplicate_expense" = "이 비용은 중복된 것 같습니다";
+
+/* === FILTERS & SEARCH === */
+"filter.all" = "전체";
+"filter.today" = "오늘";
+"filter.this_week" = "이번 주";
+"filter.this_month" = "이번 달";
+"filter.this_year" = "올해";
+"filter.custom_range" = "기간 설정";
+"search.placeholder" = "비용 검색...";
+
+/* === REPORTS === */
+"report.title" = "비용 보고서";
+"report.period" = "기간";
+"report.total_expenses" = "총 비용";
+"report.by_category" = "카테고리별";
+"report.by_month" = "월별";
+"report.export_pdf" = "PDF로 내보내기";
+"report.export_excel" = "Excel로 내보내기";
+
+/* === SETTINGS === */
+"settings.profile" = "프로필";
+"settings.notifications" = "알림";
+"settings.currency" = "기본 통화";
+"settings.language" = "언어";
+"settings.vat_settings" = "부가세 설정";
+"settings.sync" = "동기화";
+"settings.about" = "정보";
+"settings.privacy" = "개인정보";
+"settings.terms" = "이용약관";
+
+/* === RECEIPT SCANNING === */
+"scan.instructions" = "프레임 안에 영수증을 배치하세요";
+"scan.processing" = "처리중...";
+"scan.extracting" = "데이터 추출중...";
+"scan.complete" = "스캔 완료";
+"scan.retry" = "다시 시도";
+
+/* === FORMATTING === */
+"format.currency.krw" = "₩%@";
+"format.date" = "yyyy년 MM월 dd일";
+"format.time" = "a h:mm";
+"format.datetime" = "yyyy년 MM월 dd일 a h:mm";
+"format.percentage" = "%@%%";
+
+/* === ACCESSIBILITY === */
+"accessibility.add_expense" = "새 비용 추가";
+"accessibility.scan_receipt" = "영수증 스캔";
+"accessibility.expense_image" = "영수증 이미지";
+"accessibility.delete_expense" = "이 비용 삭제";
+"accessibility.approve_expense" = "이 비용 승인";
+
+/* === ADDITIONAL UI KEYS === */
+"greeting_morning" = "좋은 아침입니다";
+"greeting_afternoon" = "안녕하세요";
+"greeting_evening" = "좋은 저녁입니다";
+"today_spending" = "오늘 지출";
+"settings_title" = "설정";
+"settings_subtitle" = "경험을 사용자 정의하세요";
+"notification_label" = "알림";
+"currency_label" = "통화";
+"language_label" = "언어";
+"expense_title" = "비용";
+"scan_title" = "영수증 스캔";
+"statistics_title" = "통계";
+/* === MISSING KEYS === */
+"notifications_label" = "알림";
+"notifications_subtitle" = "푸시 알림 관리";
+"dark_mode_label" = "다크 모드";
+"dark_mode_subtitle" = "다크 테마로 전환";
+
+/* === TAB BAR === */
+"tab_home" = "홈";
+"tab_expenses" = "비용";
+"tab_scan" = "스캔";
+"tab_stats" = "통계";
+"tab_settings" = "설정";
+
+/* === NEW LOCALIZATION KEYS === */
+"app_name" = "PrivExpenses";
+"app_tagline" = "스마트 지출 추적";
+"app_version" = "버전 1.0.0 (빌드 1)";
+
+/* === SCANNER === */
+"scan_receipt" = "영수증 스캔";
+"scan_receipt_subtitle" = "영수증 촬영 방법을 선택하세요";
+"scan_option_camera" = "카메라";
+"scan_option_camera_description" = "카메라로 영수증 스캔";
+"scan_option_library" = "사진 보관함";
+"scan_option_library_description" = "사진에서 선택";
+"scan_option_files" = "파일";
+"scan_option_files_description" = "PDF 또는 이미지 파일 가져오기";
+"scan_tip" = "팁: 최상의 결과를 위해 조명이 충분하고 영수증 전체가 보이도록 촬영하세요";
+"processing_receipt" = "영수증 처리 중";
+"processing_receipt_ai" = "AI로 정보 추출 중...";
+"receipt_scanned" = "영수증 스캔 완료";
+"ai_confidence" = "AI 신뢰도: %d%%";
+"save_expense" = "비용 저장";
+"choose_from_library" = "보관함에서 선택";
+
+/* === EXPENSES === */
+"expenses_title" = "비용";
+"expenses_empty_title" = "아직 비용이 없습니다";
+"expenses_empty_message" = "+ 버튼을 눌러 첫 번째 영수증을 스캔하세요";
+"add_expense" = "비용 추가";
+"total_amount" = "총 금액";
+"tax" = "세금";
+"items" = "항목";
+"delete_expense" = "비용 삭제";
+"delete_expense_confirmation" = "이 비용을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.";
+"save_changes" = "변경사항 저장";
+
+/* === BUTTONS === */
+"button_back" = "뒤로";
+"button_cancel" = "취소";
+"button_done" = "완료";
+"button_edit" = "편집";
+"button_retry" = "다시 시도";
+"button_skip" = "건너뛰기";
+"button_next" = "다음";
+"get_started" = "시작하기";
+
+/* === ONBOARDING === */
+"camera_access_title" = "카메라 접근";
+"camera_access_description" = "PrivExpenses가 영수증을 스캔하려면 카메라 접근 권한이 필요합니다. 모든 처리는 기기에서 이루어집니다.";
+"allow_camera_access" = "카메라 접근 허용";
+"not_now" = "나중에";
+
+/* === FEEDBACK === */
+"feedback_title" = "베타 피드백";
+"feedback_subtitle" = "PrivExpenses 개선에 도움을 주세요";
+"feedback_rating_question" = "경험을 어떻게 평가하시겠습니까?";
+"feedback_category" = "카테고리";
+"feedback_your_feedback" = "귀하의 피드백";
+"feedback_placeholder" = "의견을 알려주세요...";
+"feedback_submit" = "피드백 제출";
+"feedback_thank_you" = "감사합니다!";
+"feedback_thank_you_message" = "귀하의 피드백은 PrivExpenses를 더 좋게 만드는 데 도움이 됩니다";
+
+/* === CREDITS === */
+"credits_about" = "정보";
+"credits_about_description" = "PrivExpenses는 고급 AI 및 OCR 기술을 사용하여 영수증에서 정보를 자동으로 추출하는 지능형 지출 추적 앱으로, 데이터를 기기에서 100% 비공개로 유지합니다.";
+"credits_team" = "팀";
+"credits_technologies" = "기술";
+"credits_legal" = "법적 고지";
+"credits_copyright" = "© 2025 Minh-Tam Dang. All rights reserved.";
+"credits_privacy_statement" = "이 앱은 외부 서비스를 사용하지 않습니다. 모든 데이터 처리는 기기에서 이루어지며, 어떤 데이터도 수집, 저장 또는 서버로 전송되지 않습니다.";
+/* === AI MODE & ADDITIONAL TRANSLATIONS === */
+"ai_mode_fast_description" = "⚡ 빠른 모드 - 즉시";
+"ai_mode_qwen_description" = "🤖 Qwen AI - 최고 정밀도 (~2초)";
+"ai_mode_title" = "AI 모드";
+
+/* === CURRENCY FORMATS === */
+"format.currency.chf" = "CHF %@";
+"format.currency.eur" = "€ %@";
+"format.currency.gbp" = "£ %@";
+"format.currency.usd" = "$ %@";
+
+/* === TIME REFERENCES === */
+"home.days_ago" = "%d일 전";
+"home.hours_ago" = "%d시간 전";
+"home.just_now" = "방금 전";
+"home.minutes_ago" = "%d분 전";
+"home.period.day" = "일";
+"home.period.month" = "월";
+"home.period.year" = "년";
+"home.see_all" = "모두 보기";
+
+/* === ADDITIONAL SETTINGS === */
+"settings.ai_mode" = "AI 모드";
+"settings.ai_mode_subtitle" = "영수증 분석에 인공지능 사용";
+"settings.dark_mode" = "다크 모드";
+"settings.export_data" = "데이터 내보내기";
+"settings.faceid" = "Face ID";
+"settings.faceid_subtitle" = "Face ID로 잠금 해제";
+"settings.help_support" = "도움말 및 지원";
+"settings.made_with" = "AI와 프라이버시로 제작";
+"settings.preferences" = "환경설정";
+"settings.premium_member" = "프리미엄 회원";
+"settings.privacy_policy" = "개인정보 처리방침";
+"settings.privacy_security" = "개인정보 및 보안";
+"settings.private_mode" = "비공개 모드";
+"settings.private_mode_subtitle" = "민감한 정보 숨기기";
+"settings.scans" = "스캔";
+"settings.sign_out" = "로그아웃";
+"settings.terms_of_service" = "서비스 이용약관";
+"settings.total" = "총계";
+"settings.version" = "버전";
+"settings.icloud_sync" = "iCloud 동기화";
+"settings.icloud_sync_subtitle" = "기기 간 데이터 동기화";
+"settings.export_data" = "데이터 내보내기";
+"settings.clear_cache" = "캐시 삭제";
+"settings.rate_app" = "앱 평가";
+"settings.credits" = "크레딧";
+
+/* === STATISTICS === */
+"stats.by_category" = "카테고리별";
+"stats.period.month" = "월";
+"stats.period.week" = "주";
+"stats.period.year" = "년";
+"stats.spending_trend" = "지출 추세";
+"stats.title" = "통계";
+"stats.total_spent" = "총 지출";
+"stats.vs_last_period" = "이전 기간 대비";
+
+/* === SPRINT 3 - FEEDBACK & EXPORT === */
+
+/* Extraction Error Messages (Task 650) */
+"extraction.error.title" = "추출 실패";
+"extraction.error.message" = "영수증을 읽을 수 없습니다. 더 선명한 이미지로 다시 시도해 주세요.";
+"extraction.error.tips_title" = "더 나은 결과를 위한 팁";
+"extraction.error.tip_lighting" = "충분한 조명 확보";
+"extraction.error.tip_frame" = "영수증 전체 촬영";
+"extraction.error.tip_steady" = "스캔 중 흔들림 방지";
+"extraction.error.tip_readable" = "텍스트가 읽히는지 확인";
+"extraction.error.retry_camera" = "카메라로 재시도";
+
+/* Confidence Indicator (Task 652) */
+"confidence.high" = "높은 신뢰도";
+"confidence.medium" = "중간 신뢰도";
+"confidence.low" = "낮은 신뢰도";
+
+/* Edit Mode (Task 651) */
+"edit.button" = "편집";
+"edit.hint" = "필드를 탭하여 편집";
+"expense.field.merchant" = "상호";
+"expense.field.amount" = "금액";
+
+/* Onboarding Additional Pages (Task 653) */
+"onboarding.budget.title" = "예산 및 통계";
+"onboarding.budget.description" = "지출 한도를 설정하고 아름다운 차트로 지출을 추적하세요. 지출 습관에 대한 인사이트를 얻으세요.";
+"onboarding.export.title" = "내보내기 및 보고서";
+"onboarding.export.description" = "전문적인 지출 보고서를 생성하고 PDF 또는 CSV로 내보내 쉽게 공유하세요.";
+
+/* Export (Tasks 654-655) */
+"export.loading" = "내보내는 중...";
+"export.pdf.title" = "지출 보고서";
+"export.pdf.generated" = "생성일";
+"export.pdf.total" = "합계";
+"export.pdf.items" = "건";
+"export.pdf.footer" = "PrivExpenses에서 생성됨";
+
+/* Scanner Hint (BUG 657) */
+"scanner.hint.title" = "스캔 팁";
+"scanner.hint.message" = "영수증을 스캔한 후 '스캔 유지'를 탭한 다음 '저장'을 탭하여 처리하세요.";
+"scanner.hint.ok" = "알겠습니다!";
+
+/* === SPRINT 5 - AI ASSISTANT & ADVANCED KEYS === */
+
+/* AI Assistant */
+"ai.ask_question" = "질문을 입력하세요...";
+"ai.thinking" = "AI가 생각 중입니다...";
+"ai.assistant_title" = "AI 어시스턴트";
+"ai.context.home" = "홈 - 개요";
+"ai.context.expenses" = "지출";
+"ai.context.statistics" = "통계";
+"ai.context.settings" = "설정";
+"ai.context.scanner" = "스캐너";
+"ai.welcome" = "안녕하세요! AI 어시스턴트입니다. 재정 관리를 어떻게 도와드릴까요?";
+"ai.error" = "죄송합니다, 기술적인 문제가 발생했습니다. 나중에 다시 시도해 주세요.";
+"ai.help_hint" = "시도해 보세요: '이번 달 얼마나 썼어?' 또는 '지출을 추가하려면?'";
+"ai.processing" = "처리 중...";
+"ai.done" = "완료";
+
+/* Assistant Greetings */
+"assistant.greeting_1" = "안녕하세요! 재정 관리를 도와드릴게요. 오늘 무엇을 도와드릴까요?";
+"assistant.greeting_2" = "안녕하세요! 당신의 재정 어시스턴트입니다. 어떻게 도와드릴까요?";
+"assistant.greeting_3" = "안녕하세요! 함께 재정을 최적화해봐요. 무엇을 알고 싶으세요?";
+"assistant.welcome_message" = "안녕하세요! 저는 당신의 재정 어시스턴트입니다. 오늘 지출 관리를 어떻게 도와드릴까요? 👋";
+
+/* Budget Advanced */
+"budget.daily" = "일일 예산";
+"budget.weekly" = "주간 예산";
+"budget.monthly" = "월간 예산";
+"budget.yearly" = "연간 예산";
+"budget.used" = "사용됨";
+"budget.remaining" = "남음";
+"budget.set_daily" = "일일 예산 설정";
+"budget.set_weekly" = "주간 예산 설정";
+"budget.set_monthly" = "월간 예산 설정";
+"budget.set_yearly" = "연간 예산 설정";
+"budget.status.excellent" = "훌륭한 관리";
+"budget.status.good" = "순조로움";
+"budget.status.warning" = "한도에 근접";
+"budget.status.danger" = "예산 초과";
+"budget.insight.limit_reached" = "예산 한도에 도달함";
+"budget.insight.approaching" = "예산 한도에 근접 중";
+
+/* Budget Types */
+"budget.type.daily" = "일별";
+"budget.type.weekly" = "주별";
+"budget.type.monthly" = "월별";
+"budget.type.yearly" = "연별";
+
+/* Budget Setup */
+"budget.setup.title" = "월간 예산";
+"budget.setup.subtitle" = "지출 한도 설정";
+"budget.setup.set_button" = "예산 설정";
+
+/* Budget Insights */
+"budget.insight.spending_fast" = "예상보다 20% 빠른 지출";
+"budget.insight.great_savings" = "이번 달 훌륭한 절약 속도";
+"budget.insight.low_daily" = "하루에 10 미만 남음";
+
+/* Buttons */
+"button.done" = "완료";
+"button.cancel" = "취소";
+"button.create" = "생성";
+"button.delete" = "삭제";
+"cancel" = "취소";
+"save" = "저장";
+
+/* Chat */
+"chat.greeting" = "안녕하세요! 👋";
+"chat.help_prompt" = "지출 분석을 도와드릴게요.\n질문해 주세요!";
+
+/* Common */
+"common.cancel" = "취소";
+"common.done" = "완료";
+"common.ok" = "확인";
+
+/* Expense Advanced */
+"expense.add_title" = "지출 추가";
+"expense.scan_receipt" = "영수증 스캔";
+"expense.manual_entry" = "수동 입력";
+"expense.unknown_merchant" = "알 수 없음";
+"expense.save_button" = "지출 저장";
+"expense.tax_format" = "세금: %@";
+"expense.field.date" = "날짜";
+"expense.field.category" = "카테고리";
+"expense.field.payment" = "결제";
+"expense.field.tax" = "세금";
+"expense.field.items" = "항목";
+"expense.field.merchant" = "가맹점";
+"expense.field.amount" = "금액";
+"expenses.total_format" = "합계: %@";
+
+/* Expenses Reports */
+"expenses.reports.title" = "보고서";
+"expenses.reports.generate" = "보고서 생성";
+"expenses.reports.period" = "기간";
+"expenses.reports.from" = "시작";
+"expenses.reports.to" = "종료";
+"expenses.reports.archived" = "보관됨";
+"expenses.reports.empty" = "보고서 없음";
+"expenses.reports.created" = "보고서 생성됨";
+"expenses.thumbnails.empty" = "이미지가 있는 영수증 없음";
+"expenses.view_mode.list" = "목록";
+"expenses.view_mode.thumbnails" = "썸네일";
+
+/* Export */
+"export.title" = "내보내기";
+"export.generate_auto_report" = "자동 보고서 생성";
+"export.pdf" = "PDF 내보내기";
+"export.csv" = "CSV 내보내기";
+"export.loading" = "내보내는 중...";
+"export.pdf.title" = "지출 보고서";
+"export.pdf.generated" = "생성일";
+"export.pdf.total" = "합계";
+"export.pdf.items" = "건";
+"export.pdf.footer" = "PrivExpenses에서 생성됨";
+
+/* Report Advanced */
+"report.items_count" = "%d건";
+"report.expenses_count" = "%d건의 지출";
+"report.details_title" = "보고서 상세";
+"report.create_title" = "보고서 생성";
+"report.title_placeholder" = "보고서 제목";
+"report.date_from" = "시작일";
+"report.date_to" = "종료일";
+
+/* Scan */
+"scan.complete_title" = "스캔 완료";
+"scan.complete_message" = "영수증 처리가 완료되었습니다";
+
+/* Onboarding */
+"onboarding.scanning.title" = "스마트 영수증 스캔";
+"onboarding.scanning.description" = "고급 AI 기반 OCR 기술로 영수증을 즉시 캡처하고 디지털화";
+"onboarding.ai.title" = "AI 기반 인텔리전스";
+"onboarding.ai.description" = "기기 내 AI가 가맹점, 금액, 세금을 자동 추출하고 지출을 분류";
+"onboarding.privacy.title" = "100% 비공개 & 안전";
+"onboarding.privacy.description" = "모든 처리는 기기에서 이루어집니다. 금융 데이터는 iPhone을 떠나지 않습니다";
+"onboarding.budget.title" = "예산 및 통계";
+"onboarding.budget.description" = "지출 한도를 설정하고 아름다운 차트로 지출을 추적하세요. 지출 습관에 대한 인사이트를 얻으세요.";
+"onboarding.export.title" = "내보내기 및 보고서";
+"onboarding.export.description" = "전문적인 지출 보고서를 생성하고 PDF 또는 CSV로 내보내 쉽게 공유하세요.";
+
+/* Periods */
+"period.week" = "주";
+"period.month" = "월";
+"period.year" = "년";
+
+/* Statistics */
+"statistics.title" = "통계";
+"statistics.current_period" = "현재 기간";
+"statistics.total_spent" = "총 지출";
+"statistics.this_period" = "이 기간";
+"statistics.average" = "평균";
+
+/* Lists */
+"list.and_more" = "... 외 %d건";
+
+/* Edit Mode */
+"edit.button" = "편집";
+"edit.hint" = "필드를 탭하여 편집";
+
+/* Alerts */
+"alert.cloud_vision" = "Cloud Vision";
+"alert.corrections_applied" = "수정 사항이 적용되었습니다";
+"alert.enhance_ai" = "AI 향상";
+
+/* Home Advanced */
+"home.today" = "오늘";
+"home.recent_activity" = "최근 활동";
+"home.current_report" = "이번 달 보고서";
+"home.hour_ago" = "1시간 전";
+"home.minute_ago" = "1분 전";
+"home.yesterday" = "어제";
+
+/* Performance */
+"performance.title" = "🎯 성능 모니터";
+
+/* Settings Advanced */
+"settings.select_currency" = "통화 선택";
+"settings.select_language" = "언어 선택";
+"settings_currency" = "통화";
+"settings_language" = "언어";
+
+/* === SETTINGS CLOUD VISION === */
+"settings.cloud_vision.title" = "클라우드 비전 AI";
+"settings.cloud_vision.enable" = "클라우드 비전 활성화";
+"settings.cloud_vision.subtitle" = "영수증에 강력한 클라우드 AI 사용";
+"settings.cloud_vision.test" = "클라우드 비전 테스트";
+"settings.provider" = "제공자";
+"settings.api_key_openai" = "OpenAI API 키";
+"settings.api_key_groq" = "Groq API 키";
+"settings.api_key_placeholder" = "API 키를 입력하세요...";
+"settings.api_key_configured" = "API 키 설정됨";
+
+/* === EXPORT PDF COLUMNS === */
+"export.column.date" = "날짜";
+"export.column.merchant" = "가맹점";
+"export.column.amount" = "금액";
+"export.column.tax" = "세금";
+"export.column.category" = "카테고리";
+"export.unknown" = "알 수 없음";
+"export.other" = "기타";
+
+/* === ALERTS === */
+"alert.corrections_applied" = "수정 적용됨";
+"alert.enhance_ai" = "AI 개선";
+"alert.cloud_vision" = "클라우드 비전";
+"alert.cloud_vision_success" = "분석 성공:";
+"alert.cloud_vision_error" = "클라우드 비전 오류";
+
+/* === BUTTONS === */
+"button.done" = "완료";
+
+/* === RECEIPT PREVIEW === */
+"receipt.preview.title" = "스캔한 영수증";
+"receipt.preview.expand" = "확대";
+"receipt.preview.verify_hint" = "추출된 데이터가 영수증과 일치하는지 확인하세요";
+"receipt.fullscreen.zoom_hint" = "핀치로 확대 • 더블 탭으로 초기화";
+
+/* === RESULT AUTO-CLOSE === */
+"result.auto_close" = "자동으로 닫는 중...";
+"result.tap_to_stay" = "탭하여 유지";
+"result.enhance_with_ai" = "AI로 개선";
+
+/* === SCAN RESULT DELETE === */
+"delete.confirmation.title" = "이 지출을 삭제하시겠습니까?";
+"delete.confirmation.message" = "방금 스캔한 지출이 영구적으로 삭제됩니다.";
+
+/* === 문서 아카이브 (SPRINT 13) === */
+"document.archive.title" = "문서";
+"document.processing" = "문서 처리 중...";
+"document.filter.tous" = "전체";
+"document.filter.factures" = "청구서";
+"document.filter.admin" = "관리";
+"document.empty" = "문서 없음";
+"document.empty.hint" = "청구서나 관리 문서를 스캔하여 보관하세요";
+"document.summary" = "요약";
+"document.view" = "보기";
+"document.type.invoice" = "청구서";
+"document.type.admin" = "관리 문서";
+"document.title" = "제목";
+"button.delete" = "삭제";
+"button.edit" = "편집";
+"expense.field.amount" = "금액";
+"expense.field.date" = "날짜";
+"search" = "검색";
+
+// MARK: - Search Indexing
+"search.result" = "결과";
+"search.results" = "결과";
+"search.in_content" = "내용 검색";
+"search.match.title" = "제목";
+"search.match.summary" = "요약";
+"search.match.content" = "내용";
+"search.no_results" = "결과 없음";
+"search.no_results.hint" = "다른 키워드를 시도하거나 철자를 확인하세요";

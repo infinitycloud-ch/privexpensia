@@ -1,0 +1,413 @@
+/* 
+   Localizable.strings
+   PrivExpenses
+   
+   Created on 2024-09-12
+   French (fr) localization
+   
+   Format: "key" = "value";
+   Guidelines:
+   - Keep strings concise and clear
+   - Use formal French ("vous" form) for user-facing text
+   - Follow iOS localization conventions
+   - Currency formatting respects French locale (€ after amount)
+   - Date formatting uses French standards (dd/MM/yyyy)
+*/
+
+// MARK: - App Information
+"APP_NAME" = "PrivExpenses";
+"APP_TAGLINE" = "Gestion intelligente de vos dépenses";
+"APP_DESCRIPTION" = "Scannez vos reçus et gérez vos dépenses avec l'intelligence artificielle";
+
+// MARK: - Tab Bar & Navigation
+"TAB_SCANNER" = "Scanner";
+"TAB_EXPENSES" = "Dépenses";
+"TAB_STATISTICS" = "Statistiques";
+"TAB_SETTINGS" = "Réglages";
+
+"NAV_BACK" = "Retour";
+"NAV_CANCEL" = "Annuler";
+"NAV_DONE" = "Terminé";
+"NAV_SAVE" = "Enregistrer";
+"NAV_EDIT" = "Modifier";
+"NAV_DELETE" = "Supprimer";
+"NAV_SHARE" = "Partager";
+"NAV_CLOSE" = "Fermer";
+
+// MARK: - Scanner View
+"SCANNER_TITLE" = "Scanner un reçu";
+"SCANNER_SUBTITLE" = "Positionnez le reçu dans le cadre";
+"SCANNER_INSTRUCTIONS" = "Alignez le reçu avec le cadre et appuyez sur le bouton de scan";
+"SCANNER_BUTTON_SCAN" = "Scanner";
+"SCANNER_BUTTON_GALLERY" = "Galerie";
+"SCANNER_BUTTON_MANUAL" = "Saisie manuelle";
+
+"SCANNER_PROCESSING" = "Traitement en cours...";
+"SCANNER_PROCESSING_OCR" = "Extraction des données...";
+"SCANNER_PROCESSING_AI" = "Analyse intelligente...";
+"SCANNER_SUCCESS" = "Reçu scanné avec succès";
+
+// MARK: - Camera & Permissions
+"CAMERA_PERMISSION_TITLE" = "Accès à l'appareil photo requis";
+"CAMERA_PERMISSION_MESSAGE" = "PrivExpenses a besoin d'accéder à votre appareil photo pour scanner les reçus.";
+"CAMERA_PERMISSION_SETTINGS" = "Ouvrir les Réglages";
+"CAMERA_PERMISSION_CANCEL" = "Pas maintenant";
+
+"CAMERA_UNAVAILABLE_TITLE" = "Appareil photo indisponible";
+"CAMERA_UNAVAILABLE_MESSAGE" = "L'appareil photo n'est pas disponible. Vous pouvez saisir vos dépenses manuellement.";
+"CAMERA_ERROR" = "Erreur de l'appareil photo";
+
+// MARK: - Expense Management
+"EXPENSE_TITLE" = "Nouvelle dépense";
+"EXPENSE_EDIT_TITLE" = "Modifier la dépense";
+"EXPENSE_DETAIL_TITLE" = "Détails de la dépense";
+
+"EXPENSE_AMOUNT" = "Montant";
+"EXPENSE_MERCHANT" = "Commerçant";
+"EXPENSE_DATE" = "Date";
+"EXPENSE_TIME" = "Heure";
+"EXPENSE_CATEGORY" = "Catégorie";
+"EXPENSE_DESCRIPTION" = "Description";
+"EXPENSE_NOTES" = "Notes";
+"EXPENSE_TAGS" = "Étiquettes";
+"EXPENSE_RECEIPT" = "Reçu";
+"EXPENSE_VAT" = "TVA";
+"EXPENSE_TOTAL" = "Total";
+"EXPENSE_SUBTOTAL" = "Sous-total";
+
+"EXPENSE_AMOUNT_PLACEHOLDER" = "0,00 €";
+"EXPENSE_MERCHANT_PLACEHOLDER" = "Nom du magasin";
+"EXPENSE_DESCRIPTION_PLACEHOLDER" = "Que avez-vous acheté ?";
+"EXPENSE_NOTES_PLACEHOLDER" = "Remarques personnelles";
+
+// MARK: - Categories
+"CATEGORY_FOOD" = "Alimentation";
+"CATEGORY_TRANSPORT" = "Transport";
+"CATEGORY_SHOPPING" = "Shopping";
+"CATEGORY_ENTERTAINMENT" = "Loisirs";
+"CATEGORY_HEALTH" = "Santé";
+"CATEGORY_TRAVEL" = "Voyage";
+"CATEGORY_UTILITIES" = "Services";
+"CATEGORY_EDUCATION" = "Éducation";
+"CATEGORY_BUSINESS" = "Professionnel";
+"CATEGORY_OTHER" = "Autre";
+
+"CATEGORY_SELECT" = "Choisir une catégorie";
+"CATEGORY_CREATE_NEW" = "Créer une nouvelle catégorie";
+"CATEGORY_CUSTOM" = "Catégorie personnalisée";
+
+// MARK: - Expense List
+"EXPENSES_TITLE" = "Mes dépenses";
+"EXPENSES_TODAY" = "Aujourd'hui";
+"EXPENSES_YESTERDAY" = "Hier";
+"EXPENSES_THIS_WEEK" = "Cette semaine";
+"EXPENSES_THIS_MONTH" = "Ce mois";
+"EXPENSES_OLDER" = "Plus anciennes";
+
+"EXPENSES_SEARCH_PLACEHOLDER" = "Rechercher une dépense";
+"EXPENSES_FILTER" = "Filtrer";
+"EXPENSES_SORT" = "Trier";
+"EXPENSES_EMPTY_STATE" = "Aucune dépense enregistrée";
+"EXPENSES_EMPTY_SUBTITLE" = "Commencez par scanner votre premier reçu";
+
+// MARK: - Statistics & Analytics
+"STATISTICS_TITLE" = "Statistiques";
+"STATISTICS_OVERVIEW" = "Vue d'ensemble";
+"STATISTICS_TRENDS" = "Tendances";
+"STATISTICS_CATEGORIES" = "Par catégorie";
+
+"STATS_TODAY" = "Aujourd'hui";
+"STATS_WEEK" = "Semaine";
+"STATS_MONTH" = "Mois";
+"STATS_YEAR" = "Année";
+"STATS_CUSTOM" = "Personnalisé";
+
+"STATS_TOTAL_SPENT" = "Total dépensé";
+"STATS_AVERAGE_DAILY" = "Moyenne quotidienne";
+"STATS_TRANSACTION_COUNT" = "Nombre de transactions";
+"STATS_TOP_CATEGORY" = "Catégorie principale";
+"STATS_TOP_MERCHANT" = "Commerçant principal";
+
+"STATS_NO_DATA" = "Aucune donnée disponible";
+"STATS_NO_DATA_SUBTITLE" = "Ajoutez quelques dépenses pour voir vos statistiques";
+
+// MARK: - Filters & Search
+"FILTER_TITLE" = "Filtres";
+"FILTER_APPLY" = "Appliquer";
+"FILTER_RESET" = "Réinitialiser";
+"FILTER_CLEAR_ALL" = "Tout effacer";
+
+"FILTER_DATE_RANGE" = "Période";
+"FILTER_AMOUNT_RANGE" = "Montant";
+"FILTER_CATEGORIES" = "Catégories";
+"FILTER_MERCHANTS" = "Commerçants";
+"FILTER_TAGS" = "Étiquettes";
+
+"FILTER_DATE_FROM" = "Du";
+"FILTER_DATE_TO" = "Au";
+"FILTER_AMOUNT_MIN" = "Minimum";
+"FILTER_AMOUNT_MAX" = "Maximum";
+
+"SORT_DATE_DESC" = "Plus récentes";
+"SORT_DATE_ASC" = "Plus anciennes";
+"SORT_AMOUNT_DESC" = "Montant décroissant";
+"SORT_AMOUNT_ASC" = "Montant croissant";
+"SORT_MERCHANT_AZ" = "Commerçant A-Z";
+"SORT_CATEGORY" = "Par catégorie";
+
+// MARK: - Actions & Buttons
+"ACTION_SCAN" = "Scanner";
+"ACTION_ADD" = "Ajouter";
+"ACTION_EDIT" = "Modifier";
+"ACTION_DELETE" = "Supprimer";
+"ACTION_DUPLICATE" = "Dupliquer";
+"ACTION_SHARE" = "Partager";
+"ACTION_EXPORT" = "Exporter";
+"ACTION_IMPORT" = "Importer";
+"ACTION_RETRY" = "Réessayer";
+"ACTION_CONTINUE" = "Continuer";
+"ACTION_SKIP" = "Passer";
+
+"BUTTON_GET_STARTED" = "Commencer";
+"BUTTON_TRY_AGAIN" = "Réessayer";
+"BUTTON_LEARN_MORE" = "En savoir plus";
+"BUTTON_CONTACT_SUPPORT" = "Support";
+
+// MARK: - Error Messages
+"ERROR_GENERIC_TITLE" = "Une erreur s'est produite";
+"ERROR_GENERIC_MESSAGE" = "Veuillez réessayer plus tard.";
+"ERROR_NETWORK_TITLE" = "Problème de connexion";
+"ERROR_NETWORK_MESSAGE" = "Vérifiez votre connexion internet et réessayez.";
+"ERROR_CAMERA_TITLE" = "Problème d'appareil photo";
+"ERROR_CAMERA_MESSAGE" = "Impossible d'accéder à l'appareil photo.";
+
+"ERROR_OCR_FAILED_TITLE" = "Échec de la reconnaissance";
+"ERROR_OCR_FAILED_MESSAGE" = "Impossible de lire le reçu. Vous pouvez saisir les informations manuellement.";
+"ERROR_SAVE_FAILED_TITLE" = "Échec de la sauvegarde";
+"ERROR_SAVE_FAILED_MESSAGE" = "Impossible d'enregistrer la dépense. Réessayez.";
+
+"ERROR_INVALID_AMOUNT" = "Veuillez saisir un montant valide";
+"ERROR_MISSING_MERCHANT" = "Veuillez indiquer le nom du commerçant";
+"ERROR_MISSING_CATEGORY" = "Veuillez sélectionner une catégorie";
+"ERROR_INVALID_DATE" = "Date invalide";
+
+// MARK: - Confirmations & Alerts
+"CONFIRM_DELETE_TITLE" = "Supprimer la dépense";
+"CONFIRM_DELETE_MESSAGE" = "Cette action est irréversible. Voulez-vous vraiment supprimer cette dépense ?";
+"CONFIRM_DELETE_MULTIPLE_TITLE" = "Supprimer les dépenses";
+"CONFIRM_DELETE_MULTIPLE_MESSAGE" = "Voulez-vous vraiment supprimer ces %d dépenses ?";
+
+"CONFIRM_CLEAR_DATA_TITLE" = "Effacer toutes les données";
+"CONFIRM_CLEAR_DATA_MESSAGE" = "Cette action supprimera toutes vos dépenses. Cette action est irréversible.";
+
+"ALERT_SUCCESS_SAVED" = "Dépense enregistrée";
+"ALERT_SUCCESS_DELETED" = "Dépense supprimée";
+"ALERT_SUCCESS_UPDATED" = "Dépense mise à jour";
+"ALERT_SUCCESS_EXPORTED" = "Données exportées";
+
+// MARK: - Settings & Preferences
+"SETTINGS_TITLE" = "Réglages";
+"SETTINGS_GENERAL" = "Général";
+"SETTINGS_DATA" = "Données";
+"SETTINGS_PRIVACY" = "Confidentialité";
+"SETTINGS_ABOUT" = "À propos";
+
+"SETTINGS_CURRENCY" = "Devise";
+"SETTINGS_LANGUAGE" = "Langue";
+"SETTINGS_THEME" = "Thème";
+"SETTINGS_NOTIFICATIONS" = "Notifications";
+
+"SETTINGS_AUTO_BACKUP" = "Sauvegarde automatique";
+"SETTINGS_EXPORT_DATA" = "Exporter les données";
+"SETTINGS_IMPORT_DATA" = "Importer les données";
+"SETTINGS_CLEAR_DATA" = "Effacer les données";
+
+"SETTINGS_PRIVACY_POLICY" = "Politique de confidentialité";
+"SETTINGS_TERMS_OF_SERVICE" = "Conditions d'utilisation";
+"SETTINGS_CONTACT_US" = "Nous contacter";
+"SETTINGS_RATE_APP" = "Noter l'application";
+
+"SETTINGS_VERSION" = "Version";
+"SETTINGS_BUILD" = "Build";
+
+// MARK: - Onboarding & Tutorial
+"ONBOARDING_WELCOME_TITLE" = "Bienvenue dans PrivExpenses";
+"ONBOARDING_WELCOME_SUBTITLE" = "Votre assistant personnel pour gérer vos dépenses";
+
+"ONBOARDING_SCAN_TITLE" = "Scannez vos reçus";
+"ONBOARDING_SCAN_SUBTITLE" = "L'IA extrait automatiquement toutes les informations importantes";
+
+"ONBOARDING_ORGANIZE_TITLE" = "Organisez vos dépenses";
+"ONBOARDING_ORGANIZE_SUBTITLE" = "Catégorisez et étiquetez vos achats pour un suivi optimal";
+
+"ONBOARDING_ANALYZE_TITLE" = "Analysez vos habitudes";
+"ONBOARDING_ANALYZE_SUBTITLE" = "Découvrez vos tendances de consommation avec des graphiques détaillés";
+
+"ONBOARDING_PRIVACY_TITLE" = "Vos données restent privées";
+"ONBOARDING_PRIVACY_SUBTITLE" = "Toutes vos informations sont stockées localement sur votre appareil";
+
+"ONBOARDING_GET_STARTED" = "Commencer";
+"ONBOARDING_SKIP" = "Passer";
+"ONBOARDING_NEXT" = "Suivant";
+"ONBOARDING_PREVIOUS" = "Précédent";
+
+// MARK: - Date & Time Formatting
+"DATE_TODAY" = "Aujourd'hui";
+"DATE_YESTERDAY" = "Hier";
+"DATE_TOMORROW" = "Demain";
+
+"TIME_NOW" = "Maintenant";
+"TIME_MINUTES_AGO" = "Il y a %d min";
+"TIME_HOURS_AGO" = "Il y a %d h";
+"TIME_DAYS_AGO" = "Il y a %d j";
+
+"MONTH_JANUARY" = "Janvier";
+"MONTH_FEBRUARY" = "Février";
+"MONTH_MARCH" = "Mars";
+"MONTH_APRIL" = "Avril";
+"MONTH_MAY" = "Mai";
+"MONTH_JUNE" = "Juin";
+"MONTH_JULY" = "Juillet";
+"MONTH_AUGUST" = "Août";
+"MONTH_SEPTEMBER" = "Septembre";
+"MONTH_OCTOBER" = "Octobre";
+"MONTH_NOVEMBER" = "Novembre";
+"MONTH_DECEMBER" = "Décembre";
+
+"WEEKDAY_MONDAY" = "Lundi";
+"WEEKDAY_TUESDAY" = "Mardi";
+"WEEKDAY_WEDNESDAY" = "Mercredi";
+"WEEKDAY_THURSDAY" = "Jeudi";
+"WEEKDAY_FRIDAY" = "Vendredi";
+"WEEKDAY_SATURDAY" = "Samedi";
+"WEEKDAY_SUNDAY" = "Dimanche";
+
+// MARK: - Number & Currency Formatting
+"CURRENCY_SYMBOL" = "€";
+"DECIMAL_SEPARATOR" = ",";
+"THOUSANDS_SEPARATOR" = " ";
+"CURRENCY_FORMAT" = "%@ €"; // Amount followed by currency symbol
+
+"NUMBER_ZERO" = "0";
+"NUMBER_DECIMAL_ZERO" = "0,00";
+
+// MARK: - Pluralization
+"EXPENSE_COUNT_ZERO" = "Aucune dépense";
+"EXPENSE_COUNT_ONE" = "1 dépense";
+"EXPENSE_COUNT_MANY" = "%d dépenses";
+
+"ITEM_COUNT_ZERO" = "Aucun article";
+"ITEM_COUNT_ONE" = "1 article";
+"ITEM_COUNT_MANY" = "%d articles";
+
+"DAY_COUNT_ZERO" = "Aucun jour";
+"DAY_COUNT_ONE" = "1 jour";
+"DAY_COUNT_MANY" = "%d jours";
+
+// MARK: - Accessibility Labels
+"ACCESSIBILITY_TAB_SCANNER" = "Onglet Scanner";
+"ACCESSIBILITY_TAB_EXPENSES" = "Onglet Dépenses";
+"ACCESSIBILITY_TAB_STATISTICS" = "Onglet Statistiques";
+"ACCESSIBILITY_TAB_SETTINGS" = "Onglet Réglages";
+
+"ACCESSIBILITY_SCAN_BUTTON" = "Bouton de scan";
+"ACCESSIBILITY_ADD_EXPENSE" = "Ajouter une dépense";
+"ACCESSIBILITY_EDIT_EXPENSE" = "Modifier la dépense";
+"ACCESSIBILITY_DELETE_EXPENSE" = "Supprimer la dépense";
+
+"ACCESSIBILITY_EXPENSE_AMOUNT" = "Montant de la dépense : %@";
+"ACCESSIBILITY_EXPENSE_MERCHANT" = "Commerçant : %@";
+"ACCESSIBILITY_EXPENSE_DATE" = "Date : %@";
+"ACCESSIBILITY_EXPENSE_CATEGORY" = "Catégorie : %@";
+
+"ACCESSIBILITY_CHART" = "Graphique des statistiques";
+"ACCESSIBILITY_FILTER_BUTTON" = "Bouton de filtrage";
+"ACCESSIBILITY_SEARCH_FIELD" = "Champ de recherche";
+
+// MARK: - Voice Control
+"VOICE_SCAN_RECEIPT" = "Scanner un reçu";
+"VOICE_ADD_EXPENSE" = "Ajouter une dépense";
+"VOICE_VIEW_EXPENSES" = "Voir les dépenses";
+"VOICE_SHOW_STATISTICS" = "Montrer les statistiques";
+"VOICE_OPEN_SETTINGS" = "Ouvrir les réglages";
+
+// MARK: - Dynamic Island & Live Activities
+"LIVE_ACTIVITY_SCANNING" = "Scan en cours...";
+"LIVE_ACTIVITY_PROCESSING" = "Traitement...";
+"LIVE_ACTIVITY_COMPLETE" = "Dépense ajoutée";
+
+"DYNAMIC_ISLAND_OCR_PROGRESS" = "Lecture du reçu...";
+"DYNAMIC_ISLAND_AI_ANALYSIS" = "Analyse IA...";
+"DYNAMIC_ISLAND_SAVING" = "Sauvegarde...";
+
+// MARK: - Export & Import
+"EXPORT_TITLE" = "Exporter les données";
+"EXPORT_FORMAT" = "Format d'export";
+"EXPORT_DATE_RANGE" = "Période d'export";
+"EXPORT_CSV" = "CSV (Excel)";
+"EXPORT_JSON" = "JSON (Données brutes)";
+"EXPORT_PDF" = "PDF (Rapport)";
+
+"IMPORT_TITLE" = "Importer les données";
+"IMPORT_SOURCE" = "Source des données";
+"IMPORT_FILE" = "Fichier";
+"IMPORT_CLOUD" = "Cloud";
+
+"EXPORT_SUCCESS" = "Export réussi";
+"IMPORT_SUCCESS" = "Import réussi";
+"EXPORT_FAILED" = "Échec de l'export";
+"IMPORT_FAILED" = "Échec de l'import";
+
+// MARK: - Backup & Sync
+"BACKUP_TITLE" = "Sauvegarde";
+"BACKUP_LAST_BACKUP" = "Dernière sauvegarde : %@";
+"BACKUP_NEVER" = "Jamais";
+"BACKUP_NOW" = "Sauvegarder maintenant";
+"BACKUP_AUTO" = "Sauvegarde automatique";
+"BACKUP_ICLOUD" = "iCloud";
+"BACKUP_LOCAL" = "Local";
+
+"SYNC_TITLE" = "Synchronisation";
+"SYNC_STATUS" = "État de la synchronisation";
+"SYNC_UP_TO_DATE" = "À jour";
+"SYNC_SYNCING" = "Synchronisation en cours...";
+"SYNC_ERROR" = "Erreur de synchronisation";
+
+// MARK: - Help & Support
+"HELP_TITLE" = "Aide";
+"HELP_FAQ" = "FAQ";
+"HELP_TUTORIALS" = "Tutoriels";
+"HELP_CONTACT" = "Nous contacter";
+"HELP_FEEDBACK" = "Envoyer un commentaire";
+
+"FAQ_HOW_TO_SCAN" = "Comment scanner un reçu ?";
+"FAQ_EDIT_EXPENSE" = "Comment modifier une dépense ?";
+"FAQ_CATEGORIES" = "Comment gérer les catégories ?";
+"FAQ_EXPORT_DATA" = "Comment exporter mes données ?";
+"FAQ_PRIVACY" = "Mes données sont-elles sécurisées ?";
+
+// MARK: - Performance & Status
+"STATUS_LOADING" = "Chargement...";
+"STATUS_PROCESSING" = "Traitement...";
+"STATUS_SAVING" = "Sauvegarde...";
+"STATUS_SYNCING" = "Synchronisation...";
+"STATUS_COMPLETE" = "Terminé";
+"STATUS_FAILED" = "Échec";
+"STATUS_OFFLINE" = "Hors ligne";
+"STATUS_ONLINE" = "En ligne";
+
+"PERFORMANCE_SLOW_DEVICE" = "Optimisation pour cet appareil...";
+"PERFORMANCE_LOW_BATTERY" = "Mode économie d'énergie activé";
+"PERFORMANCE_LOW_STORAGE" = "Espace de stockage faible";
+
+// MARK: - Glass UI Components
+"GLASS_EFFECT_LOADING" = "Chargement des effets visuels...";
+"GLASS_NAVIGATION_CARD" = "Carte de navigation";
+"GLASS_ACTION_BUTTON" = "Bouton d'action";
+"GLASS_INFORMATION_PANEL" = "Panneau d'information";
+
+// MARK: - Contextual Hints
+"HINT_FIRST_SCAN" = "Conseil : Assurez-vous que le reçu est bien éclairé pour de meilleurs résultats";
+"HINT_EDIT_EXPENSE" = "Astuce : Appuyez longuement sur une dépense pour accéder aux options rapides";
+"HINT_CATEGORIES" = "Info : Les catégories sont apprises automatiquement selon vos habitudes";
+"HINT_STATISTICS" = "Bon à savoir : Les statistiques se mettent à jour en temps réel";

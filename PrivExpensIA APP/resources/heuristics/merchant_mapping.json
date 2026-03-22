@@ -1,0 +1,206 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "description": "Merchant to category mapping for automatic categorization",
+  
+  "exact_matches": {
+    "food": [
+      "Migros", "Coop", "Denner", "Aldi", "Lidl", "Spar",
+      "Rewe", "Edeka", "Kaufland", "Netto", "Penny",
+      "Carrefour", "Auchan", "Leclerc", "Intermarché", "Casino",
+      "Tesco", "Sainsbury's", "ASDA", "Morrisons", "Waitrose",
+      "Walmart", "Target", "Kroger", "Whole Foods", "Trader Joe's",
+      "7-Eleven", "FamilyMart", "Lawson", "Ministop"
+    ],
+    
+    "restaurant": [
+      "McDonald's", "Burger King", "KFC", "Subway", "Pizza Hut",
+      "Domino's", "Starbucks", "Costa Coffee", "Pret A Manger",
+      "Chipotle", "Taco Bell", "Wendy's", "Five Guys", "Shake Shack",
+      "Nando's", "Wagamama", "Yo! Sushi", "Itsu", "Leon",
+      "Au Bon Pain", "Panera Bread", "Dunkin'", "Tim Hortons"
+    ],
+    
+    "hotel": [
+      "Marriott", "Hilton", "Hyatt", "Sheraton", "Westin",
+      "InterContinental", "Holiday Inn", "Hampton Inn", "Courtyard",
+      "Ibis", "Novotel", "Mercure", "Sofitel", "Pullman",
+      "Premier Inn", "Travelodge", "Best Western", "Ramada",
+      "Radisson", "Four Seasons", "Ritz-Carlton", "Mandarin Oriental"
+    ],
+    
+    "transport": {
+      "taxi": [
+        "Uber", "Lyft", "Bolt", "Grab", "Didi", "Ola", "Cabify",
+        "Gett", "Curb", "Via", "Juno", "Mytaxi", "Free Now"
+      ],
+      "public_transport": [
+        "SBB CFF FFS", "Deutsche Bahn", "SNCF", "Trenitalia",
+        "RATP", "TfL", "MTA", "MBTA", "CTA", "BART",
+        "JR East", "JR West", "Tokyo Metro", "Osaka Metro"
+      ],
+      "gas": [
+        "Shell", "BP", "Esso", "Total", "Agip", "Q8",
+        "Aral", "Jet", "OMV", "MOL", "Circle K",
+        "Chevron", "Exxon", "Mobil", "Texaco", "76",
+        "ENEOS", "Idemitsu", "Cosmo Oil"
+      ],
+      "airline": [
+        "Swiss", "Lufthansa", "Air France", "KLM", "British Airways",
+        "Emirates", "Qatar Airways", "Singapore Airlines", "Cathay Pacific",
+        "United", "Delta", "American Airlines", "Southwest", "JetBlue",
+        "Ryanair", "EasyJet", "Wizz Air", "Vueling", "Norwegian"
+      ]
+    },
+    
+    "office_supplies": [
+      "Staples", "Office Depot", "OfficeMax", "Viking Direct",
+      "Paperchase", "Ryman", "WH Smith", "Papyrus"
+    ],
+    
+    "phone": [
+      "Verizon", "AT&T", "T-Mobile", "Sprint", "Vodafone",
+      "Orange", "Telefonica", "O2", "EE", "Three",
+      "Swisscom", "Sunrise", "Salt", "UPC",
+      "Docomo", "SoftBank", "au KDDI", "Rakuten Mobile"
+    ],
+    
+    "internet": [
+      "Comcast", "Spectrum", "Cox", "Xfinity", "CenturyLink",
+      "BT", "Virgin Media", "Sky", "TalkTalk", "Plusnet",
+      "Init7", "Fiber7", "Green.ch", "Quickline"
+    ],
+    
+    "software": [
+      "Microsoft", "Adobe", "Google Workspace", "Apple",
+      "Dropbox", "Slack", "Zoom", "Teams", "Notion",
+      "Salesforce", "HubSpot", "Shopify", "Square",
+      "GitHub", "GitLab", "Atlassian", "Jira", "Confluence",
+      "Netflix", "Spotify", "YouTube Premium", "Disney+"
+    ],
+    
+    "hardware": [
+      "Apple Store", "Microsoft Store", "Best Buy", "Micro Center",
+      "MediaMarkt", "Saturn", "Expert", "Interdiscount",
+      "Fnac", "Darty", "Boulanger", "Currys PC World",
+      "Digitec", "Galaxus", "Amazon", "Newegg"
+    ]
+  },
+  
+  "pattern_matches": {
+    "food": {
+      "patterns": ["market", "grocery", "food", "organic", "bio"],
+      "regex": "(?i)(market|grocery|food|organic|bio|fresh|farm)"
+    },
+    "restaurant": {
+      "patterns": ["restaurant", "cafe", "coffee", "bistro", "grill"],
+      "regex": "(?i)(restaurant|cafe|coffee|bistro|bar|grill|diner|eatery)"
+    },
+    "hotel": {
+      "patterns": ["hotel", "inn", "resort", "lodge", "motel"],
+      "regex": "(?i)(hotel|inn|resort|lodge|motel|hostel|b&b|pension)"
+    },
+    "transport": {
+      "patterns": ["taxi", "uber", "transport", "transit", "railway"],
+      "regex": "(?i)(taxi|uber|lyft|transport|transit|rail|train|bus|metro)"
+    },
+    "gas": {
+      "patterns": ["gas", "fuel", "petrol", "station", "tankstelle"],
+      "regex": "(?i)(gas|fuel|petrol|diesel|station|tankstelle|benzin)"
+    },
+    "parking": {
+      "patterns": ["parking", "garage", "park"],
+      "regex": "(?i)(parking|garage|parkhaus|park\\s|p\\+r|valet)"
+    }
+  },
+  
+  "regional_merchants": {
+    "CH": {
+      "food": ["Migros", "Coop", "Denner", "Volg", "Spar", "Manor Food"],
+      "restaurant": ["Tibits", "Hiltl", "Marché", "Mövenpick"],
+      "transport": ["SBB", "ZVV", "BVB", "TPG", "Bernmobil"],
+      "phone": ["Swisscom", "Sunrise", "Salt", "UPC"]
+    },
+    "DE": {
+      "food": ["Rewe", "Edeka", "Aldi", "Lidl", "Kaufland", "Real"],
+      "restaurant": ["Vapiano", "Block House", "Nordsee", "Ditsch"],
+      "transport": ["Deutsche Bahn", "FlixBus", "BVG", "MVG"],
+      "phone": ["Telekom", "Vodafone", "O2", "1&1"]
+    },
+    "FR": {
+      "food": ["Carrefour", "Leclerc", "Auchan", "Casino", "Monoprix"],
+      "restaurant": ["Flunch", "Hippopotamus", "Buffalo Grill", "Courtepaille"],
+      "transport": ["SNCF", "RATP", "TCL", "RTM"],
+      "phone": ["Orange", "SFR", "Bouygues", "Free"]
+    },
+    "JP": {
+      "food": ["7-Eleven", "Lawson", "FamilyMart", "Aeon", "Ito-Yokado"],
+      "restaurant": ["Yoshinoya", "Matsuya", "Sukiya", "Saizeriya", "Gusto"],
+      "transport": ["JR", "Tokyo Metro", "Toei", "Keio", "Odakyu"],
+      "phone": ["Docomo", "au", "SoftBank", "Rakuten"]
+    },
+    "US": {
+      "food": ["Walmart", "Target", "Kroger", "Safeway", "Whole Foods"],
+      "restaurant": ["Applebee's", "Olive Garden", "Cheesecake Factory", "Chili's"],
+      "transport": ["Uber", "Lyft", "Amtrak", "Greyhound"],
+      "phone": ["Verizon", "AT&T", "T-Mobile", "Sprint"]
+    }
+  },
+  
+  "confidence_scoring": {
+    "exact_match": 1.0,
+    "pattern_match": 0.8,
+    "partial_match": 0.6,
+    "fuzzy_match": 0.5
+  },
+  
+  "matching_rules": {
+    "case_sensitive": false,
+    "remove_special_chars": true,
+    "normalize_spacing": true,
+    "remove_company_suffixes": ["Inc", "LLC", "Ltd", "GmbH", "AG", "SA", "SRL", "SpA", "株式会社"],
+    "fuzzy_threshold": 0.85
+  },
+  
+  "fallback_strategies": [
+    {
+      "step": 1,
+      "method": "exact_match",
+      "description": "Check exact merchant name match"
+    },
+    {
+      "step": 2,
+      "method": "pattern_match",
+      "description": "Check regex patterns"
+    },
+    {
+      "step": 3,
+      "method": "keyword_analysis",
+      "description": "Analyze receipt items and keywords"
+    },
+    {
+      "step": 4,
+      "method": "fuzzy_match",
+      "description": "Fuzzy string matching with threshold"
+    },
+    {
+      "step": 5,
+      "method": "default_category",
+      "description": "Assign to 'other' category"
+    }
+  ],
+  
+  "learning_capability": {
+    "enabled": true,
+    "user_corrections": {
+      "store": true,
+      "weight": 0.9,
+      "min_occurrences": 3
+    },
+    "pattern_discovery": {
+      "enabled": true,
+      "min_confidence": 0.7,
+      "min_samples": 10
+    }
+  }
+}

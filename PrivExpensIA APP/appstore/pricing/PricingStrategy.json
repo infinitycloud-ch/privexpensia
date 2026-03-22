@@ -1,0 +1,236 @@
+{
+  "pricing_model": {
+    "type": "Freemium",
+    "base_app_price": "Free",
+    "monetization": "In-App Purchases",
+    "strategy": "Free download with premium features via IAP"
+  },
+  "free_tier": {
+    "name": "PrivExpensIA Gratuit",
+    "features": [
+      "Scanner OCR jusqu'à 10 reçus/mois",
+      "Extraction automatique des données de base",
+      "3 catégories prédéfinies",
+      "Historique de 30 jours",
+      "Export basique (5 rapports/mois)",
+      "Interface SwiftUI complète",
+      "Données stockées localement"
+    ],
+    "limitations": [
+      "Limite de 10 scans mensuels",
+      "Export basique uniquement",
+      "Pas de sauvegarde iCloud", 
+      "Pas d'analyse avancée",
+      "Pas de support multi-devises"
+    ]
+  },
+  "iap_tiers": {
+    "premium_monthly": {
+      "product_id": "com.moulinsart.privexpensia.premium.monthly",
+      "name": "PrivExpensIA Premium",
+      "type": "Auto-renewable subscription",
+      "duration": "1 month",
+      "trial_period": "7 days free",
+      "features": [
+        "Scans illimités",
+        "Toutes les catégories et personnalisations",
+        "Export professionnel Excel/PDF illimité",
+        "Sauvegarde iCloud chiffrée",
+        "Analyses avancées et graphiques",
+        "Support multi-devises (50+ devises)",
+        "Mode sombre premium",
+        "Widgets iOS avancés",
+        "Support prioritaire",
+        "Nouvelles fonctionnalités en premier"
+      ],
+      "regional_pricing": {
+        "france": "€4.99",
+        "european_union": "€4.99",
+        "united_states": "$4.99",
+        "canada": "CAD $6.99",
+        "united_kingdom": "£4.49",
+        "switzerland": "CHF 5.50",
+        "japan": "¥750",
+        "australia": "AUD $7.99"
+      }
+    },
+    "premium_yearly": {
+      "product_id": "com.moulinsart.privexpensia.premium.yearly",
+      "name": "PrivExpensIA Premium Annuel",
+      "type": "Auto-renewable subscription",
+      "duration": "1 year",
+      "trial_period": "14 days free",
+      "discount": "50% vs monthly (2 months free)",
+      "features": "Same as monthly premium",
+      "regional_pricing": {
+        "france": "€29.99",
+        "european_union": "€29.99", 
+        "united_states": "$29.99",
+        "canada": "CAD $39.99",
+        "united_kingdom": "£24.99",
+        "switzerland": "CHF 32.00",
+        "japan": "¥4500",
+        "australia": "AUD $47.99"
+      }
+    },
+    "pro_lifetime": {
+      "product_id": "com.moulinsart.privexpensia.pro.lifetime",
+      "name": "PrivExpensIA Pro - Licence à Vie",
+      "type": "Non-consumable",
+      "features": [
+        "Toutes les fonctionnalités Premium",
+        "Futures mises à jour incluses à vie",
+        "Support prioritaire VIP",
+        "Accès beta aux nouvelles fonctionnalités",
+        "Badge 'Early Supporter'",
+        "Licence famille (jusqu'à 6 appareils)"
+      ],
+      "regional_pricing": {
+        "france": "€79.99",
+        "european_union": "€79.99",
+        "united_states": "$79.99", 
+        "canada": "CAD $109.99",
+        "united_kingdom": "£69.99",
+        "switzerland": "CHF 89.00",
+        "japan": "¥12000",
+        "australia": "AUD $129.99"
+      }
+    }
+  },
+  "app_store_categories": {
+    "primary_category": "Finance",
+    "secondary_category": "Productivity",
+    "justification": "Application de gestion financière avec forte composante productivité"
+  },
+  "geographic_availability": {
+    "tier_1_countries": [
+      "France",
+      "Belgium", 
+      "Luxembourg",
+      "Switzerland",
+      "Canada (Quebec)"
+    ],
+    "tier_2_countries": [
+      "Germany",
+      "Italy", 
+      "Spain",
+      "Netherlands",
+      "Austria",
+      "Portugal",
+      "United States",
+      "Canada (English)",
+      "United Kingdom",
+      "Ireland",
+      "Australia",
+      "New Zealand"
+    ],
+    "tier_3_countries": [
+      "Sweden",
+      "Norway",
+      "Denmark", 
+      "Finland",
+      "Poland",
+      "Czech Republic",
+      "Japan",
+      "South Korea"
+    ],
+    "restricted_countries": [
+      "Chine (restrictions réglementaires)",
+      "Russie (sanctions)",
+      "Iran (sanctions)",
+      "Corée du Nord (sanctions)"
+    ]
+  },
+  "educational_pricing": {
+    "available": true,
+    "discount": "50% off all IAPs",
+    "verification": "Apple School Manager integration",
+    "bulk_licensing": "Available for institutions 50+ users",
+    "eligible_institutions": [
+      "Écoles primaires et secondaires",
+      "Universités et grandes écoles", 
+      "Centres de formation professionnelle",
+      "Bibliothèques publiques"
+    ]
+  },
+  "promotional_strategies": {
+    "launch_promotion": {
+      "name": "Early Bird Special",
+      "discount": "30% off Premium Yearly for first month",
+      "duration": "30 days from launch",
+      "promo_code": "EARLYBIRD30"
+    },
+    "seasonal_promotions": [
+      {
+        "name": "Back to School",
+        "period": "Septembre",
+        "discount": "20% off all IAPs",
+        "target": "Étudiants et enseignants"
+      },
+      {
+        "name": "Black Friday",
+        "period": "Novembre",
+        "discount": "40% off Lifetime",
+        "duration": "72 heures"
+      },
+      {
+        "name": "Nouvelle Année",
+        "period": "Janvier",
+        "discount": "25% off Premium Yearly",
+        "message": "Nouvelle année, nouvelles finances !"
+      }
+    ]
+  },
+  "subscription_management": {
+    "grace_period": "16 days",
+    "billing_retry": "Auto-retry for failed payments",
+    "family_sharing": "Enabled for all subscriptions",
+    "subscription_groups": {
+      "premium_group": {
+        "name": "PrivExpensIA Premium",
+        "products": ["monthly", "yearly"],
+        "upgrade_downgrade": "Immediate with proration"
+      }
+    }
+  },
+  "revenue_projections": {
+    "year_1_targets": {
+      "downloads": 50000,
+      "conversion_rate": "8%",
+      "premium_users": 4000,
+      "average_revenue_per_user": "€24.99/year",
+      "projected_revenue": "€99,960"
+    },
+    "breakdown_by_tier": {
+      "free_users": "92% (46,000 users)",
+      "premium_monthly": "3% (1,500 users)",
+      "premium_yearly": "4% (2,000 users)", 
+      "pro_lifetime": "1% (500 users)"
+    }
+  },
+  "competitor_analysis": {
+    "similar_apps": [
+      {
+        "name": "Receipts by Wave",
+        "pricing": "Free + $2.99/month premium",
+        "our_advantage": "IA plus précise + confidentialité totale"
+      },
+      {
+        "name": "Expensify", 
+        "pricing": "$4.99/month",
+        "our_advantage": "Plus simple + données locales"
+      },
+      {
+        "name": "Receipt Bank",
+        "pricing": "£12/month",
+        "our_advantage": "Prix plus compétitif + interface moderne"
+      }
+    ]
+  },
+  "payment_processing": {
+    "apple_commission": "30% (first year) / 15% (subsequent years for subscriptions)",
+    "tax_handling": "Apple handles all regional taxes",
+    "currency_conversion": "Automatic by Apple",
+    "refund_policy": "Standard Apple refund policy applies"
+  }
+}

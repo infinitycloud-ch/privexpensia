@@ -1,0 +1,158 @@
+{
+  "version": "1.0.0",
+  "model": "Qwen2.5",
+  "description": "Prompts optimisés pour extraction de reçus avec Qwen2.5",
+  
+  "system_prompts": {
+    "base": "You are an expert receipt OCR extraction system. Extract structured data from receipts with high accuracy. Always return valid JSON.",
+    
+    "multilingual": "You are a multilingual receipt extraction expert fluent in English, French, German, Italian, Japanese, Korean, Slovak, and Spanish. Detect the language and extract accordingly.",
+    
+    "specialized": {
+      "swiss": "You specialize in Swiss receipts which often contain multiple languages (German, French, Italian) and use CHF currency with specific VAT rates (8.1%, 3.7%, 2.5%).",
+      "japanese": "You specialize in Japanese receipts with consumption tax (消費税) at 8% or 10%, using both kanji and numbers, with amounts in Yen (¥).",
+      "german": "You specialize in German receipts with MwSt at 7% (reduced) or 19% (standard), distinguishing between 'zum Mitnehmen' and 'vor Ort'."
+    }
+  },
+  
+  "extraction_prompts": {
+    "standard": {
+      "template": "Extract the following from this receipt:\n- Date (format: YYYY-MM-DD)\n- Merchant name\n- Total amount\n- Currency\n- Tax rate and amount\n- Items (if visible)\n- Category\n\nReceipt text:\n{receipt_text}\n\nReturn as JSON with confidence scores.",
+      "few_shot_examples": [
+        {
+          "input": "MIGROS\n15.01.2025\nBrot 2.50\nMilch 1.80\nTotal CHF 4.30\nMWST 2.5% 0.11",
+          "output": {
+            "date": "2025-01-15",
+            "merchant": "MIGROS",
+            "total": 4.30,
+            "currency": "CHF",
+            "tax_rate": 2.5,
+            "tax_amount": 0.11,
+            "items": [{"name": "Brot", "price": 2.50}, {"name": "Milch", "price": 1.80}],
+            "category": "food",
+            "confidence": 0.95
+          }
+        },
+        {
+          "input": "Starbucks\n2025/01/15 14:30\nCaffé Latte ¥440\n消費税(10%) ¥40\n合計 ¥480",
+          "output": {
+            "date": "2025-01-15",
+            "merchant": "Starbucks",
+            "total": 480,
+            "currency": "JPY",
+            "tax_rate": 10,
+            "tax_amount": 40,
+            "items": [{"name": "Caffé Latte", "price": 440}],
+            "category": "restaurant",
+            "confidence": 0.92
+          }
+        }
+      ]
+    },
+    
+    "edge_cases": {
+      "faded_receipt": "This receipt appears faded or damaged. Extract what you can see clearly and mark uncertain fields with lower confidence scores. Focus on: total amount, date, and merchant name as priorities.",
+      
+      "multiple_currencies": "This receipt contains multiple currencies. Extract all amounts with their respective currencies. Calculate the primary total and note any exchange rates if visible.",
+      
+      "split_bill": "This is a split bill receipt. Extract the full bill total and the paid portion separately. Note the split ratio or number of people if indicated.",
+      
+      "handwritten": "This receipt contains handwritten additions. Extract printed text with high confidence and handwritten portions with lower confidence. Clearly distinguish between the two."
+    },
+    
+    "validation_prompts": {
+      "tax_calculation": "Verify the tax calculation:\nSubtotal: {subtotal}\nTax rate: {tax_rate}%\nTax amount: {tax_amount}\nTotal: {total}\n\nIs this calculation correct? If not, provide the corrected values.",
+      
+      "date_disambiguation": "The date '{date_string}' is ambiguous. Given that this receipt is from {country}, what is the most likely interpretation in YYYY-MM-DD format?",
+      
+      "merchant_categorization": "Based on these items: {items}, and merchant name: {merchant}, what is the most appropriate category from: [food, restaurant, hotel, transport, office_supplies, entertainment, training, phone, internet, software, hardware, other]?"
+    }
+  },
+  
+  "chain_of_thought_prompts": {
+    "complex_receipt": "Let's analyze this receipt step by step:\n1. First, identify the language and country\n2. Locate the date and convert to standard format\n3. Find the merchant name at the top\n4. Identify all line items with prices\n5. Find tax information (rate and amount)\n6. Locate the total amount\n7. Determine the appropriate category\n8. Calculate confidence based on clarity\n\nReceipt: {receipt_text}",
+    
+    "tax_extraction": "To extract tax information:\n1. Look for tax keywords (VAT, MwSt, TVA, IVA, 消費税, Sales Tax)\n2. Find the tax rate (usually shown as %)\n3. Locate the tax amount\n4. Verify: subtotal + tax = total\n5. If implicit, calculate: tax = total - (total / (1 + rate/100))\n\nReceipt: {receipt_text}"
+  },
+  
+  "output_formats": {
+    "standard": {
+      "date": "YYYY-MM-DD",
+      "merchant": "string",
+      "total": "number",
+      "currency": "ISO 4217 code",
+      "tax_rate": "number (percentage)",
+      "tax_amount": "number",
+      "subtotal": "number",
+      "items": [{"name": "string", "price": "number", "quantity": "number (optional)"}],
+      "category": "enum",
+      "confidence": "number (0-1)",
+      "metadata": {
+        "receipt_number": "string (optional)",
+        "payment_method": "string (optional)",
+        "vat_number": "string (optional)"
+      }
+    },
+    
+    "error_handling": {
+      "extraction_failed": {
+        "status": "failed",
+        "reason": "description of failure",
+        "partial_data": "any successfully extracted fields",
+        "confidence": 0
+      },
+      "low_confidence": {
+        "status": "uncertain",
+        "data": "extracted data",
+        "confidence": "< 0.5",
+        "issues": ["list of specific concerns"]
+      }
+    }
+  },
+  
+  "optimization_tips": {
+    "performance": [
+      "Use temperature=0 for consistent extraction",
+      "Limit max_tokens to 500 for efficiency",
+      "Cache system prompts for repeated use",
+      "Batch similar receipts together"
+    ],
+    "accuracy": [
+      "Include 2-3 relevant few-shot examples",
+      "Use chain-of-thought for complex receipts",
+      "Validate tax calculations separately",
+      "Double-check date format conversions"
+    ],
+    "regional": [
+      "Adjust prompts based on detected country",
+      "Include local tax terminology",
+      "Use appropriate date format examples",
+      "Consider local merchant naming patterns"
+    ]
+  },
+  
+  "prompt_selection_logic": {
+    "rules": [
+      {
+        "condition": "country == 'CH' && languages.length > 1",
+        "prompt": "specialized.swiss",
+        "few_shot": "swiss_examples"
+      },
+      {
+        "condition": "country == 'JP'",
+        "prompt": "specialized.japanese",
+        "few_shot": "japanese_examples"
+      },
+      {
+        "condition": "quality == 'poor' || confidence < 0.6",
+        "prompt": "edge_cases.faded_receipt",
+        "strategy": "extract_essentials_only"
+      },
+      {
+        "condition": "has_handwriting == true",
+        "prompt": "edge_cases.handwritten",
+        "strategy": "dual_extraction"
+      }
+    ]
+  }
+}

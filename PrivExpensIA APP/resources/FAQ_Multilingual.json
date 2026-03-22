@@ -1,0 +1,209 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-11",
+  "languages": ["fr-CH", "en", "de-CH", "it-CH", "ja"],
+  "faqs": [
+    {
+      "id": "scan-quality",
+      "category": "scanning",
+      "question": {
+        "fr-CH": "Pourquoi mon reçu n'est-il pas reconnu correctement?",
+        "en": "Why is my receipt not recognized correctly?",
+        "de-CH": "Warum wird mein Beleg nicht korrekt erkannt?",
+        "it-CH": "Perché la mia ricevuta non viene riconosciuta correttamente?",
+        "ja": "なぜ領収書が正しく認識されないのですか？"
+      },
+      "answer": {
+        "fr-CH": "Assurez-vous que le reçu est bien éclairé, sans reflets, et que tout le texte est visible. Évitez les reçus froissés ou pliés.",
+        "en": "Ensure the receipt is well-lit, without glare, and all text is visible. Avoid crumpled or folded receipts.",
+        "de-CH": "Stellen Sie sicher, dass der Beleg gut beleuchtet ist, ohne Reflexionen, und dass der gesamte Text sichtbar ist.",
+        "it-CH": "Assicurati che la ricevuta sia ben illuminata, senza riflessi, e che tutto il testo sia visibile.",
+        "ja": "領収書が明るく、反射がなく、すべてのテキストが見えることを確認してください。"
+      }
+    },
+    {
+      "id": "vat-calculation",
+      "category": "tax",
+      "question": {
+        "fr-CH": "Comment la TVA est-elle calculée automatiquement?",
+        "en": "How is VAT calculated automatically?",
+        "de-CH": "Wie wird die MwSt. automatisch berechnet?",
+        "it-CH": "Come viene calcolata automaticamente l'IVA?",
+        "ja": "消費税はどのように自動計算されますか？"
+      },
+      "answer": {
+        "fr-CH": "PrivExpensIA détecte le pays et la catégorie de dépense, puis applique le taux de TVA approprié. Vous pouvez modifier manuellement si nécessaire.",
+        "en": "PrivExpensIA detects the country and expense category, then applies the appropriate VAT rate. You can manually adjust if needed.",
+        "de-CH": "PrivExpensIA erkennt das Land und die Ausgabenkategorie und wendet dann den entsprechenden MwSt.-Satz an.",
+        "it-CH": "PrivExpensIA rileva il paese e la categoria di spesa, quindi applica l'aliquota IVA appropriata.",
+        "ja": "PrivExpensIAは国と経費カテゴリーを検出し、適切な消費税率を適用します。"
+      }
+    },
+    {
+      "id": "multi-currency",
+      "category": "currency",
+      "question": {
+        "fr-CH": "Puis-je utiliser plusieurs devises?",
+        "en": "Can I use multiple currencies?",
+        "de-CH": "Kann ich mehrere Währungen verwenden?",
+        "it-CH": "Posso usare più valute?",
+        "ja": "複数の通貨を使用できますか？"
+      },
+      "answer": {
+        "fr-CH": "Oui, PrivExpensIA supporte CHF, EUR, USD, JPY, GBP et plus. La conversion est automatique selon les taux du jour.",
+        "en": "Yes, PrivExpensIA supports CHF, EUR, USD, JPY, GBP and more. Conversion is automatic based on daily rates.",
+        "de-CH": "Ja, PrivExpensIA unterstützt CHF, EUR, USD, JPY, GBP und mehr. Die Umrechnung erfolgt automatisch.",
+        "it-CH": "Sì, PrivExpensIA supporta CHF, EUR, USD, JPY, GBP e altro. La conversione è automatica.",
+        "ja": "はい、PrivExpensIAはCHF、EUR、USD、JPY、GBPなどをサポートしています。"
+      }
+    },
+    {
+      "id": "offline-mode",
+      "category": "features",
+      "question": {
+        "fr-CH": "L'application fonctionne-t-elle hors ligne?",
+        "en": "Does the app work offline?",
+        "de-CH": "Funktioniert die App offline?",
+        "it-CH": "L'app funziona offline?",
+        "ja": "アプリはオフラインで動作しますか？"
+      },
+      "answer": {
+        "fr-CH": "Oui, vous pouvez scanner et sauvegarder des reçus hors ligne. La synchronisation se fera automatiquement une fois reconnecté.",
+        "en": "Yes, you can scan and save receipts offline. Synchronization will happen automatically once reconnected.",
+        "de-CH": "Ja, Sie können Belege offline scannen und speichern. Die Synchronisation erfolgt automatisch bei Wiederverbindung.",
+        "it-CH": "Sì, puoi scansionare e salvare ricevute offline. La sincronizzazione avverrà automaticamente.",
+        "ja": "はい、オフラインで領収書をスキャンして保存できます。"
+      }
+    },
+    {
+      "id": "data-privacy",
+      "category": "privacy",
+      "question": {
+        "fr-CH": "Mes données sont-elles sécurisées?",
+        "en": "Is my data secure?",
+        "de-CH": "Sind meine Daten sicher?",
+        "it-CH": "I miei dati sono sicuri?",
+        "ja": "私のデータは安全ですか？"
+      },
+      "answer": {
+        "fr-CH": "Toutes les données sont chiffrées localement et stockées de manière sécurisée. Aucune image n'est envoyée à des serveurs externes.",
+        "en": "All data is encrypted locally and stored securely. No images are sent to external servers.",
+        "de-CH": "Alle Daten werden lokal verschlüsselt und sicher gespeichert. Keine Bilder werden an externe Server gesendet.",
+        "it-CH": "Tutti i dati sono crittografati localmente e archiviati in modo sicuro.",
+        "ja": "すべてのデータはローカルで暗号化され、安全に保存されます。"
+      }
+    },
+    {
+      "id": "export-formats",
+      "category": "reports",
+      "question": {
+        "fr-CH": "Dans quels formats puis-je exporter mes rapports?",
+        "en": "What formats can I export my reports in?",
+        "de-CH": "In welchen Formaten kann ich meine Berichte exportieren?",
+        "it-CH": "In quali formati posso esportare i miei rapporti?",
+        "ja": "どの形式でレポートをエクスポートできますか？"
+      },
+      "answer": {
+        "fr-CH": "Les rapports peuvent être exportés en PDF, Excel (XLSX), CSV et formats compatibles avec les logiciels comptables.",
+        "en": "Reports can be exported as PDF, Excel (XLSX), CSV and accounting software compatible formats.",
+        "de-CH": "Berichte können als PDF, Excel (XLSX), CSV und buchhaltungssoftware-kompatible Formate exportiert werden.",
+        "it-CH": "I rapporti possono essere esportati come PDF, Excel (XLSX), CSV e formati compatibili.",
+        "ja": "レポートはPDF、Excel（XLSX）、CSVなどの形式でエクスポートできます。"
+      }
+    },
+    {
+      "id": "approval-workflow",
+      "category": "workflow",
+      "question": {
+        "fr-CH": "Comment fonctionne le processus d'approbation?",
+        "en": "How does the approval process work?",
+        "de-CH": "Wie funktioniert der Genehmigungsprozess?",
+        "it-CH": "Come funziona il processo di approvazione?",
+        "ja": "承認プロセスはどのように機能しますか？"
+      },
+      "answer": {
+        "fr-CH": "Après soumission, votre responsable reçoit une notification. Il peut approuver, rejeter ou demander des clarifications directement dans l'app.",
+        "en": "After submission, your manager receives a notification. They can approve, reject, or request clarification directly in the app.",
+        "de-CH": "Nach der Einreichung erhält Ihr Vorgesetzter eine Benachrichtigung. Er kann direkt in der App genehmigen oder ablehnen.",
+        "it-CH": "Dopo l'invio, il tuo responsabile riceve una notifica. Può approvare o rifiutare direttamente nell'app.",
+        "ja": "提出後、マネージャーに通知が送られ、アプリ内で承認または却下できます。"
+      }
+    },
+    {
+      "id": "receipt-storage",
+      "category": "storage",
+      "question": {
+        "fr-CH": "Combien de temps les reçus sont-ils conservés?",
+        "en": "How long are receipts stored?",
+        "de-CH": "Wie lange werden Belege gespeichert?",
+        "it-CH": "Per quanto tempo vengono conservate le ricevute?",
+        "ja": "領収書はどのくらいの期間保存されますか？"
+      },
+      "answer": {
+        "fr-CH": "Les reçus sont conservés pendant 7 ans conformément aux exigences légales. Vous pouvez les archiver ou les supprimer manuellement.",
+        "en": "Receipts are stored for 7 years according to legal requirements. You can archive or delete them manually.",
+        "de-CH": "Belege werden gemäß den gesetzlichen Anforderungen 7 Jahre lang aufbewahrt.",
+        "it-CH": "Le ricevute vengono conservate per 7 anni secondo i requisiti legali.",
+        "ja": "法的要件に従って、領収書は7年間保存されます。"
+      }
+    }
+  ],
+  "categories": {
+    "scanning": {
+      "fr-CH": "Numérisation",
+      "en": "Scanning",
+      "de-CH": "Scannen",
+      "it-CH": "Scansione",
+      "ja": "スキャン"
+    },
+    "tax": {
+      "fr-CH": "Taxes et TVA",
+      "en": "Tax and VAT",
+      "de-CH": "Steuern und MwSt.",
+      "it-CH": "Tasse e IVA",
+      "ja": "税金と消費税"
+    },
+    "currency": {
+      "fr-CH": "Devises",
+      "en": "Currency",
+      "de-CH": "Währung",
+      "it-CH": "Valuta",
+      "ja": "通貨"
+    },
+    "features": {
+      "fr-CH": "Fonctionnalités",
+      "en": "Features",
+      "de-CH": "Funktionen",
+      "it-CH": "Funzionalità",
+      "ja": "機能"
+    },
+    "privacy": {
+      "fr-CH": "Confidentialité",
+      "en": "Privacy",
+      "de-CH": "Datenschutz",
+      "it-CH": "Privacy",
+      "ja": "プライバシー"
+    },
+    "reports": {
+      "fr-CH": "Rapports",
+      "en": "Reports",
+      "de-CH": "Berichte",
+      "it-CH": "Rapporti",
+      "ja": "レポート"
+    },
+    "workflow": {
+      "fr-CH": "Processus",
+      "en": "Workflow",
+      "de-CH": "Arbeitsablauf",
+      "it-CH": "Flusso di lavoro",
+      "ja": "ワークフロー"
+    },
+    "storage": {
+      "fr-CH": "Stockage",
+      "en": "Storage",
+      "de-CH": "Speicherung",
+      "it-CH": "Archiviazione",
+      "ja": "保存"
+    }
+  }
+}

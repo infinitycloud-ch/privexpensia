@@ -1,0 +1,644 @@
+/*
+  Localizable.strings
+  PrivExpenses
+
+  Français (fr)
+  Generated for PrivExpenses - Sprint 1
+*/
+
+/* === NAVIGATION & MENUS === */
+"app.title" = "PrivExpenses";
+"menu.home" = "Accueil";
+"menu.expenses" = "Dépenses";
+"menu.reports" = "Rapports";
+"menu.settings" = "Paramètres";
+"menu.help" = "Aide";
+"menu.logout" = "Déconnexion";
+
+/* === EXPENSES VIEW === */
+"expenses.view_mode.list" = "Liste";
+"expenses.view_mode.thumbnails" = "Vignettes";
+"expenses.reports.title" = "Rapports";
+"expenses.reports.generate" = "Générer rapport";
+"expenses.reports.period" = "Période";
+"expenses.reports.from" = "Du";
+"expenses.reports.to" = "Au";
+"expenses.reports.archived" = "Archivés";
+"expenses.reports.empty" = "Aucun rapport";
+"expenses.reports.created" = "Rapport créé";
+"expenses.reports.included" = "Dépenses incluses";
+"expenses.reports.generating" = "Génération...";
+"expenses.reports.confirm" = "Confirmer et Générer";
+"expenses.thumbnails.empty" = "Aucune facture avec image";
+
+/* === HOME SCREEN === */
+"home.good_morning" = "Bonjour";
+"home.good_afternoon" = "Bon après-midi";
+"home.good_evening" = "Bonsoir";
+"home.todays_spending" = "Dépenses d'aujourd'hui";
+"home.budget_left" = "Budget restant";
+"home.weekly_average" = "Moyenne hebdomadaire";
+"home.saved" = "Économisé";
+"home.activity" = "Activité";
+"home.recent_expenses" = "Dépenses récentes";
+"home.see_all" = "Voir tout";
+"home.period.day" = "Jour";
+"home.period.week" = "Semaine";
+"home.period.month" = "Mois";
+"home.period.year" = "Année";
+"home.day.mon" = "Lun";
+"home.day.tue" = "Mar";
+"home.day.wed" = "Mer";
+"home.day.thu" = "Jeu";
+"home.day.fri" = "Ven";
+"home.day.sat" = "Sam";
+"home.day.sun" = "Dim";
+"home.yesterday" = "Hier";
+"home.days_ago" = "Il y a %d jours";
+"home.hour_ago" = "Il y a 1 heure";
+"home.hours_ago" = "Il y a %d heures";
+"home.minute_ago" = "Il y a 1 minute";
+"home.minutes_ago" = "Il y a %d minutes";
+"home.just_now" = "À l'instant";
+"home.today" = "Aujourd'hui";
+"home.recent_activity" = "Activité récente";
+"home.current_report" = "Rapport courant";
+
+/* === BUDGET === */
+"budget.set_monthly" = "Définir budget mensuel";
+"budget.set_daily" = "Définir budget quotidien";
+"budget.set_weekly" = "Définir budget hebdomadaire";
+"budget.set_yearly" = "Définir budget annuel";
+"budget.monthly" = "Budget mensuel";
+"budget.daily" = "Budget quotidien";
+"budget.weekly" = "Budget hebdomadaire";
+"budget.yearly" = "Budget annuel";
+"budget.used" = "Utilisé";
+"budget.remaining" = "Restant";
+"budget.status.excellent" = "Excellent contrôle";
+"budget.status.good" = "Sur la bonne voie";
+"budget.status.warning" = "Limite approchée";
+"budget.status.danger" = "Budget dépassé";
+"budget.insight.limit_reached" = "Limite de budget atteinte";
+"budget.insight.approaching" = "Limite de budget approchée";
+
+/* === ACTIONS === */
+"action.add" = "Ajouter";
+"action.approve" = "Approuver";
+"action.cancel" = "Annuler";
+"action.close" = "Fermer";
+"action.delete" = "Supprimer";
+"action.edit" = "Modifier";
+"action.export" = "Exporter";
+"action.filter" = "Filtrer";
+"action.import" = "Importer";
+"action.refresh" = "Actualiser";
+"action.reject" = "Rejeter";
+"action.save" = "Enregistrer";
+"action.scan" = "Scanner";
+"action.search" = "Rechercher";
+"action.select" = "Sélectionner";
+"action.submit" = "Soumettre";
+
+/* === EXPENSE FORM === */
+"expense.title" = "Titre de la dépense";
+"expense.amount" = "Montant";
+"expense.date" = "Date";
+"expense.category" = "Catégorie";
+"expense.merchant" = "Commerçant";
+"expense.description" = "Description";
+"expense.receipt" = "Reçu";
+"expense.vat" = "TVA";
+"expense.currency" = "Devise";
+"expense.payment_method" = "Mode de paiement";
+"expense.status" = "Statut";
+"expense.total" = "Total";
+"expense.subtotal" = "Sous-total";
+"expense.vat_amount" = "Montant TVA";
+
+/* === CATEGORIES === */
+"category.food" = "Alimentation";
+"category.restaurant" = "Restaurant";
+"category.hotel" = "Hôtel";
+"category.transport" = "Transport";
+"category.taxi" = "Taxi";
+"category.public_transport" = "Transport public";
+"category.gas" = "Carburant";
+"category.parking" = "Parking";
+"category.office_supplies" = "Fournitures bureau";
+"category.entertainment" = "Divertissement";
+"category.training" = "Formation";
+"category.travel" = "Voyage";
+"category.phone" = "Téléphone";
+"category.internet" = "Internet";
+"category.software" = "Logiciel";
+"category.hardware" = "Matériel";
+"category.other" = "Autre";
+
+/* === STATUS === */
+"status.draft" = "Brouillon";
+"status.pending" = "En attente";
+"status.approved" = "Approuvé";
+"status.rejected" = "Rejeté";
+"status.reimbursed" = "Remboursé";
+"status.processing" = "En cours";
+
+/* === PAYMENT METHODS === */
+"payment.cash" = "Espèces";
+"payment.credit_card" = "Carte de crédit";
+"payment.debit_card" = "Carte de débit";
+"payment.company_card" = "Carte d'entreprise";
+"payment.bank_transfer" = "Virement bancaire";
+"payment.check" = "Chèque";
+
+/* === MESSAGES === */
+"message.welcome" = "Bienvenue dans PrivExpenses";
+"message.loading" = "Chargement...";
+"message.saving" = "Enregistrement...";
+"message.success" = "Opération réussie";
+"message.error" = "Une erreur s'est produite";
+"message.confirm_delete" = "Êtes-vous sûr de vouloir supprimer cette dépense ?";
+"message.no_expenses" = "Aucune dépense trouvée";
+"message.receipt_uploaded" = "Reçu téléchargé avec succès";
+"message.expense_saved" = "Dépense enregistrée";
+"message.expense_submitted" = "Dépense soumise pour approbation";
+"message.scanning_receipt" = "Scan du reçu en cours...";
+
+/* === ERRORS === */
+"error.required_field" = "Ce champ est obligatoire";
+"error.invalid_amount" = "Montant invalide";
+"error.invalid_date" = "Date invalide";
+"error.network" = "Erreur de connexion réseau";
+"error.upload_failed" = "Échec du téléchargement";
+"error.scan_failed" = "Échec du scan du reçu";
+"error.unauthorized" = "Non autorisé";
+"error.server_error" = "Erreur serveur";
+"error.invalid_receipt" = "Reçu invalide ou illisible";
+"error.duplicate_expense" = "Cette dépense semble être un doublon";
+
+/* === FILTERS & SEARCH === */
+"filter.all" = "Tout";
+"filter.today" = "Aujourd'hui";
+"filter.this_week" = "Cette semaine";
+"filter.this_month" = "Ce mois";
+"filter.this_year" = "Cette année";
+"filter.custom_range" = "Période personnalisée";
+"search.placeholder" = "Rechercher des dépenses...";
+
+/* === REPORTS === */
+"report.title" = "Rapport des dépenses";
+"report.period" = "Période";
+"report.total_expenses" = "Total des dépenses";
+"report.by_category" = "Par catégorie";
+"report.by_month" = "Par mois";
+"report.export_pdf" = "Exporter en PDF";
+"report.export_excel" = "Exporter en Excel";
+
+/* === SETTINGS === */
+"settings.profile" = "Profil";
+"settings.notifications" = "Notifications";
+"notifications_label" = "Notifications";
+"notifications_subtitle" = "Gérer les notifications push";
+"dark_mode_label" = "Mode sombre";
+"dark_mode_subtitle" = "Basculer vers le thème sombre";
+"settings.currency" = "Devise par défaut";
+"settings.language" = "Langue";
+"settings.vat_settings" = "Paramètres TVA";
+"settings.sync" = "Synchronisation";
+"settings.export_data" = "Exporter les données";
+"settings.about" = "À propos";
+"settings.privacy" = "Confidentialité";
+"settings.terms" = "Conditions d'utilisation";
+
+/* === RECEIPT SCANNING === */
+"scan.instructions" = "Positionnez le reçu dans le cadre";
+"scan.processing" = "Traitement...";
+"scan.extracting" = "Extraction des données...";
+"scan.complete" = "Scan terminé";
+"scan.retry" = "Réessayer";
+
+/* === FORMATTING === */
+"format.currency.chf" = "CHF %@";
+"format.currency.usd" = "$ %@";
+"format.currency.eur" = "%@ €";
+"format.currency.gbp" = "£ %@";
+"format.date" = "dd/MM/yyyy";
+"format.time" = "HH:mm";
+"format.datetime" = "dd/MM/yyyy HH:mm";
+"format.percentage" = "%@%%";
+
+/* === ACCESSIBILITY === */
+"accessibility.add_expense" = "Ajouter une nouvelle dépense";
+"accessibility.scan_receipt" = "Scanner un reçu";
+"accessibility.expense_image" = "Image du reçu";
+"accessibility.delete_expense" = "Supprimer cette dépense";
+"accessibility.approve_expense" = "Approuver cette dépense";
+
+/* === ADDITIONAL UI KEYS === */
+"greeting_morning" = "Bonjour";
+"greeting_afternoon" = "Bon après-midi";
+"greeting_evening" = "Bonsoir";
+"today_spending" = "Dépenses d'aujourd'hui";
+"settings_title" = "Paramètres";
+"settings_subtitle" = "Gérez vos préférences";
+"settings.dark_mode" = "Mode sombre";
+"settings.preferences" = "Préférences";
+"settings.premium_member" = "Membre Premium";
+"settings.scans" = "Scans";
+"settings.total" = "Total";
+"stats.title" = "Statistiques";
+"stats.total_spent" = "Total dépensé";
+"notification_label" = "Notifications";
+"currency_label" = "Devise";
+"language_label" = "Langue";
+"expense_title" = "Dépenses";
+"scan_title" = "Scanner un reçu";
+"statistics_title" = "Statistiques";
+"stats.period.week" = "Semaine";
+
+/* === TAB BAR === */
+"tab_home" = "Accueil";
+"tab_expenses" = "Dépenses";
+"tab_scan" = "Scanner";
+"tab_stats" = "Statistiques";
+"tab_settings" = "Paramètres";
+
+/* === NEW LOCALIZATION KEYS === */
+"app_name" = "PrivExpenses";
+"app_tagline" = "Suivi intelligent des dépenses";
+"app_version" = "Version 1.0.0 (Build 1)";
+
+/* === SCANNER === */
+"scan_receipt" = "Scanner un reçu";
+"scan_receipt_subtitle" = "Choisissez comment capturer votre reçu";
+"scan_option_camera" = "Appareil photo";
+"scan_option_camera_description" = "Scanner un reçu avec l'appareil photo";
+"scan_option_library" = "Photothèque";
+"scan_option_library_description" = "Sélectionner depuis vos photos";
+"scan_option_files" = "Fichiers";
+"scan_option_files_description" = "Importer un fichier PDF ou image";
+"scan_tip" = "Astuce : Pour de meilleurs résultats, assurez-vous d'un bon éclairage et capturez le reçu entier";
+"processing_receipt" = "Traitement du reçu";
+"processing_receipt_ai" = "Extraction des informations avec l'IA...";
+"receipt_scanned" = "Reçu scanné";
+"ai_confidence" = "Confiance IA : %d%%";
+"save_expense" = "Enregistrer la dépense";
+"choose_from_library" = "Choisir depuis la photothèque";
+
+/* === EXPENSES === */
+"expenses_title" = "Dépenses";
+"expenses_empty_title" = "Aucune dépense";
+"expenses_empty_message" = "Appuyez sur le bouton + pour scanner votre premier reçu";
+"add_expense" = "Ajouter une dépense";
+"total_amount" = "Montant total";
+"tax" = "Taxe";
+"items" = "Articles";
+"delete_expense" = "Supprimer la dépense";
+"delete_expense_confirmation" = "Êtes-vous sûr de vouloir supprimer cette dépense ? Cette action ne peut pas être annulée.";
+"save_changes" = "Enregistrer les modifications";
+
+/* === BUTTONS === */
+"button_back" = "Retour";
+"button_cancel" = "Annuler";
+"button_done" = "Terminé";
+"button_edit" = "Modifier";
+"button_retry" = "Réessayer";
+"button_skip" = "Passer";
+"button_next" = "Suivant";
+"get_started" = "Commencer";
+"save" = "Enregistrer";
+"cancel" = "Annuler";
+
+/* === ONBOARDING === */
+"camera_access_title" = "Accès à l'appareil photo";
+"camera_access_description" = "PrivExpenses a besoin d'accéder à l'appareil photo pour scanner vos reçus. Tout le traitement se fait sur votre appareil.";
+"allow_camera_access" = "Autoriser l'accès à l'appareil photo";
+"not_now" = "Pas maintenant";
+
+/* === FEEDBACK === */
+"feedback_title" = "Commentaires Beta";
+"feedback_subtitle" = "Aidez-nous à améliorer PrivExpenses";
+"feedback_rating_question" = "Comment évaluez-vous votre expérience ?";
+"feedback_category" = "Catégorie";
+"feedback_your_feedback" = "Vos commentaires";
+"feedback_placeholder" = "Dites-nous ce que vous pensez...";
+"feedback_submit" = "Envoyer les commentaires";
+"feedback_thank_you" = "Merci !";
+"feedback_thank_you_message" = "Vos commentaires nous aident à améliorer PrivExpenses";
+
+/* === CREDITS === */
+"credits_about" = "À propos";
+"credits_about_description" = "PrivExpenses est une application intelligente de suivi des dépenses qui utilise une technologie avancée d'IA et d'OCR pour extraire automatiquement les informations des reçus, tout en gardant vos données 100% privées sur votre appareil.";
+"credits_team" = "Équipe";
+"credits_technologies" = "Technologies";
+"credits_legal" = "Mentions légales";
+"credits_copyright" = "© 2025 Minh-Tam Dang. Tous droits réservés.";
+"credits_privacy_statement" = "Cette application n'utilise aucun service externe. Tout le traitement des données se fait sur votre appareil. Aucune donnée n'est collectée, stockée ou transmise à des serveurs.";
+
+/* === AI MODE === */
+"ai_mode_title" = "Mode IA";
+"ai_mode_qwen_description" = "🤖 Qwen IA - Précision maximale (~2s)";
+"ai_mode_fast_description" = "⚡ Mode Rapide - Instantané";
+
+/* === STATISTICS === */
+"stats.spending_trend" = "Tendance des dépenses";
+"stats.by_category" = "Par catégorie";
+"stats.vs_last_period" = "vs période précédente";
+"stats.period.month" = "Mois";
+"stats.period.year" = "Année";
+
+/* === SETTINGS EXTENDED === */
+"settings.faceid" = "Face ID";
+"settings.faceid_subtitle" = "Déverrouiller avec Face ID";
+"settings.ai_mode" = "Mode IA";
+"settings.ai_mode_subtitle" = "Utiliser l'intelligence artificielle pour l'analyse des reçus";
+"settings.private_mode" = "Mode privé";
+"settings.private_mode_subtitle" = "Masquer les informations sensibles";
+"settings.privacy_security" = "Confidentialité et sécurité";
+"settings.privacy_policy" = "Politique de confidentialité";
+"settings.help_support" = "Aide et support";
+"settings.terms_of_service" = "Conditions d'utilisation";
+"settings.version" = "Version";
+"settings.made_with" = "Conçu avec IA et confidentialité";
+"settings.sign_out" = "Se déconnecter";
+"settings.icloud_sync" = "Synchronisation iCloud";
+"settings.icloud_sync_subtitle" = "Synchroniser les données entre appareils";
+"settings.export_data" = "Exporter les données";
+"settings.clear_cache" = "Vider le cache";
+"settings.rate_app" = "Noter l'app";
+"settings.credits" = "Crédits";
+"settings_language" = "Langue";
+"settings_currency" = "Devise";
+
+/* === AI ASSISTANT === */
+"ai.ask_question" = "Posez votre question...";
+"ai.thinking" = "L'IA réfléchit...";
+"ai.assistant_title" = "Assistant IA";
+"ai.context.home" = "Accueil - Vue d'ensemble";
+"ai.context.expenses" = "Dépenses";
+"ai.context.statistics" = "Statistiques";
+"ai.context.settings" = "Paramètres";
+"ai.context.scanner" = "Scanner";
+"ai.welcome" = "Bonjour ! Je suis votre assistant IA. Comment puis-je vous aider avec vos finances ?";
+"ai.error" = "Désolé, je rencontre un problème technique. Essayez plus tard.";
+"ai.help_hint" = "Essayez : 'Combien j'ai dépensé ce mois ?' ou 'Comment ajouter une dépense ?'";
+"ai.processing" = "Traitement en cours...";
+"ai.done" = "Terminé";
+
+/* === PHASE 2 & 3 LOCALIZATION KEYS === */
+
+/* Onboarding */
+"onboarding.scanning.title" = "Scanner de Reçus Intelligent";
+"onboarding.scanning.description" = "Capturez et numérisez vos reçus instantanément grâce à la technologie OCR avancée";
+"onboarding.ai.title" = "Intelligence Artificielle";
+"onboarding.ai.description" = "Notre IA embarquée extrait automatiquement le commerçant, le montant, la TVA et catégorise vos dépenses";
+"onboarding.privacy.title" = "100% Privé et Sécurisé";
+"onboarding.privacy.description" = "Tout le traitement se fait sur votre appareil. Vos données financières ne quittent jamais votre iPhone";
+
+/* Reports */
+"report.items_count" = "%d éléments";
+"report.expenses_count" = "%d dépenses";
+"report.details_title" = "Détails du rapport";
+"report.create_title" = "Créer un rapport";
+"report.title_placeholder" = "Titre du rapport";
+"report.date_from" = "Du";
+"report.date_to" = "Au";
+"report.delete" = "Supprimer le rapport";
+"report.delete_confirm_title" = "Supprimer le rapport ?";
+"report.delete_confirm_message" = "Cette action supprimera le rapport définitivement. Les dépenses resteront dans votre liste principale.";
+"report.included_expenses" = "Dépenses incluses";
+"report.receipts_gallery" = "Galerie des reçus";
+
+/* Expenses */
+"expenses.total_format" = "Total : %@";
+"expense.tax_format" = "TVA : %@";
+"expense.add_title" = "Ajouter une dépense";
+"expense.scan_receipt" = "Scanner un reçu";
+"expense.manual_entry" = "Saisie manuelle";
+"expense.unknown_merchant" = "Inconnu";
+"expense.save_button" = "Enregistrer";
+
+/* Expense Fields */
+"expense.field.date" = "Date";
+"expense.field.category" = "Catégorie";
+"expense.field.payment" = "Paiement";
+"expense.field.tax" = "TVA";
+"expense.field.items" = "Articles";
+
+/* Buttons */
+"button.done" = "Terminé";
+"button.cancel" = "Annuler";
+"button.create" = "Créer";
+"button.delete" = "Supprimer";
+
+/* Scan Results */
+"scan.complete_title" = "Scan terminé";
+"scan.complete_message" = "Reçu traité avec succès";
+
+/* Budget Types */
+"budget.type.daily" = "Journalier";
+"budget.type.weekly" = "Hebdomadaire";
+"budget.type.monthly" = "Mensuel";
+"budget.type.yearly" = "Annuel";
+
+/* Budget Setup */
+"budget.setup.title" = "Budget mensuel";
+"budget.setup.subtitle" = "Définir votre limite de dépenses";
+"budget.setup.set_button" = "Définir le budget";
+
+/* Budget Insights */
+"budget.insight.spending_fast" = "Dépenses 20% plus rapides que prévu";
+"budget.insight.great_savings" = "Excellent rythme d'économies ce mois";
+"budget.insight.low_daily" = "Moins de 10 par jour restant";
+
+/* Periods */
+"period.week" = "Semaine";
+"period.month" = "Mois";
+"period.year" = "Année";
+
+/* Statistics */
+"statistics.title" = "Statistiques";
+"statistics.current_period" = "Période actuelle";
+"statistics.total_spent" = "Total dépensé";
+"statistics.this_period" = "Cette période";
+"statistics.average" = "Moyenne";
+"statistics.vs_previous" = "vs période précédente";
+"statistics.expenses_count" = "Dépenses";
+"statistics.daily_average" = "Moy. jour";
+"statistics.by_category" = "Par catégorie";
+"statistics.spending_over_time" = "Dépenses dans le temps";
+"statistics.cumulative_trend" = "Tendance cumulative";
+"statistics.top_categories" = "Top catégories";
+
+/* Export */
+"export.title" = "Exporter";
+"export.generate_auto_report" = "Générer un rapport automatique";
+"export.pdf" = "Exporter PDF";
+"export.csv" = "Exporter CSV";
+
+/* Lists */
+"list.and_more" = "... et %d de plus";
+
+/* Extraction Error Messages (Task 650) */
+"extraction.error.title" = "Échec de l'extraction";
+"extraction.error.message" = "Nous n'avons pas pu lire le reçu. Veuillez réessayer avec une image plus nette.";
+"extraction.error.tips_title" = "Conseils pour de meilleurs résultats";
+"extraction.error.tip_lighting" = "Assurez un bon éclairage";
+"extraction.error.tip_frame" = "Cadrez tout le reçu";
+"extraction.error.tip_steady" = "Tenez stable pendant le scan";
+"extraction.error.tip_readable" = "Assurez-vous que le texte est lisible";
+"extraction.error.retry_camera" = "Réessayer avec la caméra";
+
+/* Confidence Indicator (Task 652) */
+"confidence.high" = "Confiance élevée";
+"confidence.medium" = "Confiance moyenne";
+"confidence.low" = "Confiance faible";
+
+/* Edit Mode (Task 651) */
+"edit.button" = "Modifier";
+"edit.hint" = "Touchez les champs pour modifier";
+"expense.field.merchant" = "Marchand";
+"expense.field.amount" = "Montant";
+
+/* Onboarding Additional Pages (Task 653) */
+"onboarding.budget.title" = "Budget & Statistiques";
+"onboarding.budget.description" = "Définissez des limites de dépenses et suivez vos frais avec de beaux graphiques. Obtenez des insights sur vos habitudes.";
+"onboarding.export.title" = "Export & Rapports";
+"onboarding.export.description" = "Générez des rapports de dépenses professionnels et exportez-les en PDF ou CSV pour un partage facile.";
+
+/* Export (Tasks 654-655) */
+"export.loading" = "Exportation...";
+"export.pdf.title" = "Rapport de Dépenses";
+"export.pdf.generated" = "Généré le";
+"export.pdf.total" = "Total";
+"export.pdf.items" = "éléments";
+"export.pdf.footer" = "Généré par PrivExpenses";
+
+/* Scanner Hint (BUG 657) */
+"scanner.hint.title" = "Astuce Scan";
+"scanner.hint.message" = "Après avoir scanné votre reçu, tapez 'Garder' puis 'Enregistrer' pour le traiter.";
+"scanner.hint.ok" = "Compris!";
+
+/* === SETTINGS CLOUD VISION === */
+"settings.cloud_vision.title" = "Cloud Vision IA";
+"settings.cloud_vision.enable" = "Activer Cloud Vision";
+"settings.cloud_vision.subtitle" = "Utiliser l'IA cloud pour les reçus";
+"settings.cloud_vision.test" = "Tester Cloud Vision";
+"settings.provider" = "Fournisseur";
+"settings.api_key_openai" = "Clé API OpenAI";
+"settings.api_key_groq" = "Clé API Groq";
+"settings.api_key_placeholder" = "Entrez la clé API...";
+"settings.api_key_configured" = "Clé API configurée";
+
+/* === CHAT ASSISTANT === */
+"settings.chat_assistant.title" = "Assistant IA";
+"settings.chat_assistant.provider" = "Fournisseur pour le chat";
+"settings.chat_assistant.groq_required" = "Clé API Groq requise (voir Cloud Vision)";
+
+/* === EXPORT PDF COLUMNS === */
+"export.column.date" = "Date";
+"export.column.merchant" = "Marchand";
+"export.column.amount" = "Montant";
+"export.column.tax" = "TVA";
+"export.column.category" = "Catégorie";
+"export.unknown" = "Inconnu";
+"export.other" = "Autre";
+
+/* === ALERTS === */
+"alert.corrections_applied" = "Corrections appliquées";
+"alert.enhance_ai" = "Amélioration IA";
+"alert.cloud_vision" = "Cloud Vision";
+"alert.cloud_vision_success" = "Analyse réussie en";
+"alert.cloud_vision_error" = "Erreur Cloud Vision";
+
+/* === BUTTONS === */
+"button.done" = "Terminé";
+
+/* === RECEIPT PREVIEW === */
+"receipt.preview.title" = "Ticket scanné";
+"receipt.preview.expand" = "Agrandir";
+"receipt.preview.verify_hint" = "Vérifiez que les données extraites correspondent au ticket";
+"receipt.fullscreen.zoom_hint" = "Pincez pour zoomer • Double-tap pour réinitialiser";
+
+/* === RESULT AUTO-CLOSE === */
+"result.auto_close" = "Fermeture auto...";
+"result.tap_to_stay" = "Touchez pour rester";
+"result.enhance_with_ai" = "Améliorer avec l'IA";
+
+/* === SCAN RESULT DELETE === */
+"delete.confirmation.title" = "Supprimer cette dépense ?";
+"delete.confirmation.message" = "La dépense que vous venez de scanner sera définitivement supprimée.";
+
+/* === MULTI-SELECT DELETE === */
+"expenses.select" = "Sélectionner";
+"expenses.selected_count" = "%d sélectionné(s)";
+"expenses.delete_selected" = "Supprimer";
+"expenses.delete_confirmation_title" = "Supprimer les dépenses";
+"expenses.delete_confirmation_message" = "Cette action est irréversible.";
+"expenses.delete_count" = "Supprimer %d dépenses";
+
+/* === ARCHIVE DOCUMENTS (SPRINT 13) === */
+"document.archive.title" = "Documents";
+"document.processing" = "Traitement du document...";
+"document.filter.tous" = "Tous";
+"document.filter.factures" = "Factures";
+"document.filter.admin" = "Admin";
+"document.empty" = "Aucun document";
+"document.empty.hint" = "Scannez des factures ou documents admin pour les archiver";
+"document.summary" = "Résumé";
+"document.view" = "Voir";
+"document.type.invoice" = "Facture";
+"document.type.admin" = "Administratif";
+"document.title" = "Titre";
+"button.delete" = "Supprimer";
+"button.save" = "Enregistrer";
+"button.edit" = "Modifier";
+"expense.field.amount" = "Montant";
+"expense.field.date" = "Date";
+"search" = "Rechercher";
+
+/* === PROFIL UTILISATEUR === */
+"profile.first_name" = "Votre prénom";
+"profile.preferred_currency" = "Devise par défaut";
+"profile.edit_title" = "Modifier le profil";
+"settings.preferred_currency" = "Devise";
+
+/* === ACTIONS === */
+"action.photos" = "Photos";
+"action.file" = "Fichier";
+"action.text" = "Texte";
+"button.ok" = "OK";
+
+/* === MAGIC DROPBOX === */
+"magic_dropbox.title" = "Magic Dropbox";
+"magic_dropbox.description" = "Collez du texte brut et l'IA créera automatiquement un document avec titre, catégorie et résumé.";
+"magic_dropbox.your_text" = "Votre texte";
+"magic_dropbox.characters" = "%d caractères";
+"magic_dropbox.create_document" = "Créer le document";
+"magic_dropbox.classifying" = "Classification IA...";
+"magic_dropbox.creating" = "Création du document...";
+
+/* === DOCUMENT === */
+"document.created_success" = "Document créé !";
+"document.default_name" = "Document";
+
+/* === SYNC DOCUMENTS === */
+"settings.document_sync" = "Synchronisation Documents";
+"settings.sync_folder" = "Dossier de sync";
+"settings.sync_folder_none" = "Non configuré";
+"settings.auto_sync" = "Sync auto";
+"settings.auto_sync_subtitle" = "Copier automatiquement les nouveaux documents";
+"settings.last_sync" = "Dernière sync";
+"settings.wifi_only" = "WiFi uniquement";
+"settings.wifi_only_subtitle" = "Synchroniser uniquement en WiFi";
+"settings.pending_sync" = "En attente";
+
+// MARK: - Search Indexing
+"search.result" = "résultat";
+"search.results" = "résultats";
+"search.in_content" = "Recherche contenu";
+"search.match.title" = "Titre";
+"search.match.summary" = "Résumé";
+"search.match.content" = "Contenu";
+"search.no_results" = "Aucun résultat";
+"search.no_results.hint" = "Essayez d'autres mots-clés ou vérifiez l'orthographe";

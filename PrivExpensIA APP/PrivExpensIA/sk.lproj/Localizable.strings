@@ -1,0 +1,624 @@
+/*
+  Localizable.strings
+  PrivExpenses
+
+  Slovenčina (sk)
+  Generated for PrivExpenses - Sprint 1
+*/
+
+/* === NAVIGATION & MENUS === */
+"app.title" = "PrivExpenses";
+"menu.home" = "Domov";
+"menu.expenses" = "Výdavky";
+"menu.reports" = "Reporty";
+"menu.settings" = "Nastavenia";
+"menu.help" = "Pomoc";
+"menu.logout" = "Odhlásiť sa";
+
+/* === HOME SCREEN === */
+"home.good_morning" = "Dobré ráno";
+"home.good_afternoon" = "Dobré popoludnie";
+"home.good_evening" = "Dobrý večer";
+"home.todays_spending" = "Dnešné výdavky";
+"home.budget_left" = "Zostávajúci rozpočet";
+"home.weekly_average" = "Týždenný priemer";
+"home.saved" = "Ušetrené";
+"home.activity" = "Aktivita";
+"home.recent_expenses" = "Nedávne výdavky";
+"home.period.week" = "Týždeň";
+"home.period.day" = "Deň";
+"home.period.month" = "Mesiac";
+"home.period.year" = "Rok";
+"home.day.mon" = "Po";
+"home.day.tue" = "Ut";
+"home.day.wed" = "St";
+"home.day.thu" = "Št";
+"home.day.fri" = "Pi";
+"home.day.sat" = "So";
+"home.day.sun" = "Ne";
+"home.days_ago" = "pred %d dňami";
+"home.hours_ago" = "pred %d hodinami";
+"home.just_now" = "Práve teraz";
+"home.minutes_ago" = "pred %d minútami";
+"home.see_all" = "Zobraziť všetko";
+
+/* === ACTIONS === */
+"action.add" = "Pridať";
+"action.edit" = "Upraviť";
+"action.delete" = "Vymazať";
+"action.save" = "Uložiť";
+"action.cancel" = "Zrušiť";
+"action.submit" = "Odoslať";
+"action.approve" = "Schváliť";
+"action.reject" = "Zamietnuť";
+"action.export" = "Exportovať";
+"action.import" = "Importovať";
+"action.scan" = "Skenovať";
+"action.search" = "Hľadať";
+"action.filter" = "Filtrovať";
+"action.refresh" = "Obnoviť";
+"action.select" = "Vybrať";
+"action.close" = "Zatvoriť";
+
+/* === EXPENSE FORM === */
+"expense.title" = "Názov výdavku";
+"expense.amount" = "Suma";
+"expense.date" = "Dátum";
+"expense.category" = "Kategória";
+"expense.merchant" = "Dodávateľ";
+"expense.description" = "Popis";
+"expense.receipt" = "Doklad";
+"expense.vat" = "DPH";
+"expense.currency" = "Mena";
+"expense.payment_method" = "Spôsob platby";
+"expense.status" = "Stav";
+"expense.total" = "Celkom";
+"expense.subtotal" = "Medzisúčet";
+"expense.vat_amount" = "Suma DPH";
+
+/* === CATEGORIES === */
+"category.food" = "Potraviny";
+"category.restaurant" = "Reštaurácia";
+"category.hotel" = "Hotel";
+"category.transport" = "Doprava";
+"category.taxi" = "Taxi";
+"category.public_transport" = "Verejná doprava";
+"category.gas" = "Benzín";
+"category.parking" = "Parkovanie";
+"category.office_supplies" = "Kancelárske potreby";
+"category.entertainment" = "Zábava";
+"category.training" = "Školenie";
+"category.travel" = "Cestovanie";
+"category.phone" = "Telefón";
+"category.internet" = "Internet";
+"category.software" = "Softvér";
+"category.hardware" = "Hardvér";
+"category.other" = "Iné";
+
+/* === STATUS === */
+"status.draft" = "Koncept";
+"status.pending" = "Čaká na schválenie";
+"status.approved" = "Schválené";
+"status.rejected" = "Zamietnuté";
+"status.reimbursed" = "Preplatené";
+"status.processing" = "Spracováva sa";
+
+/* === PAYMENT METHODS === */
+"payment.cash" = "Hotovosť";
+"payment.credit_card" = "Kreditná karta";
+"payment.debit_card" = "Debetná karta";
+"payment.company_card" = "Firemná karta";
+"payment.bank_transfer" = "Bankový prevod";
+"payment.check" = "Šek";
+
+/* === MESSAGES === */
+"message.welcome" = "Vitajte v PrivExpenses";
+"message.loading" = "Načítava sa...";
+"message.saving" = "Ukladá sa...";
+"message.success" = "Operácia úspešná";
+"message.error" = "Nastala chyba";
+"message.confirm_delete" = "Naozaj chcete vymazať tento výdavok?";
+"message.no_expenses" = "Nenašli sa žiadne výdavky";
+"message.receipt_uploaded" = "Doklad bol úspešne nahraný";
+"message.expense_saved" = "Výdavok uložený";
+"message.expense_submitted" = "Výdavok odoslaný na schválenie";
+"message.scanning_receipt" = "Skenuje sa doklad...";
+
+/* === ERRORS === */
+"error.required_field" = "Toto pole je povinné";
+"error.invalid_amount" = "Neplatná suma";
+"error.invalid_date" = "Neplatný dátum";
+"error.network" = "Chyba sieťového pripojenia";
+"error.upload_failed" = "Nahrávanie zlyhalo";
+"error.scan_failed" = "Skenovanie dokladu zlyhalo";
+"error.unauthorized" = "Neautorizovaný";
+"error.server_error" = "Chyba servera";
+"error.invalid_receipt" = "Neplatný alebo nečitateľný doklad";
+"error.duplicate_expense" = "Tento výdavok sa zdá byť duplikát";
+
+/* === FILTERS & SEARCH === */
+"filter.all" = "Všetko";
+"filter.today" = "Dnes";
+"filter.this_week" = "Tento týždeň";
+"filter.this_month" = "Tento mesiac";
+"filter.this_year" = "Tento rok";
+"filter.custom_range" = "Vlastný rozsah";
+"search.placeholder" = "Hľadať výdavky...";
+
+/* === REPORTS === */
+"report.title" = "Report výdavkov";
+"report.period" = "Obdobie";
+"report.total_expenses" = "Celkové výdavky";
+"report.by_category" = "Podľa kategórie";
+"report.by_month" = "Podľa mesiaca";
+"report.export_pdf" = "Exportovať ako PDF";
+"report.export_excel" = "Exportovať ako Excel";
+
+/* === SETTINGS === */
+"settings.profile" = "Profil";
+"settings.notifications" = "Notifikácie";
+"settings.currency" = "Predvolená mena";
+"settings.language" = "Jazyk";
+"settings.vat_settings" = "Nastavenia DPH";
+"settings.sync" = "Synchronizácia";
+"settings.export_data" = "Exportovať údaje";
+"settings.about" = "O aplikácii";
+"settings.privacy" = "Súkromie";
+"settings.terms" = "Podmienky používania";
+"settings.dark_mode" = "Tmavý režim";
+"settings.preferences" = "Predvoľby";
+"settings.premium_member" = "Prémiový člen";
+"settings.scans" = "Skeny";
+"settings.total" = "Celkom";
+"settings.ai_mode" = "AI režim";
+"settings.ai_mode_subtitle" = "Použiť umelú inteligenciu na analýzu dokladov";
+"settings.faceid" = "Face ID";
+"settings.faceid_subtitle" = "Odomknúť pomocou Face ID";
+"settings.help_support" = "Pomoc a podpora";
+"settings.made_with" = "Vytvorené s AI a súkromím";
+"settings.privacy_policy" = "Zásady ochrany súkromia";
+"settings.privacy_security" = "Súkromie a bezpečnosť";
+"settings.private_mode" = "Súkromný režim";
+"settings.private_mode_subtitle" = "Skryť citlivé informácie";
+"settings.sign_out" = "Odhlásiť sa";
+"settings.terms_of_service" = "Podmienky služby";
+"settings.version" = "Verzia";
+"settings.icloud_sync" = "iCloud synchronizácia";
+"settings.icloud_sync_subtitle" = "Synchronizovať dáta medzi zariadeniami";
+"settings.export_data" = "Exportovať dáta";
+"settings.clear_cache" = "Vymazať vyrovnávaciu pamäť";
+"settings.rate_app" = "Ohodnotiť aplikáciu";
+"settings.credits" = "Kredity";
+
+/* === RECEIPT SCANNING === */
+"scan.instructions" = "Umiestnite doklad do rámčeka";
+"scan.processing" = "Spracováva sa...";
+"scan.extracting" = "Extrahujú sa údaje...";
+"scan.complete" = "Skenovanie dokončené";
+"scan.retry" = "Skúsiť znova";
+
+/* === FORMATTING === */
+"format.currency.eur" = "%@ €";
+"format.currency.chf" = "CHF %@";
+"format.currency.usd" = "$ %@";
+"format.currency.gbp" = "£ %@";
+"format.date" = "d.M.yyyy";
+"format.time" = "HH:mm";
+"format.datetime" = "d.M.yyyy HH:mm";
+"format.percentage" = "%@ %%";
+
+/* === ACCESSIBILITY === */
+"accessibility.add_expense" = "Pridať nový výdavok";
+"accessibility.scan_receipt" = "Skenovať doklad";
+"accessibility.expense_image" = "Obrázok dokladu";
+"accessibility.delete_expense" = "Vymazať tento výdavok";
+"accessibility.approve_expense" = "Schváliť tento výdavok";
+
+/* === ADDITIONAL UI KEYS === */
+"greeting_morning" = "Dobré ráno";
+"greeting_afternoon" = "Dobrý deň";
+"greeting_evening" = "Dobrý večer";
+"today_spending" = "Dnešné výdavky";
+"settings_title" = "Nastavenia";
+"settings_subtitle" = "Prispôsobte si svoj zážitok";
+"notification_label" = "Oznámenia";
+"currency_label" = "Mena";
+"language_label" = "Jazyk";
+"expense_title" = "Výdavky";
+"scan_title" = "Skenovať doklad";
+"statistics_title" = "Štatistiky";
+
+/* === MISSING KEYS === */
+"notifications_label" = "Oznámenia";
+"notifications_subtitle" = "Spravovať push oznámenia";
+"dark_mode_label" = "Tmavý režim";
+"dark_mode_subtitle" = "Prepnúť na tmavú tému";
+
+/* === TAB BAR === */
+"tab_home" = "Domov";
+"tab_expenses" = "Výdavky";
+"tab_scan" = "Skenovať";
+"tab_stats" = "Štatistiky";
+"tab_settings" = "Nastavenia";
+
+/* === NEW LOCALIZATION KEYS === */
+"app_name" = "PrivExpenses";
+"app_tagline" = "Inteligentné sledovanie výdavkov";
+"app_version" = "Verzia 1.0.0 (Build 1)";
+
+/* === SCANNER === */
+"scan_receipt" = "Skenovať doklad";
+"scan_receipt_subtitle" = "Vyberte spôsob zachytenia dokladu";
+"scan_option_camera" = "Kamera";
+"scan_option_camera_description" = "Skenovať doklad kamerou";
+"scan_option_library" = "Fotogaléria";
+"scan_option_library_description" = "Vybrať z vašich fotografií";
+"scan_option_files" = "Súbory";
+"scan_option_files_description" = "Importovať PDF alebo obrázok";
+"scan_tip" = "Tip: Pre najlepšie výsledky zabezpečte dobré osvetlenie a zachyťte celý doklad";
+"processing_receipt" = "Spracováva sa doklad";
+"processing_receipt_ai" = "Extrahujú sa informácie pomocou AI...";
+"receipt_scanned" = "Doklad naskenovaný";
+"ai_confidence" = "Spoľahlivosť AI: %d%%";
+"save_expense" = "Uložiť výdavok";
+"choose_from_library" = "Vybrať z galérie";
+
+/* === EXPENSES === */
+"expenses_title" = "Výdavky";
+"expenses_empty_title" = "Zatiaľ žiadne výdavky";
+"expenses_empty_message" = "Kliknite na tlačidlo + a naskenujte svoj prvý doklad";
+"add_expense" = "Pridať výdavok";
+"total_amount" = "Celková suma";
+"tax" = "Daň";
+"items" = "Položky";
+"delete_expense" = "Vymazať výdavok";
+"delete_expense_confirmation" = "Naozaj chcete vymazať tento výdavok? Túto akciu nie je možné vrátiť späť.";
+"save_changes" = "Uložiť zmeny";
+
+/* === BUTTONS === */
+"button_back" = "Späť";
+"button_cancel" = "Zrušiť";
+"button_done" = "Hotovo";
+"button_edit" = "Upraviť";
+"button_retry" = "Skúsiť znova";
+"button_skip" = "Preskočiť";
+"button_next" = "Ďalej";
+"get_started" = "Začať";
+
+/* === ONBOARDING === */
+"camera_access_title" = "Prístup ku kamere";
+"camera_access_description" = "PrivExpenses potrebuje prístup ku kamere na skenovanie dokladov. Všetko spracovanie prebieha vo vašom zariadení.";
+"allow_camera_access" = "Povoliť prístup ku kamere";
+"not_now" = "Teraz nie";
+
+/* === FEEDBACK === */
+"feedback_title" = "Beta spätná väzba";
+"feedback_subtitle" = "Pomôžte nám vylepšiť PrivExpenses";
+"feedback_rating_question" = "Ako by ste ohodnotili vašu skúsenosť?";
+"feedback_category" = "Kategória";
+"feedback_your_feedback" = "Vaša spätná väzba";
+"feedback_placeholder" = "Povedzte nám, čo si myslíte...";
+"feedback_submit" = "Odoslať spätnú väzbu";
+"feedback_thank_you" = "Ďakujeme!";
+"feedback_thank_you_message" = "Vaša spätná väzba nám pomáha vylepšovať PrivExpenses";
+
+/* === CREDITS === */
+"credits_about" = "O aplikácii";
+"credits_about_description" = "PrivExpenses je inteligentná aplikácia na sledovanie výdavkov, ktorá používa pokročilú AI a OCR technológiu na automatické extrahovanie informácií z dokladov, pričom udržiava vaše údaje 100% súkromné vo vašom zariadení.";
+"credits_team" = "Tím";
+"credits_technologies" = "Technológie";
+"credits_legal" = "Právne";
+"credits_copyright" = "© 2025 Minh-Tam Dang. Všetky práva vyhradené.";
+"credits_privacy_statement" = "Táto aplikácia nepoužíva žiadne externé služby. Všetko spracovanie údajov prebieha vo vašom zariadení. Žiadne údaje sa nezbierajú, neukladajú ani neodosielajú na servery.";
+
+/* === AI MODE === */
+"ai_mode_title" = "AI režim";
+"ai_mode_qwen_description" = "🤖 Qwen AI - Maximálna presnosť (~2s)";
+"ai_mode_fast_description" = "⚡ Rýchly režim - Okamžite";
+
+/* === STATS === */
+"stats.title" = "Štatistiky";
+"stats.total_spent" = "Celkom minúté";
+"stats.by_category" = "Podľa kategórie";
+"stats.period.week" = "Týždeň";
+"stats.period.month" = "Mesiac";
+"stats.period.year" = "Rok";
+"stats.spending_trend" = "Trend výdavkov";
+"stats.vs_last_period" = "vs posledné obdobie";
+
+/* === SPRINT 3 - FEEDBACK & EXPORT === */
+
+/* Extraction Error Messages (Task 650) */
+"extraction.error.title" = "Extrakcia zlyhala";
+"extraction.error.message" = "Nepodarilo sa prečítať doklad. Skúste to znova s jasnejším obrázkom.";
+"extraction.error.tips_title" = "Tipy pre lepšie výsledky";
+"extraction.error.tip_lighting" = "Zabezpečte dobré osvetlenie";
+"extraction.error.tip_frame" = "Zachyťte celý doklad";
+"extraction.error.tip_steady" = "Držte stabilne pri skenovaní";
+"extraction.error.tip_readable" = "Uistite sa, že text je čitateľný";
+"extraction.error.retry_camera" = "Skúsiť znova s kamerou";
+
+/* Confidence Indicator (Task 652) */
+"confidence.high" = "Vysoká spoľahlivosť";
+"confidence.medium" = "Stredná spoľahlivosť";
+"confidence.low" = "Nízka spoľahlivosť";
+
+/* Edit Mode (Task 651) */
+"edit.button" = "Upraviť";
+"edit.hint" = "Klepnutím upravte polia";
+"expense.field.merchant" = "Obchodník";
+"expense.field.amount" = "Suma";
+
+/* Onboarding Additional Pages (Task 653) */
+"onboarding.budget.title" = "Rozpočet a štatistiky";
+"onboarding.budget.description" = "Nastavte si limity výdavkov a sledujte ich pomocou pekných grafov. Získajte prehľad o svojich návykoch.";
+"onboarding.export.title" = "Export a reporty";
+"onboarding.export.description" = "Vytvárajte profesionálne reporty výdavkov a exportujte ich ako PDF alebo CSV pre jednoduché zdieľanie.";
+
+/* Export (Tasks 654-655) */
+"export.loading" = "Exportujem...";
+"export.pdf.title" = "Report výdavkov";
+"export.pdf.generated" = "Vytvorené";
+"export.pdf.total" = "Celkom";
+"export.pdf.items" = "položiek";
+"export.pdf.footer" = "Vytvorené pomocou PrivExpenses";
+
+/* Scanner Hint (BUG 657) */
+"scanner.hint.title" = "Tip na skenovanie";
+"scanner.hint.message" = "Po naskenovaní dokladu klepnite na 'Ponechať' a potom 'Uložiť' pre spracovanie.";
+"scanner.hint.ok" = "Rozumiem!";
+
+/* === SPRINT 5 - AI ASSISTANT & ADVANCED KEYS === */
+
+/* AI Assistant */
+"ai.ask_question" = "Zadajte svoju otázku...";
+"ai.thinking" = "AI premýšľa...";
+"ai.assistant_title" = "AI Asistent";
+"ai.context.home" = "Domov - Prehľad";
+"ai.context.expenses" = "Výdavky";
+"ai.context.statistics" = "Štatistiky";
+"ai.context.settings" = "Nastavenia";
+"ai.context.scanner" = "Skener";
+"ai.welcome" = "Ahoj! Som váš AI asistent. Ako vám môžem pomôcť s financiami?";
+"ai.error" = "Prepáčte, mám technický problém. Skúste to prosím neskôr.";
+"ai.help_hint" = "Skúste: 'Koľko som minul tento mesiac?' alebo 'Ako pridám výdavok?'";
+"ai.processing" = "Spracovávam...";
+"ai.done" = "Hotovo";
+
+/* Assistant Greetings */
+"assistant.greeting_1" = "Ahoj! Rád vám pomôžem s financiami. Čo pre vás môžem dnes urobiť?";
+"assistant.greeting_2" = "Ahoj! Váš finančný asistent je tu. Ako vám môžem pomôcť?";
+"assistant.greeting_3" = "Ahoj! Pripravený optimalizovať vaše financie? Čo by ste chceli vedieť?";
+"assistant.welcome_message" = "Ahoj! Som váš finančný asistent. Ako vám môžem dnes pomôcť lepšie spravovať výdavky? 👋";
+
+/* Budget Advanced */
+"budget.daily" = "Denný rozpočet";
+"budget.weekly" = "Týždenný rozpočet";
+"budget.monthly" = "Mesačný rozpočet";
+"budget.yearly" = "Ročný rozpočet";
+"budget.used" = "Použité";
+"budget.remaining" = "Zostáva";
+"budget.set_daily" = "Nastaviť denný rozpočet";
+"budget.set_weekly" = "Nastaviť týždenný rozpočet";
+"budget.set_monthly" = "Nastaviť mesačný rozpočet";
+"budget.set_yearly" = "Nastaviť ročný rozpočet";
+"budget.status.excellent" = "Výborná kontrola";
+"budget.status.good" = "Na dobrej ceste";
+"budget.status.warning" = "Blíži sa k limitu";
+"budget.status.danger" = "Rozpočet prekročený";
+"budget.insight.limit_reached" = "Dosiahnutý limit rozpočtu";
+"budget.insight.approaching" = "Blíži sa k limitu rozpočtu";
+
+/* Budget Types */
+"budget.type.daily" = "Denne";
+"budget.type.weekly" = "Týždenne";
+"budget.type.monthly" = "Mesačne";
+"budget.type.yearly" = "Ročne";
+
+/* Budget Setup */
+"budget.setup.title" = "Mesačný rozpočet";
+"budget.setup.subtitle" = "Nastavte svoj limit výdavkov";
+"budget.setup.set_button" = "Nastaviť rozpočet";
+
+/* Budget Insights */
+"budget.insight.spending_fast" = "Výdavky o 20% rýchlejšie ako očakávané";
+"budget.insight.great_savings" = "Skvelé tempo úspor tento mesiac";
+"budget.insight.low_daily" = "Menej ako 10 denne zostáva";
+
+/* Buttons */
+"button.done" = "Hotovo";
+"button.cancel" = "Zrušiť";
+"button.create" = "Vytvoriť";
+"button.delete" = "Vymazať";
+"cancel" = "Zrušiť";
+"save" = "Uložiť";
+
+/* Chat */
+"chat.greeting" = "Ahoj! 👋";
+"chat.help_prompt" = "Môžem vám pomôcť analyzovať výdavky.\nOpýtajte sa ma!";
+
+/* Common */
+"common.cancel" = "Zrušiť";
+"common.done" = "Hotovo";
+"common.ok" = "OK";
+
+/* Expense Advanced */
+"expense.add_title" = "Pridať výdavok";
+"expense.scan_receipt" = "Skenovať doklad";
+"expense.manual_entry" = "Manuálne zadanie";
+"expense.unknown_merchant" = "Neznámy";
+"expense.save_button" = "Uložiť výdavok";
+"expense.tax_format" = "Daň: %@";
+"expense.field.date" = "Dátum";
+"expense.field.category" = "Kategória";
+"expense.field.payment" = "Platba";
+"expense.field.tax" = "Daň";
+"expense.field.items" = "Položky";
+"expense.field.merchant" = "Obchodník";
+"expense.field.amount" = "Suma";
+"expenses.total_format" = "Celkom: %@";
+
+/* Expenses Reports */
+"expenses.reports.title" = "Reporty";
+"expenses.reports.generate" = "Vytvoriť report";
+"expenses.reports.period" = "Obdobie";
+"expenses.reports.from" = "Od";
+"expenses.reports.to" = "Do";
+"expenses.reports.archived" = "Archivované";
+"expenses.reports.empty" = "Žiadne reporty";
+"expenses.reports.created" = "Report vytvorený";
+"expenses.thumbnails.empty" = "Žiadne doklady s obrázkami";
+"expenses.view_mode.list" = "Zoznam";
+"expenses.view_mode.thumbnails" = "Náhľady";
+
+/* Export */
+"export.title" = "Export";
+"export.generate_auto_report" = "Vytvoriť automatický report";
+"export.pdf" = "Exportovať PDF";
+"export.csv" = "Exportovať CSV";
+"export.loading" = "Exportujem...";
+"export.pdf.title" = "Report výdavkov";
+"export.pdf.generated" = "Vytvorené";
+"export.pdf.total" = "Celkom";
+"export.pdf.items" = "položiek";
+"export.pdf.footer" = "Vytvorené pomocou PrivExpenses";
+
+/* Report Advanced */
+"report.items_count" = "%d položiek";
+"report.expenses_count" = "%d výdavkov";
+"report.details_title" = "Detaily reportu";
+"report.create_title" = "Vytvoriť report";
+"report.title_placeholder" = "Názov reportu";
+"report.date_from" = "Od dátumu";
+"report.date_to" = "Do dátumu";
+
+/* Scan */
+"scan.complete_title" = "Skenovanie dokončené";
+"scan.complete_message" = "Doklad bol úspešne spracovaný";
+
+/* Onboarding */
+"onboarding.scanning.title" = "Inteligentné skenovanie dokladov";
+"onboarding.scanning.description" = "Okamžite zachyťte a digitalizujte doklady pomocou pokročilej AI OCR technológie";
+"onboarding.ai.title" = "AI-poháňaná inteligencia";
+"onboarding.ai.description" = "Naša AI na zariadení automaticky extrahuje obchodníka, sumu, daň a kategorizuje výdavky";
+"onboarding.privacy.title" = "100% súkromné a bezpečné";
+"onboarding.privacy.description" = "Všetko spracovanie prebieha na vašom zariadení. Vaše finančné údaje nikdy neopustia váš iPhone";
+"onboarding.budget.title" = "Rozpočet a štatistiky";
+"onboarding.budget.description" = "Nastavte si limity výdavkov a sledujte ich pomocou pekných grafov. Získajte prehľad o svojich návykoch.";
+"onboarding.export.title" = "Export a reporty";
+"onboarding.export.description" = "Vytvárajte profesionálne reporty výdavkov a exportujte ich ako PDF alebo CSV pre jednoduché zdieľanie.";
+
+/* Periods */
+"period.week" = "Týždeň";
+"period.month" = "Mesiac";
+"period.year" = "Rok";
+
+/* Statistics */
+"statistics.title" = "Štatistiky";
+"statistics.current_period" = "Aktuálne obdobie";
+"statistics.total_spent" = "Celkom minuté";
+"statistics.this_period" = "Toto obdobie";
+"statistics.average" = "Priemer";
+
+/* Lists */
+"list.and_more" = "... a %d ďalších";
+
+/* Edit Mode */
+"edit.button" = "Upraviť";
+"edit.hint" = "Klepnutím upravte polia";
+
+/* Alerts */
+"alert.cloud_vision" = "Cloud Vision";
+"alert.corrections_applied" = "Opravy aplikované";
+"alert.enhance_ai" = "Vylepšiť AI";
+
+/* Home Advanced */
+"home.today" = "Dnes";
+"home.recent_activity" = "Nedávna aktivita";
+"home.current_report" = "Aktuálna správa";
+"home.hour_ago" = "Pred 1 hodinou";
+"home.minute_ago" = "Pred 1 minútou";
+"home.yesterday" = "Včera";
+
+/* Performance */
+"performance.title" = "🎯 Monitor výkonu";
+
+/* Settings Advanced */
+"settings.select_currency" = "Vybrať menu";
+"settings.select_language" = "Vybrať jazyk";
+"settings_currency" = "Mena";
+"settings_language" = "Jazyk";
+
+/* === SETTINGS CLOUD VISION === */
+"settings.cloud_vision.title" = "Cloud Vision AI";
+"settings.cloud_vision.enable" = "Povoliť Cloud Vision";
+"settings.cloud_vision.subtitle" = "Používať výkonnú cloudovú AI pre doklady";
+"settings.cloud_vision.test" = "Testovať Cloud Vision";
+"settings.provider" = "Poskytovateľ";
+"settings.api_key_openai" = "OpenAI API kľúč";
+"settings.api_key_groq" = "Groq API kľúč";
+"settings.api_key_placeholder" = "Zadajte API kľúč...";
+"settings.api_key_configured" = "API kľúč nakonfigurovaný";
+
+/* === EXPORT PDF COLUMNS === */
+"export.column.date" = "Dátum";
+"export.column.merchant" = "Obchodník";
+"export.column.amount" = "Suma";
+"export.column.tax" = "Daň";
+"export.column.category" = "Kategória";
+"export.unknown" = "Neznámy";
+"export.other" = "Iné";
+
+/* === ALERTS === */
+"alert.corrections_applied" = "Opravy aplikované";
+"alert.enhance_ai" = "AI vylepšenie";
+"alert.cloud_vision" = "Cloud Vision";
+"alert.cloud_vision_success" = "Analýza úspešná za";
+"alert.cloud_vision_error" = "Chyba Cloud Vision";
+
+/* === BUTTONS === */
+"button.done" = "Hotovo";
+
+/* === RECEIPT PREVIEW === */
+"receipt.preview.title" = "Naskenovaný účet";
+"receipt.preview.expand" = "Rozšíriť";
+"receipt.preview.verify_hint" = "Overte, či extrahované údaje zodpovedajú účtenke";
+"receipt.fullscreen.zoom_hint" = "Zovretím priblížite • Dvojitým klepnutím resetujete";
+
+/* === RESULT AUTO-CLOSE === */
+"result.auto_close" = "Automatické zatvorenie...";
+"result.tap_to_stay" = "Klepnite pre zotrvania";
+"result.enhance_with_ai" = "Vylepšiť pomocou AI";
+
+/* === SCAN RESULT DELETE === */
+"delete.confirmation.title" = "Vymazať tento výdavok?";
+"delete.confirmation.message" = "Práve naskenovaný výdavok bude natrvalo vymazaný.";
+
+/* === ARCHÍV DOKUMENTOV (SPRINT 13) === */
+"document.archive.title" = "Dokumenty";
+"document.processing" = "Spracovanie dokumentu...";
+"document.filter.tous" = "Všetky";
+"document.filter.factures" = "Faktúry";
+"document.filter.admin" = "Admin";
+"document.empty" = "Žiadne dokumenty";
+"document.empty.hint" = "Naskenujte faktúry alebo admin dokumenty na archiváciu";
+"document.summary" = "Súhrn";
+"document.view" = "Zobraziť";
+"document.type.invoice" = "Faktúra";
+"document.type.admin" = "Administratívne";
+"document.title" = "Názov";
+"button.delete" = "Vymazať";
+"button.edit" = "Upraviť";
+"expense.field.amount" = "Suma";
+"expense.field.date" = "Dátum";
+"search" = "Hľadať";
+
+// MARK: - Search Indexing
+"search.result" = "výsledok";
+"search.results" = "výsledkov";
+"search.in_content" = "Vyhľadávanie v obsahu";
+"search.match.title" = "Názov";
+"search.match.summary" = "Zhrnutie";
+"search.match.content" = "Obsah";
+"search.no_results" = "Žiadne výsledky";
+"search.no_results.hint" = "Skúste iné kľúčové slová alebo skontrolujte pravopis";

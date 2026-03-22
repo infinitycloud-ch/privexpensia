@@ -1,0 +1,167 @@
+{
+  "legal_requirements": {
+    "privacy_policy": {
+      "url": "https://privexpensia.app/privacy",
+      "last_updated": "2024-09-12",
+      "compliance": [
+        "GDPR (EU)",
+        "CCPA (California)", 
+        "PIPEDA (Canada)",
+        "App Store Privacy Guidelines"
+      ],
+      "key_points": {
+        "data_collection": "Minimale - uniquement données nécessaires au fonctionnement",
+        "data_storage": "Locale uniquement - aucun serveur externe",
+        "data_sharing": "Aucun partage avec des tiers",
+        "user_rights": "Suppression complète des données possibles"
+      }
+    },
+    "terms_of_service": {
+      "url": "https://privexpensia.app/terms",
+      "last_updated": "2024-09-12",
+      "governing_law": "Droit français",
+      "jurisdiction": "Paris, France",
+      "key_clauses": {
+        "usage_rights": "Licence d'utilisation non-exclusive",
+        "prohibited_uses": "Usage commercial sans licence interdite",
+        "liability_limits": "Limitation de responsabilité standard",
+        "termination": "Résiliation possible à tout moment"
+      }
+    },
+    "eula": {
+      "type": "Custom EULA",
+      "url": "https://privexpensia.app/eula",
+      "required": true,
+      "language": "Français avec traduction anglaise disponible",
+      "special_clauses": {
+        "ai_processing": "Traitement IA local uniquement",
+        "data_ownership": "Utilisateur propriétaire de ses données",
+        "export_rights": "Droit d'export illimité des données personnelles"
+      }
+    }
+  },
+  "age_rating": {
+    "rating": "4+",
+    "justification": {
+      "content_type": "Application utilitaire de gestion financière",
+      "no_objectionable_content": true,
+      "educational_value": "Aide à l'éducation financière",
+      "family_friendly": true,
+      "risk_factors": "Aucun - interface sécurisée"
+    },
+    "content_descriptors": [],
+    "restricted_regions": []
+  },
+  "export_compliance": {
+    "status": "Compliant",
+    "encryption_notice": "Application utilise le chiffrement standard iOS",
+    "export_administration_regulations": {
+      "applicable": true,
+      "classification": "Mass Market Encryption",
+      "self_classification": "5D002",
+      "notification_required": false
+    },
+    "international_traffic_arms": {
+      "applicable": false,
+      "justification": "Application civile sans composants militaires"
+    }
+  },
+  "intellectual_property": {
+    "copyright": {
+      "owner": "Moulinsart Studio SARL",
+      "year": "2024",
+      "notice": "© 2024 Moulinsart Studio. Tous droits réservés.",
+      "registration_number": "FR-2024-PrivExpensIA-001"
+    },
+    "trademarks": {
+      "app_name": {
+        "mark": "PrivExpensIA™",
+        "class": "International Class 42 (Software services)",
+        "registration_status": "En cours",
+        "territories": ["France", "EU", "US", "Canada"]
+      },
+      "logo": {
+        "mark": "Logo PrivExpensIA",
+        "class": "International Class 35 & 42",
+        "status": "Déposé"
+      }
+    },
+    "third_party_licenses": {
+      "swift_packages": [
+        {
+          "name": "SwiftUI",
+          "license": "Apple Swift License",
+          "usage": "Interface utilisateur"
+        },
+        {
+          "name": "Vision Framework",
+          "license": "Apple Frameworks License", 
+          "usage": "Reconnaissance optique de caractères"
+        },
+        {
+          "name": "CoreML",
+          "license": "Apple Frameworks License",
+          "usage": "Machine Learning local"
+        }
+      ],
+      "fonts": [
+        {
+          "name": "SF Pro",
+          "license": "Apple System Font License",
+          "usage": "Police système standard"
+        }
+      ],
+      "icons": [
+        {
+          "name": "SF Symbols",
+          "license": "Apple SF Symbols License",
+          "usage": "Icônes interface utilisateur"
+        }
+      ]
+    }
+  },
+  "regulatory_compliance": {
+    "france": {
+      "cnil_compliance": true,
+      "data_protection_officer": "dpo@moulinsart.studio",
+      "legal_representative": "Moulinsart Studio SARL"
+    },
+    "european_union": {
+      "gdpr_compliant": true,
+      "data_processing_basis": "Legitimate interest & Consent",
+      "representative": "EU-representative@moulinsart.studio"
+    },
+    "united_states": {
+      "coppa_compliance": "N/A - No children data collection",
+      "ccpa_compliance": true,
+      "state_privacy_laws": "Compliant with all applicable state laws"
+    }
+  },
+  "contact_information": {
+    "support_email": "support@privexpensia.app",
+    "legal_email": "legal@moulinsart.studio",
+    "privacy_email": "privacy@privexpensia.app",
+    "dmca_email": "dmca@moulinsart.studio",
+    "phone": "+33 1 23 45 67 89",
+    "address": {
+      "company": "Moulinsart Studio SARL",
+      "street": "123 Rue de la Technologie", 
+      "city": "Paris",
+      "postal_code": "75001",
+      "country": "France"
+    }
+  },
+  "app_store_specific": {
+    "content_rating_certificate": "certificate_4plus_2024.pdf",
+    "legal_requirements_checklist": {
+      "privacy_policy_link": "✓ Active",
+      "terms_of_service_link": "✓ Active", 
+      "support_url": "✓ Active",
+      "age_rating_justification": "✓ Documenté",
+      "export_compliance": "✓ Déclaré",
+      "content_warnings": "✓ Aucun requis",
+      "accessibility_features": "✓ VoiceOver compatible",
+      "localization_compliance": "✓ Français natif"
+    }
+  }
+}

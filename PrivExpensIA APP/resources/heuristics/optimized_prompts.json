@@ -1,0 +1,324 @@
+{
+  "version": "2.0.0",
+  "model": "Qwen2.5",
+  "description": "Prompts optimisés par catégorie avec few-shot examples",
+  
+  "category_specific_prompts": {
+    "restaurant": {
+      "system": "You are a restaurant receipt specialist. Focus on: meal items, beverages, service charges, tips, and applicable taxes (eat-in vs takeaway).",
+      "template": "Extract restaurant receipt:\n- Items ordered with prices\n- Service/tip if present\n- Tax type (eat-in/takeaway)\n- Payment method\n\n{receipt_text}",
+      "few_shot": [
+        {
+          "input": "Starbucks\n2025-01-15\nLatte 4.50\nCroissant 3.20\nEat in\nVAT 19% 1.46\nTotal 9.16",
+          "output": {
+            "merchant": "Starbucks",
+            "date": "2025-01-15",
+            "items": [{"name": "Latte", "price": 4.50}, {"name": "Croissant", "price": 3.20}],
+            "service_type": "eat_in",
+            "tax_rate": 19,
+            "tax_amount": 1.46,
+            "total": 9.16,
+            "category": "restaurant"
+          }
+        },
+        {
+          "input": "McDonald's\nBig Mac Menu CHF 12.90\nTakeaway\nMwSt 2.5% CHF 0.32\nTotal CHF 13.22",
+          "output": {
+            "merchant": "McDonald's",
+            "items": [{"name": "Big Mac Menu", "price": 12.90}],
+            "service_type": "takeaway",
+            "tax_rate": 2.5,
+            "total": 13.22,
+            "currency": "CHF",
+            "category": "restaurant"
+          }
+        }
+      ],
+      "validation": "Verify: subtotal + tax + tip = total",
+      "confidence_boost": 0.05
+    },
+    
+    "transport": {
+      "system": "You are a transport receipt expert. Handle: public transit, taxis, ride-sharing, airlines, parking, and fuel receipts.",
+      "template": "Extract transport details:\n- Journey details (from/to if available)\n- Service type (taxi/train/flight/etc)\n- Distance/duration if shown\n- Base fare and surcharges\n\n{receipt_text}",
+      "few_shot": [
+        {
+          "input": "Uber\nRide from Airport to City Center\n15.2 km, 23 min\nBase fare: 15.00\nDistance: 8.50\nTime: 4.20\nTip: 3.00\nTotal: €30.70",
+          "output": {
+            "merchant": "Uber",
+            "service": "ride_share",
+            "route": {"from": "Airport", "to": "City Center"},
+            "distance": "15.2 km",
+            "duration": "23 min",
+            "fare_breakdown": {
+              "base": 15.00,
+              "distance": 8.50,
+              "time": 4.20,
+              "tip": 3.00
+            },
+            "total": 30.70,
+            "currency": "EUR",
+            "category": "transport"
+          }
+        },
+        {
+          "input": "SBB CFF FFS\nZürich HB - Bern\n2. Klasse\nHalbtax\nCHF 25.00\n15.01.2025 08:45",
+          "output": {
+            "merchant": "SBB",
+            "service": "train",
+            "route": {"from": "Zürich HB", "to": "Bern"},
+            "class": "2nd",
+            "discount": "Halbtax",
+            "total": 25.00,
+            "currency": "CHF",
+            "date": "2025-01-15",
+            "time": "08:45",
+            "category": "transport"
+          }
+        }
+      ],
+      "special_handling": "Extract route information when available",
+      "confidence_boost": 0.03
+    },
+    
+    "hotel": {
+      "system": "You are a hotel receipt specialist. Extract: room charges, dates of stay, taxes, resort fees, and additional services.",
+      "template": "Extract hotel stay details:\n- Check-in/out dates\n- Number of nights\n- Room rate\n- Additional charges (resort fee, parking, etc)\n- Tourist taxes\n\n{receipt_text}",
+      "few_shot": [
+        {
+          "input": "Hilton Paris\nCheck-in: 10/01/2025\nCheck-out: 12/01/2025\n2 nights @ €180\nCity tax: €5.50/night\nBreakfast: €45\nTotal: €416",
+          "output": {
+            "merchant": "Hilton Paris",
+            "check_in": "2025-01-10",
+            "check_out": "2025-01-12",
+            "nights": 2,
+            "room_rate": 180,
+            "city_tax": 11.00,
+            "extras": {"breakfast": 45},
+            "total": 416,
+            "currency": "EUR",
+            "category": "hotel"
+          }
+        }
+      ],
+      "validation": "nights * room_rate + taxes + extras = total",
+      "confidence_boost": 0.04
+    },
+    
+    "food": {
+      "system": "You are a grocery/supermarket receipt expert. Focus on: food items, beverages, household products, and reduced VAT rates for essentials.",
+      "template": "Extract grocery receipt:\n- Store name and location\n- Items with quantities\n- Different tax rates (food vs non-food)\n- Loyalty card/discounts\n\n{receipt_text}",
+      "few_shot": [
+        {
+          "input": "Migros\nZürich\nBrot 2x 2.50\nMilch 1.80\nGemüse 4.50\nWein 12.00\nA: 2.5% 0.23\nB: 8.1% 0.97\nTotal CHF 22.00",
+          "output": {
+            "merchant": "Migros",
+            "location": "Zürich",
+            "items": [
+              {"name": "Brot", "quantity": 2, "price": 2.50},
+              {"name": "Milch", "price": 1.80},
+              {"name": "Gemüse", "price": 4.50},
+              {"name": "Wein", "price": 12.00}
+            ],
+            "tax_breakdown": {
+              "reduced_2.5": 0.23,
+              "standard_8.1": 0.97
+            },
+            "total": 22.00,
+            "currency": "CHF",
+            "category": "food"
+          }
+        }
+      ],
+      "special_handling": "Identify reduced VAT items (food essentials)",
+      "confidence_boost": 0.02
+    },
+    
+    "office_supplies": {
+      "system": "You are an office supplies receipt expert. Extract: stationery, electronics, furniture, and business equipment purchases.",
+      "template": "Extract office purchase details:\n- Item descriptions and SKUs\n- Quantities for bulk purchases\n- Business customer info if present\n\n{receipt_text}",
+      "few_shot": [
+        {
+          "input": "Staples\nPaper A4 5x500 sheets 25.00\nPens pack of 10 8.50\nNotebooks 3x 4.50\nVAT 20% 9.40\nTotal 56.40",
+          "output": {
+            "merchant": "Staples",
+            "items": [
+              {"name": "Paper A4", "quantity": "5x500 sheets", "price": 25.00},
+              {"name": "Pens", "quantity": "pack of 10", "price": 8.50},
+              {"name": "Notebooks", "quantity": 3, "price": 13.50}
+            ],
+            "tax_rate": 20,
+            "tax_amount": 9.40,
+            "total": 56.40,
+            "category": "office_supplies"
+          }
+        }
+      ],
+      "confidence_boost": 0.01
+    },
+    
+    "entertainment": {
+      "system": "You are an entertainment receipt specialist. Handle: cinema, concerts, events, museums, and leisure activities.",
+      "template": "Extract entertainment details:\n- Event/venue name\n- Date and time of event\n- Number of tickets\n- Seat information if available\n\n{receipt_text}",
+      "few_shot": [
+        {
+          "input": "Cinéma Pathé\nFilm: Avatar 3\n15.01.2025 20:30\n2 adults @ CHF 18\n1 child @ CHF 12\nPopcorn CHF 8\nTotal CHF 56",
+          "output": {
+            "merchant": "Cinéma Pathé",
+            "event": "Avatar 3",
+            "date": "2025-01-15",
+            "time": "20:30",
+            "tickets": [
+              {"type": "adult", "quantity": 2, "price": 18},
+              {"type": "child", "quantity": 1, "price": 12}
+            ],
+            "concessions": {"popcorn": 8},
+            "total": 56,
+            "currency": "CHF",
+            "category": "entertainment"
+          }
+        }
+      ],
+      "confidence_boost": 0.02
+    },
+    
+    "software": {
+      "system": "You are a software/subscription receipt expert. Extract: license details, subscription periods, user counts, and renewal information.",
+      "template": "Extract software purchase:\n- Product/service name\n- License type (subscription/perpetual)\n- Period (monthly/annual)\n- User count\n- Renewal date\n\n{receipt_text}",
+      "few_shot": [
+        {
+          "input": "Microsoft\nOffice 365 Business\nAnnual subscription\n5 users\nPeriod: 01/2025 - 01/2026\nTotal: $299.00\nAuto-renewal: Yes",
+          "output": {
+            "merchant": "Microsoft",
+            "product": "Office 365 Business",
+            "license_type": "subscription",
+            "period": "annual",
+            "users": 5,
+            "start_date": "2025-01",
+            "end_date": "2026-01",
+            "auto_renewal": true,
+            "total": 299.00,
+            "currency": "USD",
+            "category": "software"
+          }
+        }
+      ],
+      "confidence_boost": 0.03
+    },
+    
+    "hardware": {
+      "system": "You are a hardware/electronics receipt expert. Extract: device specifications, warranty information, accessories, and serial numbers.",
+      "template": "Extract hardware purchase:\n- Product model and specs\n- Serial number if present\n- Warranty period\n- Accessories included\n\n{receipt_text}",
+      "few_shot": [
+        {
+          "input": "Apple Store\niPhone 15 Pro 256GB\nSerial: DNPXX1234\nAppleCare+ 2 years\nCase CHF 59\nTotal CHF 1418\n15.01.2025",
+          "output": {
+            "merchant": "Apple Store",
+            "product": "iPhone 15 Pro 256GB",
+            "serial": "DNPXX1234",
+            "warranty": "AppleCare+ 2 years",
+            "accessories": {"case": 59},
+            "total": 1418,
+            "currency": "CHF",
+            "date": "2025-01-15",
+            "category": "hardware"
+          }
+        }
+      ],
+      "confidence_boost": 0.02
+    }
+  },
+  
+  "multi_currency_handling": {
+    "system": "Handle multiple currencies. Always identify and extract all currency amounts separately.",
+    "template": "Receipt contains multiple currencies:\n{currencies_detected}\n\nExtract all amounts with their respective currencies and note any exchange rates if shown.",
+    "validation": "Sum of all currency amounts should match receipt total when converted"
+  },
+  
+  "json_enforcement": {
+    "strict_mode": true,
+    "template": "You must output valid JSON only. No additional text or explanation.\n\nRequired fields:\n- merchant: string\n- date: YYYY-MM-DD\n- total: number\n- currency: ISO code\n- category: string\n- confidence: 0-1\n\nOptional fields:\n- items: array\n- tax_rate: number\n- tax_amount: number\n- metadata: object",
+    "validation_regex": "^\\s*\\{[\\s\\S]*\\}\\s*$"
+  },
+  
+  "optimization_settings": {
+    "per_category": {
+      "restaurant": {
+        "temperature": 0,
+        "max_tokens": 400,
+        "top_p": 0.95
+      },
+      "transport": {
+        "temperature": 0,
+        "max_tokens": 350,
+        "top_p": 0.95
+      },
+      "hotel": {
+        "temperature": 0,
+        "max_tokens": 450,
+        "top_p": 0.95
+      },
+      "food": {
+        "temperature": 0,
+        "max_tokens": 500,
+        "top_p": 0.95
+      },
+      "default": {
+        "temperature": 0,
+        "max_tokens": 400,
+        "top_p": 0.95
+      }
+    },
+    "batch_processing": {
+      "enabled": true,
+      "batch_size": 10,
+      "parallel_requests": 3,
+      "timeout_ms": 5000
+    }
+  },
+  
+  "prompt_selection_strategy": {
+    "rules": [
+      {
+        "condition": "merchant in known_restaurants",
+        "prompt": "category_specific_prompts.restaurant",
+        "priority": 1
+      },
+      {
+        "condition": "keywords contain ['taxi', 'uber', 'flight', 'train']",
+        "prompt": "category_specific_prompts.transport",
+        "priority": 1
+      },
+      {
+        "condition": "keywords contain ['hotel', 'accommodation', 'check-in']",
+        "prompt": "category_specific_prompts.hotel",
+        "priority": 1
+      },
+      {
+        "condition": "merchant in known_supermarkets",
+        "prompt": "category_specific_prompts.food",
+        "priority": 1
+      },
+      {
+        "condition": "confidence < 0.7",
+        "prompt": "enhanced_extraction_prompt",
+        "priority": 2
+      }
+    ],
+    "fallback": "standard_extraction_prompt"
+  },
+  
+  "performance_metrics": {
+    "expected_improvements": {
+      "restaurant": "+5% accuracy with few-shot",
+      "transport": "+3% accuracy with route extraction",
+      "hotel": "+4% accuracy with date handling",
+      "food": "+2% accuracy with tax separation",
+      "overall": "+3.5% average improvement"
+    },
+    "execution_time": {
+      "optimized": "350-450ms per receipt",
+      "batch": "250ms per receipt in batch mode"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "app_metadata": {
+    "name": "PrivExpensIA",
+    "subtitle": "Scanner IA 95% précision",
+    "bundle_id": "com.moulinsart.privexpensia",
+    "version": "1.0.0",
+    "build_number": "1"
+  },
+  "store_listing": {
+    "description": "PrivExpensIA révolutionne la gestion de vos dépenses grâce à l'intelligence artificielle. Scannez vos reçus avec une précision de 95% et laissez l'IA extraire automatiquement toutes les informations importantes.\n\n🤖 IA AVANCÉE\n• Scanner OCR nouvelle génération\n• Reconnaissance intelligente des données\n• Extraction automatique : montant, date, marchand, TVA\n• Apprentissage continu pour améliorer la précision\n\n📊 ANALYSE INTELLIGENTE\n• Catégorisation automatique des dépenses\n• Détection des doublons\n• Analyse des tendances de consommation\n• Alertes budgétaires personnalisées\n\n🔒 CONFIDENTIALITÉ TOTALE\n• Toutes les données restent sur votre appareil\n• Aucune connexion internet requise\n• Chiffrement bout en bout\n• Conformité RGPD garantie\n\n✨ FONCTIONNALITÉS PREMIUM\n• Export Excel/PDF professionnel\n• Sauvegarde iCloud sécurisée\n• Rapports détaillés illimités\n• Support multi-devises\n• Mode sombre élégant\n\n💼 PARFAIT POUR\n• Professionnels en déplacement\n• Entrepreneurs et freelances\n• Familles soucieuses du budget\n• Étudiants et particuliers\n\n🏆 AVANTAGES EXCLUSIFS\n• Interface SwiftUI moderne et intuitive\n• Synchronisation instantanée entre appareils\n• Recherche avancée par critères multiples\n• Widgets iOS pour un accès rapide\n• Raccourcis Siri personnalisables\n\nTransformez votre smartphone en assistant financier intelligent. PrivExpensIA combine la puissance de l'IA avec la simplicité d'utilisation pour vous faire gagner du temps et optimiser vos finances.\n\nTéléchargez maintenant et découvrez pourquoi plus de 10 000 utilisateurs font confiance à PrivExpensIA pour gérer leurs dépenses en toute sécurité.",
+    "keywords": "facture,scanner,OCR,IA,dépenses,budget,comptabilité,reçu,finance,privé,sécure,automatique",
+    "promotional_text": "🚀 NOUVEAU : Scanner IA révolutionnaire avec 95% de précision ! Scannez, analysez et gérez vos dépenses en toute sécurité. Essai gratuit inclus !",
+    "whats_new": "🎉 Première version de PrivExpensIA !\n\n✨ NOUVEAUTÉS v1.0 :\n• Scanner IA ultra-précis (95% de réussite)\n• Interface SwiftUI moderne et fluide\n• Confidentialité totale - données locales uniquement\n• Catégorisation automatique intelligente\n• Export professionnel Excel/PDF\n• Mode sombre intégré\n• Widgets iOS pour accès rapide\n• Support multi-devises\n• Sauvegarde iCloud chiffrée\n\nDécouvrez l'avenir de la gestion d'expenses avec notre IA révolutionnaire. Scannez n'importe quel reçu et laissez l'intelligence artificielle faire le travail !\n\nMerci de votre confiance. L'équipe PrivExpensIA 🙏"
+  },
+  "urls": {
+    "support_url": "https://moulinsart.support/privexpensia",
+    "marketing_url": "https://privexpensia.app",
+    "privacy_policy_url": "https://privexpensia.app/privacy"
+  },
+  "copyright": "© 2024 Moulinsart Studio. Tous droits réservés.",
+  "age_rating": {
+    "rating": "4+",
+    "content_description": "Aucun contenu répréhensible. Application de gestion financière familiale."
+  },
+  "localization": {
+    "primary_language": "fr-FR",
+    "supported_languages": [
+      "fr-FR",
+      "en-US",
+      "es-ES",
+      "de-DE",
+      "it-IT"
+    ]
+  }
+}

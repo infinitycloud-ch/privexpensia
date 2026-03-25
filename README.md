@@ -1,5 +1,9 @@
 # PrivExpensIA
 
+<p align="center">
+  <img src="assets/cover.png" width="700" alt="PrivExpensIA">
+</p>
+
 An AI-powered iOS expense tracker that extracts data from receipts using on-device OCR and machine learning. Scan a receipt, get structured expense data — no cloud processing, 100% private.
 
 ![iOS](https://img.shields.io/badge/iOS-17%2B-blue)

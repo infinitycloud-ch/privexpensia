@@ -16,11 +16,11 @@ An AI-powered iOS expense tracker that extracts data from receipts using on-devi
 ## Screenshots
 
 <p align="center">
-  <img src="assets/screenshots/dashboard.png" width="220" alt="Dashboard">
+  <img src="assets/screenshots/home.png" width="220" alt="Home — Budget & Expenses">
   &nbsp;&nbsp;
-  <img src="assets/screenshots/onboarding.png" width="220" alt="Onboarding">
+  <img src="assets/screenshots/expenses.png" width="220" alt="Expense List">
   &nbsp;&nbsp;
-  <img src="assets/screenshots/dashboard-dark.png" width="220" alt="Dashboard Dark Mode">
+  <img src="assets/screenshots/analytics.png" width="220" alt="Analytics & Export">
 </p>
 
 ## Academic Paper

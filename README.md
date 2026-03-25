@@ -13,16 +13,15 @@ An AI-powered iOS expense tracker that extracts data from receipts using on-devi
 ![Languages](https://img.shields.io/badge/Languages-12-yellow)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-<!--
 ## Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/scan.png" width="200" alt="Receipt Scanner">
-  <img src="docs/screenshots/expense-list.png" width="200" alt="Expense List">
-  <img src="docs/screenshots/statistics.png" width="200" alt="Statistics">
-  <img src="docs/screenshots/dark-mode.png" width="200" alt="Dark Mode">
+  <img src="assets/screenshots/dashboard.png" width="220" alt="Dashboard">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/onboarding.png" width="220" alt="Onboarding">
+  &nbsp;&nbsp;
+  <img src="assets/screenshots/dashboard-dark.png" width="220" alt="Dashboard Dark Mode">
 </p>
--->
 
 ## Academic Paper
 
